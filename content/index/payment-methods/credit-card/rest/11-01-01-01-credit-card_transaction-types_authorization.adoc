@@ -115,14 +115,14 @@ We provide detailed descriptions of all
 .Request Header
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
 .XML authorization Request (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_authorization_request_success_091c42.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_authorization_request_success.xml[]
 ----
 
 
@@ -138,7 +138,7 @@ when using the credit card for the first time.
 .XML authorization Response (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_authorization_response_success_8d2ff4.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_authorization_request_success.xml[]
 ----
 
 
@@ -163,7 +163,7 @@ We provide detailed descriptions of all
 
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
@@ -171,7 +171,7 @@ Content-Type: application/xml
 .XML authorization Request (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_authorization_request_success_de4dea_1.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_authorization_requestWithToken_success.xml[]
 ----
 
 
@@ -185,7 +185,7 @@ We provide detailed descriptions of all
 .XML authorization Response (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_authorization_response_success_3fd72a.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_authorization_responseWithToken_success.xml[]
 ----
 
 
@@ -208,15 +208,15 @@ We provide detailed descriptions of all
 
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
 .XML void-authorization Request (Successful)
 
-[source,xml,subs=attributes+]
+[source,subs=attributes+]
 ----
-include::{root}/samples/xml/CreditCardTransactionTypesAuthorizationSendingDataVoidAuthorization_VoidAuthorizationRequestSuccessful.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_voidAuthorization_request_success.xml[]
 ----
 
 [#CreditCard_TransactionTypes_Authorization_SendingData_VoidAuthorization_Res]
@@ -227,9 +227,9 @@ We provide detailed descriptions of all
 
 .XML void-authorization Response (Successful)
 
-[source,xml,subs=attributes+]
+[source,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_void-authorization_response_success_878d86d2.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_voidAuthorization_response_success.xml[]
 ----
 
 //-

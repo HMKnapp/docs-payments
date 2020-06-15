@@ -56,7 +56,7 @@ agreement between _Alipay Cross-border_ and the consumer. |
 
 [%autowidth.stretch,stripes=none]
 |===
-h|URL (Endpoint) 2+|``\https://payments-test.wirecard.com/ee/rest/payments``
+h|URL (Endpoint) 2+|``{rest-api-test-endpoint}``
 
 h|Merchant Account ID (MAID)
 2+|47cd4edf-b13c-4298-9344-53119ab8b9df
@@ -258,7 +258,7 @@ m| amount
 
 [#API_AlipayCrossBorder_Fields_BusinessType5]
 .Business Type 5 - Other
-The business type description of your business is stored in the MCC code of your merchant configutation. For other business types than the ones described above, {payment-gateway} adds this MCC code description to your request. +
+The business type description of your business is stored in the MCC code of your merchant configuration. For other business types than the ones described above, {payment-gateway} adds this MCC code description to your request. +
 You do not need to add mandatory fields to your request. +
 For MCC code setup, <<ContactUs, contact merchant support>>.
 

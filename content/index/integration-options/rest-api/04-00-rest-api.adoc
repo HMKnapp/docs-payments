@@ -11,9 +11,9 @@ as GET, PUT, POST and DELETE.
 
 The API currently supports the following data formats:
 
-- for *requests* XML and JSON.
-- for *responses* XML, HTML or JSON. Some methods accept a subset of these
-formats, only.
+- for *requests*, XML and JSON.
+- for *responses*, XML, HTML or JSON. Some methods accept a subset of these
+formats only.
 //-
 
 
@@ -22,7 +22,7 @@ header to get results in the format of your choice. Methods to retrieve
 data from the Payment Processing API require a ``GET`` request. Methods
 that submit data require a ``POST``.
 
-WARNING: API methods that require a particular HTTP method will return an error
+WARNING: API methods that require a particular HTTP method return an error
 if the request is not made using the correct method. The
 following <<StatusCodes, HTTP Return Codes>> are helpful in analyzing the error.
 
@@ -33,6 +33,7 @@ keep in mind when making requests with parameters:
 
 - Parameter values should be UTF-8
 - All URLs for REST should be https://en.wikipedia.org/wiki/Percent_encoding[URL encoded].
+
 //-
 
 Because the Payment Processing API is based on open standards, any web
@@ -44,7 +45,7 @@ development language may be used to access the API.
 Every request sent to {payment-gateway} is
 authorized and authenticated. Users are authenticated using
 https://en.wikipedia.org/wiki/Basic_access_authentication[basic
-authentication] over an SSL enabled channel. The Merchant Account
+authentication] over an SSL-enabled channel. The Merchant Account
 configuration is used to authorize the request.
 
 [#RestApi_GoingOnProduction]

@@ -138,7 +138,7 @@ when using the credit card for the first time.
 .XML authorization Response (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/NOVA/nova_CC_authorization_request_success.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_authorization_response_success.xml[]
 ----
 
 

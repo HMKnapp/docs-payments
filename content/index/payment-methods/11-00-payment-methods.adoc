@@ -122,13 +122,10 @@ on regulations and laws of regions and countries. For details click the
 payment method's name in the list below, where you can find all the supported
 APMs grouped by the payment mode.
 
-Other payment modes provided by the {payment-gateway} are
-<<PaymentMethods_PaymentMode_Prepaid, Prepaid>>,
+Other payment modes provided by the {payment-gateway} are:
 <<PaymentMethods_PaymentMode_Voucher, Voucher>> or
 <<PaymentMethods_PaymentMode_Wallet, _Wallet_>>.
 
-Also some <<PaymentMethods_PaymentMode_MobilePayment, _Mobile Payment_>> options, which
-are just a variety of the above mentioned Payment Methods, fit into that scheme.
 
 [#API_PM_APM_PaymentMode]
 [discrete]
@@ -157,7 +154,7 @@ immediately.
 payments to consumers, who
 
 - do not own a credit/debit card.
-- do not want to use a credit/debit card when shopping in the internet.
+- do not want to use a credit/debit card when shopping on the internet.
 
 With an _Online Bank Transfer_ consumers
 
@@ -167,19 +164,11 @@ With an _Online Bank Transfer_ consumers
 This increases the conversion rate for merchants as well as the customer
 satisfaction.
 | 
-<<Bancontact_Main, Bancontact>>
-
-<<CarrierBilling_Main, Carrier Billing>>
-
-<<CIMBClicks_Main, CIMB Clicks>>
-
 <<eNets_Main, eNets>>
 
 <<epsUberweisung_Main, eps-Überweisung>>
 
 <<FPX_Main, FPX>>
-
-<<giropay_Main, giropay>>
 
 <<iDEAL_Main, iDEAL>>
 
@@ -189,27 +178,8 @@ satisfaction.
 
 <<KlarnaV2_Main, Klarna Debit>>
 
-<<Maybank2U_Main, Maybank2u>>
-
-<<moip_Main, moip Pagamentos>>
-
-<<MOLPay_Main, MOLPay>>
-
-<<PayByBankApp_Main, Pay by Bank app>>
-
-<<Paydirekt_Main, paydirekt>>
-
-<<payolution_Main, payolution>>
-
-<<POLi_Main, POLi>>
-
-<<Przelewy24_Main, Przelewy24>>
-
 <<Sofort_Main, Sofort.>>
 
-<<Trustly_Main, Trustly>>
-
-<<TrustPay_Main, TrustPay>>
 
 |[[PaymentMethods_PaymentMode_OfflineBankTransfer]]_Offline Bank Transfer_
 |_Offline Bank Transfer_ is a payment mode which enables shoppers to
@@ -236,21 +206,9 @@ This increases the conversion rate for merchants as well as the customer
 satisfaction.
 
 |
-<<Boleto_Main, Boleto>>
-
-<<KlarnaV2_Main, Klarna Financing>>
-
-<<KlarnaV2_Main, Klarna Pay later>>
-
-<<Klarna_Main, Klarna Services>>
-
-<<POIPIA_Main, Payment on Invoice (POI)/Payment in Advance (PIA)>>
-
 <<SEPACreditTransfer, SEPA Credit Transfer>>
 
 <<SEPADirectDebit, SEPA Direct Debit>>
-
-<<TrustPay, TrustPay>>
 
 <<API_PaymentDirectDebit, {payment-provider-name} Payment Guaranteed Direct Debit>>
 
@@ -313,47 +271,13 @@ In most of the cases
 
 |<<AlipayCrossBorder_Main, Alipay Cross-border>>
 
-<<AlipayDomestic_Main, Alipay Domestic>>
-
-<<AlipayQRPay_Main, Alipay QR Pay>>
-
-<<ApplePay_Main, Apple Pay>>
-
 <<GooglePay_Main, Google Pay™>>
-
-<<Masterpass_Main, Masterpass>>
-
-<<Mobicred_Main, mobicred>>
-
-<<moneta_Main, moneta.ru>>
 
 <<Paylib_Main, Paylib>>
 
 <<PayPal_Main, PayPal>>
 
-<<Skrill_Main, Skrill Digital Wallet>>
-
-<<VISACheckout_Main, Visa Checkout>>
-
 <<WeChat_Main, WeChat QR Pay>>
-
-|[[PaymentMethods_PaymentMode_MobilePayment]]_Mobile Payment_
-|Payment methods offer _Mobile Payment_ as an additional variant to
-their traditional payment possibilities. Therefore it is not possible to
-assign mobile payment to either _Credit/Debit Card_ or an APM.
-
-The usage of smartphones and tablets has massively assisted in the
-development of mobile payments. Meanwhile, a wide-range of products
-are available on the market, using different kinds of technologies.
-{payment-gateway} already supports several mobile payment
-options.
-|A mobile payment method is an attractive alternative to a consumer's
-credit card. Some consumers enjoy the comfort to pay with a mobile
-device and charge the monthly telecommunication bill.
-
-|<<ApplePay_Main, Apple Pay>>
-
-<<GooglePay_Main, Google Pay™>>
 |===
 
 //-

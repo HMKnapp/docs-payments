@@ -4,11 +4,25 @@
 // tag::cc-base[]
 // tag::pm-base[]
 
+| pareq 
+| M/O 
+| String 
+| 16000 
+| Base64-encoded request message created for cards enrolled in the 3D Secure program. 
+``pareq`` is returned by the issuer's ACS via the _VISA_ or _Mastercard_ directory to the _{payment-gateway}_ and from there passed on to you. +
+*Mandatory* for <<CreditCard_3DS2_Fields_request_threed, 3D Secure 2 payments>>.
+
+| pares 
+| M/O 
+| String 
+| 2048 
+| Digitally signed, base64-encoded authentication response message. It contains the ARes/CRes received from the issuer.
+
 |acs-url 
 |M/O
 |String 
-|2048 
-|Issuer URL. You need to direct the enrollment-check request via the cardholder's browser to this URL. It is returned only if the cardholder is enrolled in the 3D Secure program. +
+|256
+|Issuer URL. You need to direct the enrollment-check request in the cardholder's browser to this URL. It is returned only if the cardholder is enrolled in the 3D Secure program. +
 *Mandatory* for <<CreditCard_3DS2_Fields_request_threed, 3D Secure 2 payments>>.
 
 |attempt-three-d 
@@ -54,25 +68,17 @@ Accepted format: see IETF RFC 4122.
 |Indicates the status of the VERes. +
 *Mandatory* for <<CreditCard_3DS2_Fields_request_threed, 3D Secure 2 payments>>.
 
-|pareq 
-|M/O 
-|String 
-|16000 
-|A base64-encoded request message created for cards participating in the 3D Secure program. The PaReq is returned by the issuer's ACS via the _VISA_ or _Mastercard_ directory to the _{payment-gateway}_ and from there passed on to you. +
-*Mandatory* for <<CreditCard_3DS2_Fields_request_threed, 3D Secure 2 payments>>.
-
-| pares 
-|M/O 
-|String 
-|2048 
-|Issuer URL. You need to direct the enrollment-check request via the consumer's browser to this URL. It is returned only if the cardholder is enrolled in the 3D Secure program. +
-*Mandatory* for <<CreditCard_3DS2_Fields_request_threed, 3D Secure 2 payments>>.
+|request-exemption	
+|O	
+|Boolean
+|
+|Set this flag to ``true`` if you do not want this transaction to be subject to SCA.
 
 |riid 
 |O 
 |Enumeration
 |2  
-| Indicates the type of 3RI request. +
+| Indicates the type of 3RI (3D Sccure Requestor Initiated) request. +
 Accepted values: +
 
 * ``01`` = Recurring transaction +

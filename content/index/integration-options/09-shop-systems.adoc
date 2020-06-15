@@ -369,7 +369,7 @@ a| Magento 1 image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title
 //      - PayPal
 //      - SEPA Credit Transfer
 //      - SEPA Direct Debit |
-//endif::[]
+
 
       - English
       - German  |

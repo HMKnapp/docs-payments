@@ -7,51 +7,19 @@
 |M/O 
 |String 
 |32 
-|The first name given in the consumer's shipping information. +
-Mandatory for credit card.
+|The first name given in the consumer's shipping information.
 
 |last-name 
 |M/0 
 |String 
 |32 
-|The last name given in the consumer's shipping information. +
-Mandatory for credit card.
+|The last name given in the consumer's shipping information.
 
 |phone 
 |O 
 |String 
 |32 
 |Phone number given in the consumer's shipping information.
-
-|email 
-|O 
-|String 
-|64 
-|Email address given in the consumer's shipping information. 
-
-|return-shipping-company 
-|O 
-|String 
-|36 
-|Company that handles the return delivery.
-
-|return-tracking-number 
-|O 
-|String 
-|64 
-|The delivery tracking number of the return.
-
-|return-tracking-url 
-|O 
-|String 
-|2000 
-|URL for tracking the delivery of the return.
-
-|shipping-company 
-|O 
-|String 
-|64 
-|Company that delivers the order to the recipient.
 
 // tag::three-ds[]
 
@@ -84,18 +52,6 @@ Mandatory for credit card.
 //-
 
 // tag::cc-base[]
-
-|tracking-number 
-|O 
-|String 
-|64 
-|The shipping tracking number.
-
-|tracking-url 
-|O 
-|String 
-|2000 
-|URL for tracking the shipping.
 
 // tag::three-ds[]
 

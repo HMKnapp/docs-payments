@@ -32,8 +32,6 @@ Include this field +
 
 //-
 
-//-
-
 Otherwise, the field is optional.
 
 | card-security-code 
@@ -49,8 +47,13 @@ Depending on your merchant account settings it may be mandatory.
 |String 
 |15 
 a| 
-Card brand, e.g. ``visa``. +
-Please refer to the <<Appendix_Xml, Payment XSD>> for the complete list of supported card types.
+Card brand. +
+Accepted values:
+
+- ``mastercard``
+- ``visa``
+
+//-
 
 Mandatory for credit card transactions.
 
@@ -58,13 +61,15 @@ Mandatory for credit card transactions.
 | M/O 
 | Numeric 
 | 2 
-| The 2-digit representation of the expiration month of the ``account-number``. Mandatory for credit card transactions if <<{listname}_request_cardtoken,``card-token``>> is not used.
+| The 2-digit representation of the expiration month of the ``account-number``. +
+Mandatory for credit card transactions if <<{listname}_request_cardtoken,``card-token``>> is not used.
 
 | expiration-year 
 | M/O
 | Numeric	
 | 4 
-| The 4-digit representation of the expiration year of the ``account-number``. Mandatory for credit card transactions if <<{listname}_request_cardtoken,``card-token``>> is not used.
+| The 4-digit representation of the expiration year of the ``account-number``. +
+Mandatory for credit card transactions if <<{listname}_request_cardtoken,``card-token``>> is not used.
 
 // tag::three-ds[]
 

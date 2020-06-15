@@ -13,6 +13,8 @@ Accepted values: +
 ``02`` = HTML +
 ``03`` = Both +
 
+//-
+
 | ui-type
 | O
 | String
@@ -24,5 +26,7 @@ Accepted values: +
 ``03`` = Multi Select +
 ``04`` = OOB (out-of-band) +
 ``05`` = HTML Other (accepted only for HTML UI)
+
+//-
 
 |===

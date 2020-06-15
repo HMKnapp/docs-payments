@@ -213,6 +213,46 @@ include::{root}/include/fields/rest_cc/request/req-device.adoc[]
 // include::{root}/include/fields/rest_cc/request/req-encryption-context.adoc[]
 
 
+[#API_Fields_xmlelements_request_deviceRenderOptions]
+==== device.render-options
+
+include::{root}/include/fields/rest_cc/request/req-device-renderOption.adoc[]
+
+
+[#API_Fields_xmlelements_request_deviceSDK]
+==== device.sdk
+
+For mobile transactions.
+
+include::{root}/include/fields/rest_cc/request/req-device-SDK.adoc[]
+
+
+[#API_Fields_xmlelements_request_installmentPlanOptions]
+==== installment-plan-options
+
+[%autowidth]
+[cols="m,,,,a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-installment-plan-options.adoc[]
+
+|===
+
+
+[#API_Fields_xmlelements_request_availableInstallmentPlanOptions_installmentPlanOption]
+==== installment-plan-options.available-installment-plan-options.installment-plan-option
+
+[%autowidth]
+[cols="m,,,,a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-available-installment-plan-options.adoc[]
+
+|===
+
+
 [#API_Fields_xmlelements_request_ISO]
 ==== iso
 
@@ -275,6 +315,20 @@ include::{root}/include/fields/rest_cc/request/req-payment-method.adoc[]
 include::{root}/include/fields/rest_cc/request/req-periodic.adoc[]
 
 |===
+
+
+[#API_Fields_xmlelements_request_periodicInstallmentPlan]
+==== periodic.installment-plan
+
+[%autowidth]
+[cols="m,,,,a"]
+|===
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Size | Description
+
+include::{root}/include/fields/rest_cc/request/req-periodic-installment-plan.adoc[]
+
+|===
+
 
 [#API_Fields_xmlelements_request_riskinfo]
 ==== risk-info

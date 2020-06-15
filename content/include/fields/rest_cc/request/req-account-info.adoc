@@ -26,7 +26,7 @@ For guest checkout, the timestamp is ``now``.
 | card-creation-date
 | O
 | Date
-| 10
+| 8
 | Date that the consumer’s card was added to their account in your shop for card-on-file payments (one-click checkout). +
 Accepted format: ``{date-pattern}``. +
 For all other types of checkout (e.g. guest checkout, regular checkout, the first transaction with one-click checkout), the date is ``now``.
@@ -56,7 +56,7 @@ If the element is not provided, the ACS will interpret this as ``01`` = No prefe
 | creation-date 
 | O
 | Date 
-| 10
+| 8
 | Registration date (UTC) of the consumer's account in your shop. +
 Accepted format: ``{date-pattern}``. +
 For guest checkout, do not send this field.
@@ -64,7 +64,7 @@ For guest checkout, do not send this field.
 | password-change-date 
 | O
 | Date
-| 10
+| 8
 | Date that the consumer last changed/reset their password in your shop. +
 Accepted format: ``{date-pattern}``. +
 For guest checkout, do not send this field.
@@ -73,12 +73,12 @@ For guest checkout, do not send this field.
 | O
 | Number
 | 9
-| Number of successful orders by the consumer in your shop within the past six months.
+| Number of successful purchases by the consumer in your shop within the past six months.
 
 | shipping-address-first-use 
 | O
 | Date
-| 10
+| 8
 | Date that the consumer first used this shipping address in your shop. +
 Accepted format: ``{date-pattern}``. +
 For guest checkout, do not send this field.
@@ -104,7 +104,7 @@ For guest checkout, do not send this field.
 | update-date 
 | O
 | Date
-| 10
+| 8
 | Date that the consumer last made changes to their account in your shop, e.g. changes to billing and shipping address, new payment account, new email address.  + 
 Accepted format: ``{date-pattern}``. +
 For guest checkout, do not send this field.

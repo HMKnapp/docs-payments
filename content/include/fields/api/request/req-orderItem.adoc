@@ -18,12 +18,12 @@
 | amount
 | M/O
 | Numeric 
-| 18.3 
+| 18.2 
 | Item’s price per unit.  +
 Use ``.`` (decimal point) as separator.
 
 a| ``amount``/@``currency`` 
-| M 
+| M/O
 | String
 | 3 
 | Currency of this item's price. Must match the order currency (requested amount currency). +
@@ -39,45 +39,6 @@ Format: 3-character abbreviation according to ISO 4217.
 | O  
 | Numeric
 | 5,2 
-a| Item’s tax rate per unit in percent. +
-Mandatory if ``tax-amount`` is specified.
-
-| tax-amount 
-| O  
-| Numeric
-| 5,2 
-a| Item’s tax value per unit. +
-Mandatory if ``tax-rate`` is specified.
-
-| description 
-| O 
-| String
-| 1024 
-| Description of the item in the shopping basket.
-
-| discount	
-| O
-| Numeric
-| 18.3 
-| The discount value for one order item.  +
-Use ``.`` (decimal point) as separator.
-
-| type
-| O 
-| String
-| n/a
-a| Order item type. +
-Accepted values: 
-
-  - ``shipment_fee``
-  - ``handling_fee``
-  - ``discount``
-  - ``physical``
-  - ``sales_tax``
-  - ``digital``
-  - ``gift_card``
-  - ``store_credit``
-
-//-
+a| Item’s tax rate per unit in percent. 
 
 |===

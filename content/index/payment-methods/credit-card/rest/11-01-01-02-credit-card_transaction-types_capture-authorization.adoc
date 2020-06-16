@@ -80,18 +80,18 @@ We provide detailed descriptions of all
 _Sample_
 
 .Request Header
+
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
-
 .XML authorization Request (Successful)
 
-[source,xml,subs=attributes+]
+[source,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_authorization_request_success_de4dea_2.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_authorization_request_success.xml[]
 ----
 
 
@@ -106,9 +106,9 @@ _Sample_
 
 .XML authorization Response (Successful)
 
-[source,xml,subs=attributes+]
+[source,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_authorization_response_success_784ca3.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_authorization_response_success.xml[]
 ----
 
 
@@ -135,17 +135,16 @@ _Sample_
 
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
 
-
 .XML capture-authorization Request (Successful)
 
-[source,xml,subs=attributes+]
+[source,subs=attributes+]
 ----
-include::{root}/samples/xml/CreditCardTransactionTypesCaptureAuthorizationSendingDataCaptureAuthorization_CaptureAuthorizationRequestSuccessful.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_captureAuthorization_request_success.xml[]
 ----
 
 
@@ -160,9 +159,9 @@ _Sample_
 
 .XML capture-authorization Response (Successful)
 
-[source,xml,subs=attributes+]
+[source,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_capture-authorization_response_success_df92ce59.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_captureAuthorization_response_success.xml[]
 ----
 
 
@@ -190,7 +189,7 @@ _Sample_
 .Request Header
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
@@ -198,7 +197,7 @@ Content-Type: application/xml
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CreditCardTransactionTypesCaptureAuthorizationSendingDataVoidCapture_VoidCaptureRequestSuccessful.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_voidCapture_request_success.xml[]
 ----
 
 
@@ -215,7 +214,7 @@ _Sample_
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_void-capture_response_success_76c1fcbf.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_voidCapture_response_success.xml[]
 ----
 
 
@@ -238,18 +237,17 @@ _Sample_
 
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
 
 .XML refund-capture Request (Successful)
 
-[source,xml,subs=attributes+]
+[source,subs=attributes+]
 ----
-include::{root}/samples/xml/CreditCardTransactionTypesCaptureAuthorizationSendingDataRefundCapture_RefundCaptureRequestSuccessful.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_refundCapture_request_success.xml[]
 ----
-
 
 
 *Response*
@@ -263,9 +261,9 @@ _Sample_
 
 .XML refund-capture Response (Successful)
 
-[source,xml,subs=attributes+]
+[source,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_refund-capture_response_success_dce8eb51.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_refundCapture_response_success.xml[]
 ----
 
 //-

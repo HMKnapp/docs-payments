@@ -92,7 +92,7 @@ Accepted values:
 |O 
 |String 
 |45 
-|The global *F*nternet *P*rotocol address of the consumer's device.
+|The global **I**nternet **P**rotocol address of the consumer's device.
 
 |processing-redirect-url 
 |O 

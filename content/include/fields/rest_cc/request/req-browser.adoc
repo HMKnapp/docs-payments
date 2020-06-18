@@ -81,7 +81,8 @@ The value is returned from the ``screen.height`` and ``screen.width`` properties
 | O
 | String
 | 5
-| Time difference in minutes between UTC and the local time of the consumer's browser. Value is returned from the ``getTimezoneOffset()`` method.
+| Time difference in minutes between UTC and the local time of the consumer's browser. +
+The value is returned from the ``getTimezoneOffset()`` method.
 
 | user-agent 
 | O 

@@ -18,7 +18,7 @@ Allowed characters: ``[A-Z a-z 0-9] + ? - : ( ) . , '``
 | The date that the mandated transaction is due.
 
 | signed-date
-| M/O
+| O
 | String
 | 19
 | The date when the above-mentioned mandate was signed by the consumer. +

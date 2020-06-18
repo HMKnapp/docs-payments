@@ -20,11 +20,11 @@
 | O
 | Numeric
 | 	
-| Total amount the consumer has to pay, including interest and management-fee.
+| Total amount the consumer has to pay, including interest and ``management-fee``.
 
 | tenure
 | O 
-| Numeric
+| Integer
 | 
 | Installment tenure. Number of installments the consumer has to pay.
 
@@ -34,6 +34,7 @@
 | 
 | Period between two installments. +
 Accepted values:
+
 * ``months``
 //-
 

@@ -36,7 +36,7 @@ a| Date after which recurring payments with this card are no longer allowed. Acc
 *Mandatory* only for installment payments with ``periodic-type`` = ``installment``. Sent in authentication of the first transaction.
 
 | recurring-frequency
-| O 
+| M/O 
 | Numeric
 | 4
 a| Indicates the minimum number of days between individual authorizations. +

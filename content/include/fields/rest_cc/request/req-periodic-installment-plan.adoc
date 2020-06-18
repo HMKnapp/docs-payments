@@ -8,7 +8,6 @@
 | O
 | String
 | 36
-| 
 | Unique identifier of the installment payment plan framework.
 
 | plan-code
@@ -59,6 +58,7 @@
 | 
 | Period between two installments. +
 Accepted values:
+
 * ``months``
 //-
 

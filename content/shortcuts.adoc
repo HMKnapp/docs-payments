@@ -52,5 +52,5 @@
 :enterprise-portal-abbr: WEP
 :enterprise-portal-url: wep.{domain}/
 
-:timestamp-pattern: YYYYMMDDHHMM
+:timestamp-pattern: YYYYMMDDhhmm
 :date-pattern: YYYYMMDD

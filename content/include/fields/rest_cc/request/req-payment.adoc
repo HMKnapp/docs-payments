@@ -58,7 +58,7 @@ For credit card transactions, this is issued by their credit card company. It ca
 |O 
 |String 
 |2048 
-|Merchant side order details.
+|The order details which you can provide.
 
 |order-number 
 |O 
@@ -176,61 +176,61 @@ Allowed characters: ``[a-zA-Z]\{2,2}[0-9]\{2,2}[a-zA-Z0-9]\{3,3}[a-zA-Z0-9]\{1,2
 
 // end::pm-base[]
 
-// tag::three-ds[]
+// // tag::three-ds[]
 
-5+|<<{listname}_request_accountholder, account-holder>>
+// 5+|<<{listname}_request_accountholder, account-holder>>
 
-// end::three-ds[]
+// // end::three-ds[]
 
 
-// tag::three-ds[]
+// // tag::three-ds[]
 
-5+|<<{listname}_request_browser, browser>>
+// 5+|<<{listname}_request_browser, browser>>
 
-5+|<<{listname}_request_card, card>>
+// 5+|<<{listname}_request_card, card>>
 
-// end::three-ds[]
+// // end::three-ds[]
 
-5+|<<{listname}_request_cardtoken, card-token>>
+// 5+|<<{listname}_request_cardtoken, card-token>>
 
-// end::pm-base[]
+// // end::pm-base[]
 
-// tag::pm-base[]
+// // tag::pm-base[]
 
-5+|<<{listname}_request_customfield, custom-fields.custom-field>>
+// 5+|<<{listname}_request_customfield, custom-fields.custom-field>>
 
-5+|<<{listname}_request_device, device>>
+// 5+|<<{listname}_request_device, device>>
 
-5+|<<{listname}_request_deviceRenderOptions, device.render-options>>
+// 5+|<<{listname}_request_deviceRenderOptions, device.render-options>>
 
-5+|<<{listname}_request_deviceSDK, device.sdk>>
+// 5+|<<{listname}_request_deviceSDK, device.sdk>>
 
-5+|<<{listname}_request_notification, notifications.notification>>
+// 5+|<<{listname}_request_notification, notifications.notification>>
 
-5+|<<{listname}_request_orderitem, order-items.order-item>>
+// 5+|<<{listname}_request_orderitem, order-items.order-item>>
 
-5+|<<{listname}_request_paymentmethod, payment-methods.payment-method>>
+// 5+|<<{listname}_request_paymentmethod, payment-methods.payment-method>>
 
-// tag::three-ds[]
+// // tag::three-ds[]
 
-5+|<<{listname}_request_periodic, periodic>>
+// 5+|<<{listname}_request_periodic, periodic>>
 
-5+|<<{listname}_request_riskinfo, risk-info>>
+// 5+|<<{listname}_request_riskinfo, risk-info>>
 
-5+|<<{listname}_request_shipping, shipping>> 
+// 5+|<<{listname}_request_shipping, shipping>> 
 
-// end::three-ds[]
+// // end::three-ds[]
 
-// end::pm-base[]
+// // end::pm-base[]
 
-// tag::three-ds[]
+// // tag::three-ds[]
 
-// tag::pm-base[]
+// // tag::pm-base[]
 
-5+|<<{listname}_request_threed, three-d>>
+// 5+|<<{listname}_request_threed, three-d>>
 
-// end::pm-base[]
+// // end::pm-base[]
 
-// end::three-ds[]
+// // end::three-ds[]
 
-//-
+// //-

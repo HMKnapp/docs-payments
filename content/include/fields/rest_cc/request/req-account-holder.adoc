@@ -7,7 +7,7 @@
 |date-of-birth 
 |O 
 |Date 
-|  
+|8
 |Consumer's birth date. +
 Accepted format: ``{date-pattern}``.
 

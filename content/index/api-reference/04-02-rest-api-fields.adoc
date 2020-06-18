@@ -81,7 +81,7 @@ It is used to specify the consumer's address and can refer to
 //-
 Data can be provided optionally but it helps with fraud checks if ``address`` is complete.
 
-[cols="30m,6,9,7,48a"]
+[%autowidth, cols="m,,,,a"]
 |===
 | Field | <<APIRef_FieldDefs_Cardinality, M/O>> | <<APIRef_FieldDefs_DataTypes, Data Type>> | Size | Description
 
@@ -199,7 +199,7 @@ include::{root}/include/fields/rest_cc/request/req-device.adoc[]
 [#API_Fields_xmlelements_request_deviceRenderOptions]
 ==== device.render-options
 
-include::{root}/include/fields/rest_cc/request/req-device-renderOption.adoc[]
+include::{root}/include/fields/rest_cc/request/req-device-renderOptions.adoc[]
 
 
 [#API_Fields_xmlelements_request_deviceSDK]
@@ -419,7 +419,7 @@ The <<FraudPrevention_AVS, Address Verification System (AVS)>> is an
 advanced credit card security service that is integrated in the {payment-provider-name}
 credit card processing network to help thwart identity theft. 
 
-[cols="30m,9,7,48a"]
+[%autowidth, cols="m,,,a"]
 |===
 |Field | <<APIRef_FieldDefs_DataTypes, Data Type>> |Size |Description
 

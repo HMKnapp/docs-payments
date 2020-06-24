@@ -1,14 +1,14 @@
-| installment-plan-id
-| O
-| String	
-|
-| Specifies the installment payment plan option selected by the consumer.
+// | installment-plan-id
+// | O
+// | String	
+// |
+// | Specifies the installment payment plan option selected by the consumer.
 
-| program-id
-| O
-| String
-| 36
-| Unique identifier of the installment payment plan framework selected by the consumer.
+// | program-id
+// | O
+// | String
+// | 36
+// | Unique identifier of the installment payment plan framework selected by the consumer.
 
 | plan-code
 | O
@@ -56,7 +56,7 @@
 | Response only
 | String	
 | 
-| Period between two installments, e.g. ``month``
+| Period between two installments, e.g. ``month``.
 //-
 
 | interest-rate
@@ -84,7 +84,7 @@
 // |
 
 | management-fee
-| O
+| Response only
 | Numeric
 | 
 | Extra charges for providing the option of payment in installments.

@@ -1,7 +1,7 @@
 | plan-type	
 | Response only
 | String
-| Indicates the Installment payment plan type.
+| Indicates the installment payment plan type.
 	
 | payment-option
 | Response only

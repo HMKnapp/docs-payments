@@ -77,9 +77,7 @@ Mandatory for credit card transactions if <<{listname}_request_cardtoken,``card-
 | M/O  
 | Boolean 
 |  
-| This flag is set to ``true`` as soon as the consumer's card data has been stored for future transactions. +
-Maps the Visa field ``Stored Credential``. +
-Mandatory for one-click checkout.
+| This flag is set to ``true`` as soon as the consumer's card data has been stored for future transactions.
 
 // end::three-ds[]
 

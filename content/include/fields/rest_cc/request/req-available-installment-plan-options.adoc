@@ -1,57 +1,53 @@
 | plan-id
-| O
+| Response only
 | String	
 | 
 | Unique identifier of the installment payment plan.
 	
 | first-payment-amount
-| O
+| Response only
 | Numeric	
 |
 | Amount of the first installment the consumer has to pay.
 
 | monthly-payment-amount
-| O
+| Response only
 | Numeric	
 |
 | Amount the consumer has to pay back in monthly installments.
 
 | total-payment-amount
-| O
+| Response only
 | Numeric
 | 	
 | Total amount the consumer has to pay, including interest and ``management-fee``.
 
 | tenure
-| O 
+| Response only
 | Integer
 | 
 | Installment tenure. Number of installments the consumer has to pay.
 
 | tenure-unit
-| O
+| Response only
 | String	
-| 
-| Period between two installments. +
-Accepted values:
-
-* ``months``
-//-
+| Response only
+| Period between two installments. 
 
 | interest-rate
-| O
+| Response only
 | Numeric
 | 
 | Interest rate in percent.
 
 | annual-interest-rate
-| O
+| Response only
 | Numeric
 | 
 | Annual interest rate in percent.
 
 | management-fee
-| O
+| Response only
 | Numeric
 | 
 | Extra charges for providing the option of payment in installments.

@@ -35,10 +35,4 @@ Format: 3-character abbreviation according to ISO 4217.
 |
 | Total number of this item in the shopping basket.
 
-| tax-rate 
-| O  
-| Numeric
-| 5,2 
-a| Item’s tax rate per unit in percent. 
-
 |===

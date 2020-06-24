@@ -7,7 +7,7 @@ It is mandatory if ``card.account-number`` is not specified. +
 It is unique per instance.
 
 | masked-account-number 
-| O 
+| Response only
 | String 
 | 16 
 | The masked version of ``card.account-number`` of the consumer, e.g. ``440804+++******+++7893``.

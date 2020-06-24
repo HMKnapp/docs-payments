@@ -214,9 +214,9 @@ include::{root}/include/fields/rest_cc/request/req-device-SDK.adoc[]
 ==== installment-plan-options
 
 [%autowidth]
-[cols="m,,,,a"]
+[cols="m,,,a"]
 |===
-| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Size | Description
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Description
 
 include::{root}/include/fields/rest_cc/request/req-installment-plan-options.adoc[]
 
@@ -227,9 +227,9 @@ include::{root}/include/fields/rest_cc/request/req-installment-plan-options.adoc
 ==== installment-plan-options.available-installment-plan-options.installment-plan-option
 
 [%autowidth]
-[cols="m,,,,a"]
+[cols="m,,,a"]
 |===
-| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Size | Description
+| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Description
 
 include::{root}/include/fields/rest_cc/request/req-available-installment-plan-options.adoc[]
 
@@ -404,11 +404,11 @@ include::{root}/include/fields/api/response/res-status.adoc[]
 
 include::{root}/include/fields/rest_cc/request/req-three-d.adoc[tag=pm-base]
 
-| liability-shift-indicator
-| Response only
-| String 
-| 2048 
-| Liability shift can be enabled for 3D Secure consumers.
+// | liability-shift-indicator
+// | Response only
+// | String 
+// | 2048 
+// | Liability shift can be enabled for 3D Secure consumers.
 |===
 
 

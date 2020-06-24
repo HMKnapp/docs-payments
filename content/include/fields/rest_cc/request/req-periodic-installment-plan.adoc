@@ -8,83 +8,80 @@
 | O
 | String
 | 36
-| Unique identifier of the installment payment plan framework.
+| Unique identifier of the installment payment plan framework selected by the consumer.
 
 | plan-code
 | O
 | String
 | 36	
-| Unique identifier of the installment payment plan framework.
+| Unique identifier of the installment payment plan selected by the consumer.
 
 | plan-type
-| O
+| Response only
 | String
 | 
-| 
+| Indicates the installment payment plan type.
 
 | first-payment-amount
-| O
+| Response only
 | Numeric	
 |
 | Amount of the first installment the consumer has to pay.
 
 | monthly-payment-amount
-| O
+| Response only
 | Numeric	
 |
 | Amount the consumer has to pay back in monthly installments.
 
 | last-payment-amount
-| O
+| Response only
 | Numeric
 |
 | Amount of the last installment the consumer has to pay.
 
 | total-payment-amount
-| O
+| Response only
 | Numeric
 |
 | Total amount the consumer has to pay, including interest and management-fee.
 
 | tenure
-| O 
+| Response only
 | Numeric
 | 
 | Installment tenure. Number of installments the consumer has to pay.
 
 | tenure-unit
-| O
+| Response only
 | String	
 | 
-| Period between two installments. +
-Accepted values:
-
-* ``months``
+| Period between two installments, e.g. ``month``
 //-
 
 | interest-rate
-| O
+| Response only
 | Numeric
 | 
 | Interest rate in percent.
 
 | annual-interest-rate
-| O
+| Response only
 | Numeric
 | 
 | Annual interest rate in percent.
 
-| acquirer-code
-| O
-| String	
-|
-|
+// | acquirer-code
+// | O
+// | String	
+// |
+// |
 
-| interest-payer
-| O
-| String	
-| 
-|
+// | interest-payer
+// | O
+// | String	
+// | 
+// |
 
 | management-fee
 | O
@@ -92,16 +89,16 @@ Accepted values:
 | 
 | Extra charges for providing the option of payment in installments.
 
-| interest-type
-| O
-| Numeric	
-| 
-|
+// | interest-type
+// | O
+// | Numeric	
+// | 
+// |
 
-| interest-mode
-| O
-| String
-| 
-| 
+// | interest-mode
+// | O
+// | String
+// | 
+// | 
 
 //-

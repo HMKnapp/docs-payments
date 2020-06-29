@@ -1,6 +1,3 @@
-// This include file requires the shortcut {listname} in the link, as this include file is used in different environments.
-// The shortcut guarantees that the target of the link remains in the current environment.
-
 | @``transaction-state``
 | O
 | String
@@ -12,5 +9,15 @@
 | String
 | 256
 | URL to be used for the instant payment notification. Overwrites the notification URL set during merchant configuration.
+
+| format
+| O
+| String
+| 12	
+a| Notifications content-type. +
+Accepted values:
+
+* ``application/json`` +
+* ``application/xml``
 
 //-

@@ -1,0 +1,15 @@
+| plan-type	
+| Response only
+| String
+| Indicates the installment payment plan type.
+	
+| payment-option
+| Response only
+| String
+| ``F``: Pay in full only. +
+``B``: Pay in full or pay in installments. +
+``I``: Pay in installments only.
+
+//-
+
+//-

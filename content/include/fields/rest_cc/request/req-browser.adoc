@@ -59,29 +59,30 @@ Mandatory for requests where +
 | O 
 | Boolean 
 |  
-a|Boolean that represents the ability of the consumer's browser to execute Java. +
-Value is returned by the ``navigator.javaEnabled`` property.
+a| Boolean that represents the ability of the consumer's browser to execute Java. +
+The value is returned from the ``navigator.javaEnabled`` property.
 
 | language 
 | O 
 | String 
 | 8 
-a|Value representing the browser language as defined in IETF BCP47. +
+a| Value representing the browser language as defined in IETF BCP47. +
 The value is limited to 1-8 characters. +
-Value is returned by the ``navigator.language`` property.
+The value is returned from the ``navigator.language`` property.
 
 | screen-resolution 
 | O 
 | String 
-| 12 
+| 32 
 | Total height and width of the consumer’s screen in pixels. +
-Value is returned by the ``screen.height`` and ``screen.width`` properties.
+The value is returned from the ``screen.height`` and ``screen.width`` properties.
 
 | time-zone
-|O
+| O
 | String
 | 5
-| Time difference in minutes between UTC and the local time of the consumer's browser. Value is returned from the ``getTimezoneOffset()`` method.
+| Time difference in minutes between UTC and the local time of the consumer's browser. +
+The value is returned from the ``getTimezoneOffset()`` method.
 
 | user-agent 
 | O 
@@ -91,17 +92,5 @@ a| User agent as retrieved from the cardholder's browser in the HTTP request. +
 If it is longer than 256 bytes, it must be truncated. +
 
 *We strongly recommend* to provide this field if you want to prevent rejection from the ACS server.
-
-// [#{listname}_request_browser]
-// .browser
-// 
-// The following fields are currently not part of the doc: 
-// 
-// | hostname | O  | String | ?? | ??
-// | browser-version | O | String | ?? | ??
-// | os | O | String  | ?? | ??
-// | referrer | O | String | ?? | ??
-// | headers | O | ?? | ?? | ??
-// | cookies | O | ?? | ?? | ??
 
 //-

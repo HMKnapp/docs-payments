@@ -1,2 +1,9 @@
 [#CC_Main]
 == Credit Card
+
+Supported brands:
+
+* Mastercard
+* Visa
+
+//-

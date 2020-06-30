@@ -11,8 +11,8 @@ as GET, PUT, POST and DELETE.
 
 The API currently supports the following data formats:
 
-- for *requests* XML, JSON and NVP (for credit card only).
-- for *responses* XML, HTML or JSON. Some methods accept a subset of these
+- for *requests* XML and JSON.
+- for *responses* XML, HTML and JSON. Some methods accept a subset of these
 formats, only.
 //-
 
@@ -52,23 +52,10 @@ configuration is used to authorize the request.
 
 .REST API endpoints
 
-[cols="h,,", stripes=none]
+* *Test Environment:* ``\https://{rest-api-test-endpoint}``
+* *Production Environment:* ``\https://payments.wirecard.com/ee/rest/payments``
 
-|===
-| | Test Environment | Production Environment
-
-| Credit Card 
-| ``\https://{rest-api-test-endpoint}`` 
-| ``\https://{instance-hostname}/engine/rest/payments``
-
-| Alternative Payment Methods 
-| ``\https://{rest-api-test-apm-endpoint}`` 
-| ``\https://{instance-hostname}/engine/rest/paymentmethods/``
-
-| Mobile Payments 
-| ``\https://{test-instance-hostname}/engine/rest/mobile/payments`` 
-| ``\https://{instance-hostname}/engine/rest/mobile/payments``
-|===
+//-
 
 NOTE: Please contact our <<ContactUs, Merchant Support>> for production environment credentials.
 

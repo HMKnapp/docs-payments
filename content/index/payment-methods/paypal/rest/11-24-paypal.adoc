@@ -300,7 +300,7 @@ NOTE: The consumer has three hours to finish their payment, because the
 See <<API_PayPal_Samples_GeneralSamples_debit, debit samples>> for details.
 
 .debit workflow with _PayPal_
-image::images/11-24-paypal/PaypalWorkflow_debit.png[debit Workflow]
+image::images/diagrams/paypal_debit.svg[debit Workflow]
 
 .  Consumer initiates the payment.
 .  -> Send a ``debit`` request to _{payment-gateway-abbr}_.
@@ -321,7 +321,7 @@ See <<API_PayPal_Samples_GeneralSamples_refunddebit, refund-debit samples>>
 for details.
 
 .refund-debit workflow with _PayPal_
-image::images/11-24-paypal/PaypalWorkflow_refundDebit.png[refund-debit Workflow]
+image::images/diagrams/paypal_refund_debit.svg[refund-debit Workflow]
 
 .  -> Send a ``refund`` request to _{payment-gateway-abbr}_.
 ..  Depending on the corresponding transaction, send either a ``refund-debit`` or ``refund-capture`` request.
@@ -337,7 +337,7 @@ be refunded, which is the ``transaction-id`` of this preceding transaction.
 See <<API_PayPal_Samples_GeneralSamples_credit, credit samples>> for details.
 
 .credit workflow with _PayPal_
-image::images/11-24-paypal/PaypalWorkflow_credit.png[credit workflow,height=250]
+image::images/diagrams/paypal_credit.svg[credit workflow,height=250]
 
 .  -> Send a ``pending-credit`` request to _{payment-gateway-abbr}_.
 .  {payment-gateway-abbr} processes the transaction.
@@ -351,7 +351,7 @@ image::images/11-24-paypal/PaypalWorkflow_credit.png[credit workflow,height=250]
 See <<API_PayPal_Workflow_AuthorizationCaptureRefundCapture, authorization and capture-authorization samples>> for details.
 
 .authorization and capture-authorization workflow with _PayPal_
-image::images/11-24-paypal/PaypalWorkflow_AuthorizationCapture.png[authorization and capture-authorization workflow]
+image::images/diagrams/paypal_capture_authorization.svg[authorization and capture-authorization workflow]
 
 If you authorize a specific amount, the consumer needs to accept this authorization, and then you can submit a capture anytime to capture the requested amount.
 
@@ -377,7 +377,7 @@ process).
 See <<API_PayPal_Workflow_OrderAuthorizationCapture, order, authorization and capture-authorization samples>> for details.
 
 .order, authorization and capture-authorization workflow with _PayPal_
-image::images/11-24-paypal/PaypalWorkflow_OrderAuthorizationCapture.png[order, authorization and capture-authorization workflow,height=250]
+image::images/diagrams/paypal_order_capture-authorization.svg[order, authorization and capture-authorization workflow,height=250]
 
 
 .  ``order``

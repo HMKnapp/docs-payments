@@ -1,20 +1,23 @@
 [#API_PaybyBankapp]
-== REST API & {payment-page-v1}
+== REST API
 _Pay by Bank app_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#API_PaybyBankapp_General_PaymentMode]
 === Countries and Currencies
 [width=75%,cols="1h,3",stripes=none]
 |===
-|Countries
-|Please contact <<ContactUs, Merchant Support>> for Countries.
-|Currencies |GBP
+| Countries
+| Contact <<ContactUs, Merchant Support>> for Countries.
+| Currencies 
+| GBP
 |===
 
 [#API_PaybyBankapp_General_Communication]
 === Communication Formats
+
 This table illustrates how _Pay by Bank app_ (_PBBA_) notifications are encoded
 and which formats and methods can be used for requests and responses.
+
 [width=75%,stripes=none]
 |===
 .2+h| Requests/Responses |Format |XML, JSON
@@ -33,39 +36,45 @@ at <<AppendixB,  Transaction Types>>.
 |===
 |Transaction Type |Description |Link to sample
 
-|_debit_ |receive funds from a consumer's account to ship the
-merchandise |See <<API_PaybyBankapp_Samples_debit, debit>> samples.
-|_refund-debit_ |refund an order, because consumer has returned
-merchandise |
+| debit 
+| receive funds from a consumer's account to ship the
+merchandise 
+| <<API_PaybyBankapp_Samples_debit, debit>> samples.
+
+| refund-debit 
+|refund an order, because consumer has returned
+merchandise 
+|
+
 |===
 
 [#PaybyBankapp_TestCredentials]
 === Test Credentials
 
-[%autowidth]
+[%autowidth, cols=","]
 |===
-.2+h| URL(s) Endpoints |
-For the transaction type _debit_.        |``\https://{rest-api-test-apm-endpoint}``
-                       |For the transaction type _refund-debit_. |``\https://{rest-api-test-endpoint}``
+h| URL(s) Endpoints
+|``\https://{rest-api-test-endpoint}``
+
 h| Merchant Account ID (MAID)
-2+|Please contact <<ContactUs, merchant support>> for complete test credentials.
+| Contact <<ContactUs, merchant support>> for complete test credentials.
 
 h| Username
-2+|70000-APITEST-AP
+| 70000-APITEST-AP
 
 h| Password
-2+|qD2wzQ_hrc!8
+| qD2wzQ_hrc!8
 
 h| Secret Key
-2+|4a4396df-f78c-44b9-b8a0-b72b108ac465
+| 4a4396df-f78c-44b9-b8a0-b72b108ac465
 |===
 
 [#API_PaybyBankapp_TestCredentials_Additional]
 ==== Additional Test Credentials on _PBBA_ Environment
 
-[%autowidth]
+[%autowidth, cols=","]
 |===
-h|Merchant Account Name | ``WD Zapp``
+h|Merchant Account Name | WD Zapp
 h|PE BCSig | 123456
 h|can use credit +
 (configuration parameter)
@@ -85,7 +94,7 @@ a|yes
 
 image::images/11-20-paybybankapp/paybybank_debit_workflow.png[Pay by Bank app Debit Workflow, height=250]
 
-. Consumers select products/services on merchant's website. (This can
+. Consumers select products/services on your website. (This can
 happen either with a desktop browser or a mobile device browser. See
 https://paybybankapp.mastercard.co.uk/personal[the PBBA Experience] for details).
 . Consumers select payment method _PBBA_.
@@ -98,23 +107,23 @@ https://paybybankapp.mastercard.co.uk/personal[the PBBA Experience] for details)
 . Consumers' bank processes the payment in real-time and sends a
 notification to provider and merchants.
 . Consumers' bank displays payment confirmation on MBA.
-. Merchants redirect consumers to a result page.
+. You redirect consumers to a result page.
 
 //-
 
 [#API_PaybyBankapp_Workflow_refundrequest]
-==== _refund-request_
+==== refund-request
 
 image::images/11-20-paybybankapp/paybybank_refund_workflow.png[Pay by Bank app Refund Workflow, height=250]
 
 . Consumers request a refund from merchant.
-. Merchants send _refund_ request to Wirecard.
+. You send refund request to Wirecard.
 . _{payment-gateway-abbr}_ requests refund account details of the consumers
-(transaction type _refund-request_).
-. _{payment-gateway-abbr}_ initiates refund using wiretransfer method (take several
+(transaction type ``refund-request``).
+. _{payment-gateway-abbr}_ initiates refund using wiretransfer method (takes several
 days).
 . After confirmation from bank, consumers are refunded (transaction type
-_refund-debit_).
+``refund-debit``).
 
 //-
 
@@ -122,7 +131,7 @@ _refund-debit_).
 === Fields
 
 [#API_PaybyBankapp_Fields_debit_withPC]
-==== _debit_ with PayConnect
+==== debit with PayConnect
 
 This is faster checkout option without typing the unique 6-digit PBBA
 code to a mobile banking app. To support the PayConnect feature for
@@ -147,14 +156,12 @@ MBA.
 
 //-
 
-The following elements are mandatory (M), optional (O) or conditional
-\(C) for a request/response/notification. If the respective cell is
-empty, the field is disregarded or not sent.
+The following elements are **M**andatory or **O**ptional for a request/response/notification. If the respective cell is empty, the field is disregarded or not sent.
 
 WARNING: Requests that contain capital letters fail. +
 Do not use capital letters in XML requests.
 
-[%autowidth]
+[%autowidth, cols="m,,,,,,"]
 |===
 |Field |Request |Response |Notification |Type |Size |Description
 
@@ -172,9 +179,9 @@ If
 |===
 
 [#API_PaybyBankapp_Fields_debit_withoutPC]
-==== _debit_ without PayConnect
+==== debit without PayConnect
 
-[%autowidth]
+[%autowidth, cols="m,,,,,,"]
 |===
 |Field |Request |Response |Notification |Type |Size |Description
 
@@ -218,7 +225,7 @@ Accepted values: +
                                                                                   within their banking app and presses confirm to submit the payment
 |api-id                                                   |O |O |O |String    |  |A unique identifier assigned for every API.
 |transaction-state                                        |  |M |M |String    |7 |Transaction result status. Should be *success or failed*
-|Statuses/status[@code]                                   |  |M |M |String    |  |Transaction status code (e.g. 201.0000)
+|statuses/status[@code]                                   |  |M |M |String    |  |Transaction status code (e.g. 201.0000)
 |statuses/status[@description]                            |  |M |M |String    |  |Transaction status description (e.g. 201.0000).
 |statuses/status[@severity]                               |  |M |M |String    |  |Transaction status severity. Should be 'information' for successful transactions, 'error'
                                                                                   for failed
@@ -226,15 +233,15 @@ Accepted values: +
 |===
 
 [#API_PaybyBankapp_Fields_refundrequest]
-==== _refund-request_
+==== refund-request
 
-[%autowidth]
+[%autowidth, cols="m,,,,,,"]
 |===
 |Field |Request |Response |Notification |Type |Size |Description
 
 |merchant-account-id                                     |M |M |M |String    |36 |Unique identifier for a merchant account
 |request-id                                              |M |M |M |String    |150 |This is the identification number of the request. *It has to be unique for each request.*
-|transaction-type                                        |M |M |M |String    |22 |This is the type for a transaction. Must be _Refund-Request_
+|transaction-type                                        |M |M |M |String    |22 |This is the type for a transaction. Must be ``refund-request``.
 |parent-transaction-id                                   |M |M |M |String    |36 |Transaction-id of debit transaction for which the refund is being done.
 |payment-methods/payment-method[@name]                   |M |M |M |String    |9 |The name of the Payment Method is "*zapp*".
 |requested-amount                                        |O |M |M |Decimal   |18.3 a| This is the amount of the transaction. When not defined the whole amount of parent transaction is used.
@@ -248,7 +255,7 @@ Accepted values: +
                                                                                  <zapp.in.RefundReasonType> is DISPUTES
 |account-holder.last-Name                                |M |M |M |String    |50 |This is the last name of the end-consumer.
 |transaction-state                                       |  |M |M |String    |7  |Transaction result status. Should be *success or failed*
-|Statuses/status[@code]                                  |  |M |M |String    |   |Transaction status code (e.g. 201.0000)
+|statuses/status[@code]                                  |  |M |M |String    |   |Transaction status code (e.g. 201.0000)
 |statuses/status[@description]                           |  |M |M |String    |   |Transaction status description
 |statuses/status[@severity]                              |  |M |M |String    |   |Transaction status severity. Should be 'information' for successful transactions, 'error' for failed
 |completion-time-stamp                                   |  |M |M |Date time |   |Timestamp of the get-url
@@ -256,19 +263,19 @@ transaction
 |===
 
 [#API_PaybyBankapp_Fields_refunddebit]
-==== _refund-debit_ Notification
+==== refund-debit Notification
 
-When refund is finished, the merchant receives _refund-debit_
-notification. Notification is send as Base64 Encoded XML message, unless
-the merchant has different configuration.
+When the refund is finished, you receive a refund-debit
+notification. This notification is sent as Base64 Encoded XML message, unless
+you have a different configuration.
 
-[%autowidth]
+[%autowidth, cols="m,,,,"]
 |===
 |Field |Notification |Type |Size |Description
 
 |merchant-account-id                                          |M |String    |36    |Unique identifier for a merchant account
 |request-id                                                   |M |String    |150    |This is the identification number of the request. *It has to be unique for each request.*
-|transaction-type                                             |M |String    |22    |This is the type for a transaction. Must be *refund-debit*.
+|transaction-type                                             |M |String    |22    |This is the type for a transaction. Must be ``refund-debit``.
 |parent-transaction-id                                        |M |String    |36    |Transaction-id of debit transaction for which the refund is being done.
 |payment-methods/payment-method[@name]                        |M |String    |9     |The name of the Payment Method is "*zapp*".
 |requested-amount                                             |M |Decimal   |18.3 a|This is the amount of the transaction. When not defined the whole amount of parent transaction is used.
@@ -283,11 +290,8 @@ the merchant has different configuration.
                                                                                     is DISPUTES
 |account-holder.last-Name                                     |M |String    |50    |This is the last name of the end-consumer.
 |transaction-state                                            |M |String    |7     |Transaction result status. Should be *success or failed*
-|Statuses/status[@code]                                       |M |String    |      |Transaction status code (e.g. 201.0000)
-|statuses/status[@description]                                |M |String    |      |Transaction status description
-|statuses/status[@severity]                                   |M |String    |      |Transaction status severity. Should be 'information' for successful transactions, 'error' for failed
 |completion-time-stamp                                        |M |Date time |      |Timestamp of the get-url transaction
-|Statuses/status[@code]                                       |M |String    |      |Transaction status code (e.g. 201.0000)
+|statuses/status[@code]                                       |M |String    |      |Transaction status code (e.g. 201.0000)
 |statuses/status[@description]                                |M |String    |      |Transaction status description
 |statuses/status[@severity]                                   |M |String    |      |Transaction status severity. Should be 'information' for successful transactions, 'error' for failed
 |ip-address                                                   |O |String    |      |
@@ -352,12 +356,12 @@ a|(from EE release 1.130.0)
 === Samples
 
 [#API_PaybyBankapp_Samples_debit]
-==== _debit_
+==== debit
 
 [#API_PaybyBankapp_Samples_debit_withPC]
 ===== With PayConnect
 
-._debit_ Request (Successful)
+.debit Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -376,7 +380,7 @@ Authorization: Basic NzAwMDAtQVBJVEVTVC1BUDpxRDJ3elFfaHJjITg=
 include::{root}/samples/xml/zapp_debit_response_success_87c979.xml[]
 ----
 
-._debit_ Notification (Successful)
+.debit Notification (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -386,7 +390,7 @@ include::{root}/samples/xml/zapp_debit_notification_success_fb22856d.xml[]
 [#API_PaybyBankapp_Samples_debit_withoutPC]
 ===== Without PayConnect
 
-._debit_ Request (Successful)
+.debit Request (Successful)
 
 ----
 POST https://{rest-api-test-apm-endpoint} HTTP/1.1
@@ -402,14 +406,14 @@ User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
 include::{root}/samples/xml/zapp_debit_request_success_ad66b3.xml[]
 ----
 
-._debit_ Response (Successful)
+.debit Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/zapp_debit_response_success_670826.xml[]
 ----
 
-._debit_ Notification (Successful)
+.debit Notification (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -419,27 +423,27 @@ include::{root}/samples/xml/zapp_debit_notification_success_3958a84c.xml[]
 NOTE: For a failed notification, notice the 'failed' state of the transaction.
 
 [#API_PaybyBankapp_Samples_refundrequest]
-===== _refund-request_
+===== refund-request
 
 NOTE: Refund action triggers a request to return paid funds. Below request
 supplies consumer's bank account details kept by Wirecard. These are
 used to arrange a wiretransfer using BACS scheme (takes several days).
 
-._refund-request_ Request (Successful)
+.refund-request Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/zapp_refund-request_request_success_24b115ba.xml[]
 ----
 
-._refund-request_ Response (Successful)
+.refund-request Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/zapp_refund-request_response_success_b1ca738d.xml[]
 ----
 
-._refund-debit_ Notification (Successful)
+.refund-debit Notification (Successful)
 
 [source,xml,subs=attributes+]
 ----

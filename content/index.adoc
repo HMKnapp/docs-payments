@@ -270,6 +270,6 @@ include::index/api-reference/ssl-certificates.adoc[leveloffset=+1]
 
 include::index/glossary/14-glossary.adoc[]
 
-include::index/contact-us/17-contact-us.adoc[]
+//include::index/contact-us/17-contact-us.adoc[]
 
 include::index/imprint-and-privacy-policy/18-imprint.adoc[]

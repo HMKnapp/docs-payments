@@ -82,7 +82,7 @@ set up your testing tool:
 [%autowidth, cols="h,", stripes="none"]
 |===
 | URL (Endpoint)           
-| ``\{rest-api-test-endpoint}``
+| ``\https://{rest-api-test-endpoint}``
 
 | Merchant Account ID (MAID) 
 | 7a6dd74f-06ab-4f3f-a864-adc52687270a
@@ -111,8 +111,7 @@ set up your testing tool:
 .1. Create a Payment Session
 
 To create a payment session, send a *POST request* to the
-``/api/payment/register`` endpoint,
-e.g. ``\https://{pp-test-instance-hostname}/api/payment/register``.
+``/api/payment/register`` endpoint, e.g. ``\https://{pp-test-endpoint}``.
 
 
 This is an HTTP request with two headers:

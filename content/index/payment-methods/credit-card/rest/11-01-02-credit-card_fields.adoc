@@ -511,7 +511,7 @@ include::{root}/include/fields/rest_cc/response/res-custom-field.adoc[]
 
 
 [#CC_Fields_xmlelements_request_installmentPlanOptions]
-==== installment-plan-options
+.``installment-plan-options``
 
 [%autowidth]
 [cols="m,,,a"]
@@ -524,7 +524,7 @@ include::{root}/include/fields/rest_cc/request/req-installment-plan-options.adoc
 
 
 [#CC_Fields_xmlelements_request_availableInstallmentPlanOptions_installmentPlanOption]
-==== installment-plan-options.available-installment-plan-options.installment-plan-option
+.``installment-plan-options.available-installment-plan-options.installment-plan-option``
 
 [%autowidth]
 [cols="m,,,a"]

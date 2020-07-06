@@ -112,7 +112,7 @@ For a full structure of a request (optional fields included), see the
 include::{root}/samples/json/WPP_CC_TransactionTypePurchase_1CreateAPaymentSessionInitialRequest.json[]
 ----
 
-[%autowidth,cols="m,,,a,,"]
+[%autowidth, stripes=none, cols="m,,,a,,"]
 |===
 2+h|Field (JSON) 
 h|Data +

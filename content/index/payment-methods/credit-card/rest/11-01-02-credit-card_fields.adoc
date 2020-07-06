@@ -518,7 +518,7 @@ include::{root}/include/fields/rest_cc/response/res-custom-field.adoc[]
 |===
 | Field | Datatype | Description
 
-include::{root}/include/fields/rest_cc/response/req-installment-plan-options.adoc[]
+include::{root}/include/fields/rest_cc/response/res-installment-plan-options.adoc[]
 
 |===
 
@@ -531,7 +531,7 @@ include::{root}/include/fields/rest_cc/response/req-installment-plan-options.ado
 |===
 | Field | Datatype | Description
 
-include::{root}/include/fields/rest_cc/response/req-available-installment-plan-options.adoc[]
+include::{root}/include/fields/rest_cc/response/res-available-installment-plan-options.adoc[]
 
 |===
 

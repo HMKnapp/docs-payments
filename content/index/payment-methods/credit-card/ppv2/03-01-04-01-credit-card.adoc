@@ -56,7 +56,7 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 [#PPv2_CC_TestCredentials_Additional]
 .Test Card Information for _Credit Card_
 
-[cols="35h,65"]
+[%autowidth, cols="h,"]
 |===
 | Card number      | 4200000000000018
 | CVV              | 018

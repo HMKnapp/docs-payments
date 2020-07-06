@@ -167,43 +167,43 @@ With an _Online Bank Transfer_ consumers
 This increases the conversion rate for merchants as well as the customer
 satisfaction.
 | 
-<<Bancontact_Main, Bancontact>>
+// <<Bancontact_Main, Bancontact>>
 
-<<CarrierBilling_Main, Carrier Billing>>
+// <<CarrierBilling_Main, Carrier Billing>>
 
-<<CIMBClicks_Main, CIMB Clicks>>
+// <<CIMBClicks_Main, CIMB Clicks>>
 
-<<eNets_Main, eNets>>
+// <<eNets_Main, eNets>>
 
 <<epsUberweisung_Main, eps-Überweisung>>
 
-<<FPX_Main, FPX>>
+// <<FPX_Main, FPX>>
 
-<<giropay_Main, giropay>>
+// <<giropay_Main, giropay>>
 
 <<iDEAL_Main, iDEAL>>
 
-<<Interac_Main, Interac>>
+// <<Interac_Main, Interac>>
 
-<<KlarnaV2_Main, Klarna Bank Transfer>>
+// <<KlarnaV2_Main, Klarna Bank Transfer>>
 
-<<KlarnaV2_Main, Klarna Debit>>
+// <<KlarnaV2_Main, Klarna Debit>>
 
-<<Maybank2U_Main, Maybank2u>>
+// <<Maybank2U_Main, Maybank2u>>
 
-<<moip_Main, moip Pagamentos>>
+// <<moip_Main, moip Pagamentos>>
 
-<<MOLPay_Main, MOLPay>>
+// <<MOLPay_Main, MOLPay>>
 
 <<PayByBankApp_Main, Pay by Bank app>>
 
-<<Paydirekt_Main, paydirekt>>
+// <<Paydirekt_Main, paydirekt>>
 
-<<payolution_Main, payolution>>
+// <<payolution_Main, payolution>>
 
-<<POLi_Main, POLi>>
+// <<POLi_Main, POLi>>
 
-<<Przelewy24_Main, Przelewy24>>
+// <<Przelewy24_Main, Przelewy24>>
 
 <<Sofort_Main, Sofort.>>
 
@@ -236,27 +236,27 @@ This increases the conversion rate for merchants as well as the customer
 satisfaction.
 
 |
-<<Boleto_Main, Boleto>>
+// <<Boleto_Main, Boleto>>
 
-<<KlarnaV2_Main, Klarna Financing>>
+// <<KlarnaV2_Main, Klarna Financing>>
 
-<<KlarnaV2_Main, Klarna Pay later>>
+// <<KlarnaV2_Main, Klarna Pay later>>
 
-<<Klarna_Main, Klarna Services>>
+// <<Klarna_Main, Klarna Services>>
 
-<<POIPIA_Main, Payment on Invoice (POI)/Payment in Advance (PIA)>>
+// <<POIPIA_Main, Payment on Invoice (POI)/Payment in Advance (PIA)>>
 
 <<SEPACreditTransfer, SEPA Credit Transfer>>
 
 <<SEPADirectDebit, SEPA Direct Debit>>
 
-<<TrustPay, TrustPay>>
+// <<TrustPay, TrustPay>>
 
-<<API_PaymentDirectDebit, {payment-provider-name} Payment Guaranteed Direct Debit>>
+// <<API_PaymentDirectDebit, {payment-provider-name} Payment Guaranteed Direct Debit>>
 
-<<API_PaymentInstallment, {payment-provider-name} Payment in Installments>>
+// <<API_PaymentInstallment, {payment-provider-name} Payment in Installments>>
 
-<<API_PaymentInvoice, {payment-provider-name} Payment on Invoice>>
+// <<API_PaymentInvoice, {payment-provider-name} Payment on Invoice>>
 
 |[[PaymentMethods_PaymentMode_Prepaid]]_Prepaid_
 .2+|"Pay with cash on the internet" - this slogan stands for prepaid or
@@ -316,47 +316,47 @@ In most of the cases
 
 |<<AlipayCrossBorder_Main, Alipay Cross-border>>
 
-<<AlipayDomestic_Main, Alipay Domestic>>
+// <<AlipayDomestic_Main, Alipay Domestic>>
 
-<<AlipayQRPay_Main, Alipay QR Pay>>
+// <<AlipayQRPay_Main, Alipay QR Pay>>
 
-<<ApplePay_Main, Apple Pay>>
+// <<ApplePay_Main, Apple Pay>>
 
-<<GooglePay_Main, Google Pay™>>
+// <<GooglePay_Main, Google Pay™>>
 
-<<Masterpass_Main, Masterpass>>
+// <<Masterpass_Main, Masterpass>>
 
-<<Mobicred_Main, mobicred>>
+// <<Mobicred_Main, mobicred>>
 
-<<moneta_Main, moneta.ru>>
+// <<moneta_Main, moneta.ru>>
 
-<<Paylib_Main, Paylib>>
+// <<Paylib_Main, Paylib>>
 
 <<PayPal_Main, PayPal>>
 
-<<Skrill_Main, Skrill Digital Wallet>>
+// <<Skrill_Main, Skrill Digital Wallet>>
 
-<<VISACheckout_Main, Visa Checkout>>
+// <<VISACheckout_Main, Visa Checkout>>
 
 <<WeChat_Main, WeChat QR Pay>>
 
-|[[PaymentMethods_PaymentMode_MobilePayment]]_Mobile Payment_
-|Payment methods offer _Mobile Payment_ as an additional variant to
-their traditional payment possibilities. Therefore it is not possible to
-assign mobile payment to either _Credit/Debit Card_ or an APM.
+// |[[PaymentMethods_PaymentMode_MobilePayment]]_Mobile Payment_
+// |Payment methods offer _Mobile Payment_ as an additional variant to
+// their traditional payment possibilities. Therefore it is not possible to
+// assign mobile payment to either _Credit/Debit Card_ or an APM.
 
-The usage of smartphones and tablets has massively assisted in the
-development of mobile payments. Meanwhile, a wide-range of products
-are available on the market, using different kinds of technologies.
-{payment-gateway} already supports several mobile payment
-options.
-|A mobile payment method is an attractive alternative to a consumer's
-credit card. Some consumers enjoy the comfort to pay with a mobile
-device and charge the monthly telecommunication bill.
+// The usage of smartphones and tablets has massively assisted in the
+// development of mobile payments. Meanwhile, a wide-range of products
+// are available on the market, using different kinds of technologies.
+// {payment-gateway} already supports several mobile payment
+// options.
+// |A mobile payment method is an attractive alternative to a consumer's
+// credit card. Some consumers enjoy the comfort to pay with a mobile
+// device and charge the monthly telecommunication bill.
 
-|<<ApplePay_Main, Apple Pay>>
+// |<<ApplePay_Main, Apple Pay>>
 
-<<GooglePay_Main, Google Pay™>>
+// <<GooglePay_Main, Google Pay™>>
 |===
 
 //-

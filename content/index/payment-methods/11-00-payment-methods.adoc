@@ -207,9 +207,9 @@ satisfaction.
 
 <<Sofort_Main, Sofort.>>
 
-<<Trustly_Main, Trustly>>
+// <<Trustly_Main, Trustly>>
 
-<<TrustPay_Main, TrustPay>>
+// <<TrustPay_Main, TrustPay>>
 
 |[[PaymentMethods_PaymentMode_OfflineBankTransfer]]_Offline Bank Transfer_
 |_Offline Bank Transfer_ is a payment mode which enables shoppers to
@@ -258,28 +258,27 @@ satisfaction.
 
 // <<API_PaymentInvoice, {payment-provider-name} Payment on Invoice>>
 
-|[[PaymentMethods_PaymentMode_Prepaid]]_Prepaid_
-.2+|"Pay with cash on the internet" - this slogan stands for prepaid or
-voucher-based payment solutions.
+|[[PaymentMethods_PaymentMode_Voucher]]_Voucher_
+|"Pay with cash on the internet" - this slogan stands for voucher-based payment solutions.
 
-With this popular payment mode consumers have the possibility to buy
-prepaid-cards or vouchers at thousands of participating stores like
-kiosks or gas stations.
+With this popular payment mode consumers have the possibility to buy vouchers at thousands of participating stores like kiosks or gas stations.
 
 The cash or voucher code is used to perform the payment on the
 merchant´s checkout page.
-.2+|For the merchant a prepaid or voucher payment is
+|For you, a voucher payment is
 
 - guaranteed and cannot be revoked by the consumer.
 - very popular at kiosks or gas stations.
 
+//-
+
 For consumers who do not want to provide
 
-- credit card data
-- account data or credentials
-|<<paysafecard_Main, paysafecard>>
+- credit card data.
+- account data or credentials.
 
-|[[PaymentMethods_PaymentMode_Voucher]]_Voucher_
+//-
+
 |<<Voucher_Main, Wirecard Voucher>>
 
 |[[PaymentMethods_PaymentMode_Wallet]]_Wallet_

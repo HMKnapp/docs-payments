@@ -498,7 +498,7 @@ _capture-authorization_ request.
 
 
 [#CreditCard_PaymentFeatures_AccountUpdater]
-===== Account Updater
+=== Account Updater
 
 Account Updater is a feature facilitating <<CreditCard_PaymentFeatures_RecurringTransaction, recurring>> credit card payments. It informs the merchant about changes of cardholders' credit card details.
 

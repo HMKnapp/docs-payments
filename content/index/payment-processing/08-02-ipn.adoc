@@ -27,7 +27,7 @@ To receive a notification, you have to include the notifications element with an
 The following example shows how the {payment-gateway} can be
 configured to send notifications as JSON format:
 
-``<notifications format="application/json>``
+``<notifications format="application/json">``
 
 
 .XML Request (determines notification in JSON format)

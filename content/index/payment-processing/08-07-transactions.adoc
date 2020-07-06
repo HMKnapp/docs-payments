@@ -8,7 +8,7 @@
 With the {payment-gateway} a payment process can reference two
 subsequent transactions.
 
-This reference can be accomplished with the transaction ID.
+This reference can be accomplished with the ``transaction-id``.
 
 
 //-
@@ -16,20 +16,20 @@ This reference can be accomplished with the transaction ID.
 [#GeneralPlatformFeatures_ReferencingTransaction_byID]
 ==== Referencing by Transaction ID
 
-Referencing by transaction ID uses the field <``parent-transaction-id``>.
+Referencing by transaction ID uses the field ``parent-transaction-id``.
 
-In that case the <``transaction-id``> of the preceding transaction will be
-referenced as the <``parent-transaction-id``> of the follow up transaction.
+In that case the ``transaction-id`` of the preceding transaction will be
+referenced as the ``parent-transaction-id`` of the follow up transaction.
 
 Be aware that the ``parent-transaction-id`` is also referred to as
 ``reference-transaction-id``.
 
 The following example for PayPal shows the use of
-<``parent-transaction-id``>:
+``parent-transaction-id``:
 
 [%autowidth]
 |===
-|Transaction No. |Transaction Type |<transaction-id> |<parent-transaction-id>
+|Transaction No. |Transaction Type | ``transaction-id`` | ``parent-transaction-id``
 
 |1 |authorization |1234567 |empty
 |2 |capture-authorization |8901235 |1234567
@@ -138,10 +138,10 @@ after submitting a transaction and still waiting for the IPN.
 [#GeneralPlatformFeatures_RetrieveTransaction_TransactionID]
 ==== Retrieve Transaction by Transaction-ID
 
-Retrieving a transaction using a _Transaction-ID_ returns a single
-transaction belonging to a merchant account. The _Transaction-ID_
+Retrieving a transaction using a ``transaction-id`` returns a single
+transaction belonging to a merchant account. The ``transaction-id``
 attribute must match the value that was included in the transaction
-response sent by {payment-provider-name}. An error occurs if the _Transaction-ID_ is
+response sent by {payment-provider-name}. An error occurs if the ``transaction-id`` is
 not available (request must be submitted later again) or the requested
 user is not authorized to see the content. The desired content type can
 be set through the _Accept_-header or by specifying an extension.
@@ -156,12 +156,11 @@ notification was sent the status is final.
 [#GeneralPlatformFeatures_RetrieveTransaction_TransactionID_Endpoint]
 .Endpoint
 
-[cols="h,"]
+[%autowidth, cols="h,"]
 |===
 |URL
 
-|http://payments.wirecard.com/ee/rest/merchants/{{MAID}}/payments/TXID
-``\https://payments-test.wirecard.com/ee/rest/merchants/{merchant-account-id}/payments/{transaction-id}``
+| ``\https://{test-instance-hostname}/ee/rest/merchants/{merchant-account-id}/payments/{transaction-id}``
 |===
 
 [#GeneralPlatformFeatures_RetrieveTransaction_TransactionID_Fields]
@@ -180,14 +179,14 @@ m|transaction-id |M |Alphanumeric |36
 [#GeneralPlatformFeatures_RetrieveTransaction_TransactionID_SampleURL]
 .Sample URL to a Merchant's Endpoint
 
-``\https://payments-test.wirecard.com/ee/rest/merchants/ba261be8-af94-11df-ab7800163e5eafd7/payments/048b27e0-9c31-4cab-9eab-3b72b1b4d498``
+``\https://{test-instance-hostname}/ee/rest/merchants/ba261be8-af94-11df-ab7800163e5eafd7/payments/048b27e0-9c31-4cab-9eab-3b72b1b4d498``
 
 [#GeneralPlatformFeatures_RetrieveTransaction_TransactionID_Response]
 .Response when retrieving a transaction
 
 The response corresponds to the transaction type of the transaction
-being retrieved. For example, the transaction type = 'purchase' and the
-transaction type = 'tokenize' have different responses when the
+being retrieved. For example, the transaction type = ``purchase`` and the
+transaction type = ``tokenize`` have different responses when the
 transaction is being created and that same response will occur for this
 retrieval. See the sample responses as described for each transaction
 type.
@@ -221,19 +220,19 @@ include::{root}/samples/xml/GeneralPlatformFeaturesTransactionsStoring.xml[]
 
 
 [#GeneralPlatformFeatures_Transactions_CheckSignatureAuthorization]
-==== _check-signature/authorization_
+==== check-signature/authorization
 
-_check-signature_ and its related transaction types are transaction
-types that are dependent on the payment method not of elementary need for
+check-signature and its related transaction types are transaction
+types that depend on the payment method not of elementary need for
 processing via {payment-gateway}. Some payment methods just
 provide the possibility to verify if this payment method is allowed to
 process by this consumer account or to verify if the account data are
-valid. In _{enterprise-portal-abbr}_ both Transaction Types are visible.   
+valid. In _{enterprise-portal-abbr}_ both transaction types are visible.   
 
 [NOTE]
 ====
 .Example
-For <<Sofort>> the transaction type _check-signature_ can be submitted to validate the
+For <<Sofort>> the transaction type ``check-signature`` can be submitted to validate the
 digital signature.
 ====
 

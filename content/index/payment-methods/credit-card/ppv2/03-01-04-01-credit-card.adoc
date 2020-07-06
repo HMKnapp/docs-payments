@@ -772,7 +772,7 @@ payment form.
 
 [%autowidth, cols="h,"]
 |===
-| URL(s) Endpoints           |``\https://{pp-test-instance-hostname}/api/payment/register``
+| URL(s) Endpoints           | ``\https://{pp-test-endpoint}``
 | Merchant Account ID (MAID) | cad16b4a-abf2-450d-bcb8-1725a4cef443
 | Username                   | 70000-APILUHN-CARD
 | Password                   | 8mhwavKVb91T

@@ -46,7 +46,7 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 
 [%autowidth, cols="h,"]
 |===
-| URL(s) Endpoints           | ``\https://{pp-test-instance-hostname}/api/payment/register``
+| URL(s) Endpoints           | ``\https://{pp-test-endpoint}``
 | Merchant Account ID (MAID) | 7a6dd74f-06ab-4f3f-a864-adc52687270a
 | Username                   | 70000-APIDEMO-CARD
 | Password                   | ohysS0-dvfMx

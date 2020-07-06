@@ -516,7 +516,7 @@ include::{root}/include/fields/rest_cc/response/res-custom-field.adoc[]
 [%autowidth]
 [cols="m,,a"]
 |===
-| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Description
+| Field | Datatype | Description
 
 include::{root}/include/fields/rest_cc/response/req-installment-plan-options.adoc[]
 
@@ -529,7 +529,7 @@ include::{root}/include/fields/rest_cc/response/req-installment-plan-options.ado
 [%autowidth]
 [cols="m,,a"]
 |===
-| Field | <<APIRef_FieldDefs_Cardinality, M/O>> | Datatype | Description
+| Field | Datatype | Description
 
 include::{root}/include/fields/rest_cc/response/req-available-installment-plan-options.adoc[]
 

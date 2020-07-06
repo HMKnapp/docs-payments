@@ -3,6 +3,7 @@
 
 :toc-title:
 :!table-caption:
+:figure-caption!:
 
 :icons: font
 // Following line is not working, font-awesome is always loaded via CDN

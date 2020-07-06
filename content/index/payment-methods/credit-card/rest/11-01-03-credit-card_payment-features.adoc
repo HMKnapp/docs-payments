@@ -536,7 +536,7 @@ To activate and configure Account Updater, contact <<ContactUs, merchant support
 ---
 
 [#CreditCard_PaymentFeatures_AccountUpdater_Workflow]
-====== Workflow
+==== Workflow
 
 Updating account information requires action on the merchant side (step 1 and step 6):
 
@@ -559,7 +559,7 @@ The ``FLIX`` folder contains two customized subfolders: ``from ...`` and ``to ..
 //-
 
 [#CreditCard_PaymentFeatures_AccountUpdater_Files]
-====== Files
+==== Files
 
 Both the <<CreditCard_PaymentFeatures_AccountUpdater_Files_Request, request file>> and the <<CreditCard_PaymentFeatures_AccountUpdater_Files_Response, response file>> are plain text files without extension.
 The fields within the files are seperated by ``;``. All fields are mandatory, unless otherwise indicated.
@@ -729,7 +729,7 @@ F;3
 ----
 
 [#CreditCard_PaymentFeatures_AccountUpdater_ErrorHandling]
-====== Error Handling
+==== Error Handling
 . **Invalid request file:** +
 +
 --

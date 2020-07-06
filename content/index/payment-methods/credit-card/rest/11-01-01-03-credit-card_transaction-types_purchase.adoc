@@ -86,7 +86,7 @@ _Sample_
 .Request Header
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
@@ -94,7 +94,7 @@ Content-Type: application/xml
 .XML purchase Request (Successful)
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_purchase_request_success_fd9eef.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_purchase_request_success.xml[]
 ----
 
 
@@ -114,7 +114,7 @@ _Sample_
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_purchase_response_success_24a237.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_purchase_response_success.xml[]
 ----
 
 
@@ -140,7 +140,7 @@ _Sample_
 
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
@@ -149,9 +149,8 @@ Content-Type: application/xml
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CreditCardTransactionTypesPurchaseSendingDataPurchaseUsingToken_PurchaseRequestSuccessful.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_purchaseWithToken_request_success.xml[]
 ----
-
 
 
 *Response*
@@ -167,7 +166,7 @@ _Sample_
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CreditCardTransactionTypesPurchaseSendingDataPurchaseUsingToken_PurchaseResponseSuccessful.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_purchaseWithToken_response_success.xml[]
 ----
 
 
@@ -184,53 +183,53 @@ _Workflow_
 
 image::images/11-01-01-03-credit-card_transaction-types_purchase/CC_purchaseReferencing_flow.png[ReferencingPurchaseTransactions_Workflow]
 
-[#CreditCard_TransactionTypes_Purchase_SendingData_ReferencingPurchaseTransactions_PurchaseRequestFirst]
-*purchase Request (recurring/first)*
+// [#CreditCard_TransactionTypes_Purchase_SendingData_ReferencingPurchaseTransactions_PurchaseRequestFirst]
+// *purchase Request (recurring/first)*
 
-_Fields_
+// _Fields_
 
-We provide detailed descriptions of all
-<<CC_Fields, _credit card_ fields>>.
+// We provide detailed descriptions of all
+// <<CC_Fields, _credit card_ fields>>.
 
-_Sample_
+// _Sample_
 
-.Request Header
-[source,subs=attributes+]
-----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
-Content-Type: application/xml
-----
+// .Request Header
+// [source,subs=attributes+]
+// ----
+// Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
+// Content-Type: application/xml
+// ----
 
-.XML (recurring/first) purchase Request (Success)
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/creditcard_purchase_request_success_recurring_first.xml[]
-----
+// .XML (recurring/first) purchase Request (Success)
+// [source,xml,subs=attributes+]
+// ----
+// include::{root}/samples/xml/creditcard_purchase_request_success_recurring_first.xml[]
+// ----
 
-[#CreditCard_TransactionTypes_Purchase_SendingData_ReferencingPurchaseTransactions_PurchaseResponseFirst]
-*purchase Response (recurring/first)*
+// [#CreditCard_TransactionTypes_Purchase_SendingData_ReferencingPurchaseTransactions_PurchaseResponseFirst]
+// *purchase Response (recurring/first)*
 
-_Fields_
+// _Fields_
 
-We provide detailed descriptions of all
-<<CC_Fields, _credit card_ fields>>.
+// We provide detailed descriptions of all
+// <<CC_Fields, _credit card_ fields>>.
 
-_Sample_
+// _Sample_
 
-.XML (recurring/first) purchase Response (Success)
-[source,xml,subs=attributes+]
-----
-include::{root}/samples/xml/creditcard_purchase_response_success_recurring_first.xml[]
-----
+// .XML (recurring/first) purchase Response (Success)
+// [source,xml,subs=attributes+]
+// ----
+// include::{root}/samples/xml/creditcard_purchase_response_success_recurring_first.xml[]
+// ----
 
 
 [#CreditCard_TransactionTypes_Purchase_SendingData_VoidPurchase]
-._void-purchase_
+.void-purchase
 
-A _void-purchase_ must reference a successful
+A void-purchase must reference a successful
 <<CreditCard_TransactionTypes_Purchase_SendingData_PurchaseUsingToken, purchase response>>.
 
-NOTE: A _void-purchase_ shall be used only, if the payment was processed in an
+NOTE: A void-purchase shall be used only, if the payment was processed in an
 online shop and not at a POS.
 
 We only list field descriptions for requests and responses. Notifications follow
@@ -250,7 +249,7 @@ _Sample_
 
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
@@ -259,7 +258,7 @@ Content-Type: application/xml
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CreditCardTransactionTypesPurchaseSendingDataVoidPurchase_VoidPurchaseRequestSuccessful.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_voidPurchase_request_success.xml[]
 ----
 
 
@@ -276,23 +275,19 @@ _Sample_
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_void-purchase_response_success.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_voidPurchase_response_success.xml[]
 ----
 
 
 [#CreditCard_TransactionTypes_Purchase_SendingData_RefundPurchase]
-._refund-purchase_
+.refund-purchase
 
-Merchants use a _refund-purchase_ to refund a purchase or parts of it
+Merchants use a refund-purchase to refund a purchase or parts of it
 after the funds transfer was initiated.
 
-A _refund-purchase_ must reference a
-successful
-<<CreditCard_TransactionTypes_Purchase_SendingData_PurchaseUsingToken, purchase response>>.
+A refund-purchase must reference a successful <<CreditCard_TransactionTypes_Purchase_SendingData_PurchaseUsingToken, purchase response>>.
 
-We only list field descriptions for requests and responses. Notifications follow
-the general structure described in
-<<GeneralPlatformFeatures_IPN_NotificationExamples, General Platform Features>>.
+We only list field descriptions for requests and responses. Notifications follow the general structure described in <<GeneralPlatformFeatures_IPN_NotificationExamples, General Platform Features>>.
 
 
 *Request*
@@ -308,7 +303,7 @@ _Sample_
 
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
@@ -317,7 +312,7 @@ Content-Type: application/xml
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CreditCardTransactionTypesPurchaseSendingDataRefundPurchase_RefundPurchaseRequestSuccessful.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_refundPurchase_request_success.xml[]
 ----
 
 
@@ -338,12 +333,11 @@ include::{root}/samples/xml/creditcard_refund-purchase_response_success.xml[]
 ----
 
 
-A successful _refund-purchase_ response can be followed by a
-_void-refund-purchase_ (details see
+A successful refund-purchase response can be followed by a void-refund-purchase (details see
 <<CreditCard_TransactionTypes_VoidRefund_Void, void>>).
 
 [#CreditCard_TransactionTypes_Purchase_SendingData_VoidRefundPurchase]
-._void-refund-purchase_
+.void-refund-purchase
 
 With this transaction type you can void a successful refund-purchase
 until the funds transfer has been triggered.
@@ -360,7 +354,7 @@ _Sample_
 .Request Header
 [source,subs=attributes+]
 ----
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 Content-Type: application/xml
 ----
 
@@ -369,7 +363,7 @@ Content-Type: application/xml
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/CreditCardTransactionTypesPurchaseSendingDataVoidRefundPurchase_VoidRefundPurchaseRequestSuccessful.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_voidRefundPurchase_request_success.xml[]
 ----
 
 
@@ -377,8 +371,7 @@ include::{root}/samples/xml/CreditCardTransactionTypesPurchaseSendingDataVoidRef
 
 _Fields_
 
-We provide detailed descriptions of all
-<<CC_Fields, _credit card_ fields>>.
+We provide detailed descriptions of all <<CC_Fields, _credit card_ fields>>.
 
 _Sample_
 
@@ -386,7 +379,7 @@ _Sample_
 
 [source,xml,subs=attributes+]
 ----
-include::{root}/samples/xml/creditcard_void-refund-purchase_response_success_87fffba5.xml[]
+include::{root}/samples/xml/NOVA/nova_CC_voidRefundPurchase_response_success.xml[]
 ----
 
 //-

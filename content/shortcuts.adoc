@@ -44,10 +44,6 @@
 :rest-api-test-endpoint: {test-instance-hostname}/engine/rest/payments/
 //:rest-api-test-apm-endpoint: {test-instance-hostname}/engine/rest/paymentmethods/
 :pp-test-endpoint: {pp-test-instance-hostname}/wpp/api/payment/register
-
- 	
-https://payments-test.wirecard.com/wpp/api/payment/register
-
 :pp-redirect-url-success: {pp-demoshop-instance-hostname}/demoshop/#/success
 :pp-redirect-url-cancel: {pp-demoshop-instance-hostname}/demoshop/#/cancel
 :pp-redirect-url-error: {pp-demoshop-instance-hostname}/demoshop/#/error

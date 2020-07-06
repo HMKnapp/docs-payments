@@ -158,10 +158,9 @@ image::images/11-01-01-credit-card_transaction-types/CC_refund-capture_flow.png[
 === OCT Eligibility Check
 
 
-{payment-gateway} uses the transaction type
-_authorization-only_, to find out whether the card in use is eligible
+{payment-gateway} uses the transaction type _authorization-only_, to find out whether the card in use is eligible
 for original credit transactions (OCT). If you want to use this
-eligibility check contact mailto:{e-mail-support}[merchant support]
+eligibility check, contact mailto:{e-mail-support}[merchant support]
 for details.
 
 

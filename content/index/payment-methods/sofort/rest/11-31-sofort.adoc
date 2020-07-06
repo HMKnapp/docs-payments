@@ -17,7 +17,7 @@ CZK and HUF are valid _Sofort_ currencies but cannot be tested.
 === Communication Formats
 This table illustrates how _Sofort_ notifications are encoded and
 which formats and methods can be used for requests and responses.
-[width=75%,stripes=none]
+[%autowidth, stripes=none]
 |===
 .2+h| *Requests/Responses* | Format | Please contact <<ContactUs, Merchant Support>> for Format.
                         | Methods | Please contact <<ContactUs, Merchant Support>> for Methods.

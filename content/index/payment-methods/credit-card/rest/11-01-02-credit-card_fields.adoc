@@ -523,7 +523,7 @@ include::{root}/include/fields/rest_cc/response/res-installment-plan-options.ado
 |===
 
 
-[#CC_Fields_xmlelements_response_ availableInstallmentPlanOptions_installmentPlanOption]
+[#CC_Fields_xmlelements_response_availableInstallmentPlanOptions_installmentPlanOption]
 .``installment-plan-options.available-installment-plan-options.installment-plan-option.``
 
 [%autowidth]

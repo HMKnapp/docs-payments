@@ -39,15 +39,12 @@ h| IPN Encodement 2+| Please follow the instructions given at <<GeneralPlatformF
 |URL (Endpoint) | ``\https://{rest-api-test-endpoint}``
 |===
 
-Refer to one of the following tables to complete your test
-credentials:
-
 .Non-3D and 3D Test
 [%autowidth,cols="h,"]
 |===
-|Merchant Account ID (MAID) |fd83dbfa-8790-4492-8391-3f3938908b28
-|Username to access Test Account |EEUser
-|Password to access Test Account |1RDXNZkYGm
+|Merchant Account ID (MAID) |``fd83dbfa-8790-4492-8391-3f3938908b28``
+|Username to access Test Account |``EEUser``
+|Password to access Test Account |``1RDXNZkYGm``
 |===
 
 

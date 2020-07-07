@@ -88,7 +88,6 @@ See the list of all supported payment methods below:
 // * <<API_Masterpass, Masterpass>>
 // * <<PPv2_paydirekt, paydirekt>>
 // * <<PPv2_paylib, Paylib>>
-* <<PPv2_PayPal, Pay by Bank app>>
 * <<PPv2_PayPal, PayPal>>
 // * <<PPv2_paysafecard, paysafecard>>
 // * <<PPv2_P24, Przelewy24>>

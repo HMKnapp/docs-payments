@@ -142,7 +142,7 @@ For a full structure of a request (optional fields included), see the
 include::{root}/samples/json/WPP_PayPalTransactionTypeDebit_1CreateAPaymentSessionInitialRequest.json[]
 ----
 
-[cols="20e,10,10,10,5,45"]
+[%autowidth, cols="m,,,,,"]
 |===
 2+|Field (JSON) |Data Type |Mandatory/Optional |Size |Description
 
@@ -174,7 +174,7 @@ used. Set this value to ``paypal``.
 include::{root}/samples/json/WPP_PayPalTransactionTypeDebit_2RtCttPPIRU.json[]
 ----
 
-[cols="e,,"]
+[%autowidth, cols="m,,"]
 |===
 |Field (JSON) |Data Type |Description
 
@@ -218,7 +218,7 @@ You can find a decoded payment response example below.
 include::{root}/samples/json/WPP_PayPalTransactionTypeDebit_3ParseAndProcessThePaymentResponseDecodedPaymentResponse.json[]
 ----
 
-[cols="30,5,5,5,55"]
+[%autowidth, cols="m,,,,"]
 |===
 3+|Field (JSON) |Data Type |Description
 
@@ -521,9 +521,9 @@ Use . (decimal point) as the separator.
 transaction amount.
 
 Format: 3-character abbreviation according to ISO 4217.
-|payment-method |name |String |Optional |15 |The name of the
+|payment-method m|name |String |Optional |15 |The name of the
 payment method used for the transaction. Set this value to ``paypal``.
-.2+|periodic |periodic-type |String |Conditional |9 |Mandatory for recurring
+.2+|periodic m|periodic-type |String |Conditional |9 |Mandatory for recurring
 transactions. Indicates if (and how) payment occurs more than once.
 |sequence-type |String |Conditional |9 |Mandatory for recurring transactions.
 Indicates the phase of a recurring transaction.

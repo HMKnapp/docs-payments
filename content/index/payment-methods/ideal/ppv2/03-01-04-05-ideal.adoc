@@ -186,7 +186,7 @@ payment method used. Set this value to ``iDEAL``.
 include::{root}/samples/json/WPP_IdealTransactionTypeDebit_2RtCttPPIRU.json[]
 ----
 
-[cols="15e,10,75"]
+[%autowidth, cols="m,,"]
 |===
 |Field (JSON) |Data Type |Description
 
@@ -217,8 +217,7 @@ payments are returned as _failed_, but the
 In any case (unless the consumer cancels the transaction on a 3rd party
 provider page), a base64 encoded response containing payment information
 is sent to the configured redirection URL. See
-<<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and IPNs for {payment-page-v2-abbr}>>﻿﻿
-for more details on redirection targets after payment & transaction status
+<<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and IPNs for {payment-page-v2-abbr}>> for more details on redirection targets after payment & transaction status
 notifications.
 
 You can find a decoded payment response example below.

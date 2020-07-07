@@ -23,7 +23,7 @@ You've come to the right place!
 
 Get started with our three most popular integration options
 
-.3+a|
+.2+a|
 
 [.icon-large]
 image::images/icons/signpost.png[streetsign_icon]

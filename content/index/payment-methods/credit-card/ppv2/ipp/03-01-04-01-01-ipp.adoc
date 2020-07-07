@@ -1,5 +1,5 @@
 [#PPv2_CC_IPP]
-[discrete]
+// [discrete]
 == Installment Payment Plan (IPP) for {payment-page-v2-abbr}
 
 **I**nstallment **P**ayment **P**lan is a feature that allows the consumer to pay in installments. +
@@ -23,7 +23,7 @@ consumer's card was issued, must match the merchant country.
 //-
 
 [#PPv2_CC_IPP_CountriesCurrencies]
-[discrete]
+//[discrete]
 === Countries and Currencies
 
 [#PPv2_CC_IPP_Scenarios_Fields]
@@ -39,7 +39,7 @@ consumer's card was issued, must match the merchant country.
 
 
 [#PPv2_CC_IPP_TransactionTypes]
-[discrete]
+//[discrete]
 === Transaction Types
 **I**nstallment **P**ayment **P**lan works with transaction type _purchase_.
 
@@ -51,7 +51,7 @@ NOTE: You need a Merchant Account ID (MAID) to offer _IPP_ to your consumers. Ma
 
 
 [#PPv2_CC_IPP_HPP_Workflow]
-[discrete]
+// [discrete]
 .Workflow
 . The consumer checks out products in your shop and selects the payment method _Credit Card._
 
@@ -94,7 +94,7 @@ There are two types of seamless _IPP_ integrations:
 //-
 
 [#PPv2_CC_IPP_seamlessDefault]
-[discrete]
+// [discrete]
 ==== 1. Automatic IPP
 
 Automatic _IPPs_ are predefined in your merchant configuration. Consumers are prompted to choose from various installment programs offered in the seamless iframe. These programs are retrieved with an initial payment request. This request must contain your Merchant Account ID (MAID). With your MAID, _{payment-gateway}_ checks if "onus" and "IPP" are enabled for your merchant account, so make sure that your merchant account has been set up for _IPP_ by <<ContactUs, merchant support>>. 
@@ -102,7 +102,7 @@ Automatic _IPPs_ are predefined in your merchant configuration. Consumers are pr
 NOTE: If the MAID is missing in the initial payment request (e.g. due to expected merchant account resolving), the payment page does not offer payment in installments to your consumers.
 
 [#PPv2_CC_IPP_seamlessDefault_Workflow]
-[discrete]
+// [discrete]
 .Workflow
 . The consumer checks out products in your shop and selects the payment method _Credit Card._
 
@@ -160,7 +160,7 @@ WPP.seamlessSubmit({
 . -> Inform the consumer on the payment outcome.
 
 [#PPv2_CC_IPP_seamlessManual]
-[discrete]
+// [discrete]
 ==== 2. Manual IPP
 
 You can customize for each payment individually which _IPPs_ are to be displayed on your payment page. The consumer selects _IPP_ options directly on your payment page, but not in the seamless iframe. You provide the selected _IPP_ details (``program-id`` & ``tenure`` or ``installment-plan-id``) with the seamless form submit. 
@@ -177,7 +177,7 @@ These installment details must be part of the ``extPayment`` object of the ``WPP
 NOTE: To retrieve all available _IPP_ options, send a request to the <<GeneralPlatformFeatures_IPP_InstallmentCalculator, Installment Calculator>>.
 
 [#PPv2_CC_IPP_seamlessManual_Workflow]
-[discrete]
+// [discrete]
 .Workflow
 
 . -> Send an <<GeneralPlatformFeatures_IPP_InstallmentCalculator, Installment Calculator>> request to retrieve the available _IPPs._

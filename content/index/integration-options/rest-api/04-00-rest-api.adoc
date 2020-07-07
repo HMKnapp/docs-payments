@@ -31,7 +31,7 @@ following <<StatusCodes, HTTP Return Codes>> are helpful in analyzing the error.
 Some API methods use optional or requisite parameters. Two things to
 keep in mind when making requests with parameters:
 
-- Parameter values should be UTF-8
+- Parameter values should be UTF-8.
 - All URLs for REST should be https://en.wikipedia.org/wiki/Percent_encoding[URL encoded].
 //-
 
@@ -57,7 +57,7 @@ configuration is used to authorize the request.
 
 //-
 
-NOTE: Please contact our <<ContactUs, Merchant Support>> for production environment credentials.
+NOTE: Contact <<ContactUs, merchant support>> for production environment credentials.
 
 //-
 

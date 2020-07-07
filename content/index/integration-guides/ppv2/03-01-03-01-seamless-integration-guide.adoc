@@ -133,7 +133,7 @@ set up your testing tool:
 [%autowidth, cols="h,",]
 |===
 |URI (Endpoint)   
-|``\https://{pp-test-instance-hostname}/api/payment/register``
+|``\https://{pp-test-endpoint}``
 
 |Username         
 |70000-APILUHN-CARD
@@ -689,3 +689,5 @@ consumer to a success-/fail-/cancel-redirect-url of your own choice and design t
 
 To parse and process the payment response of Non 3D Secure credit card
 payment, please consult *<<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> for details.*
+
+//-

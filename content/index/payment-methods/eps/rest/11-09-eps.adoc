@@ -1,5 +1,5 @@
 [#eps]
-== REST API & {payment-page-v1}
+== REST API
 _eps-Überweisung_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#eps_GeneralInformation_PaymentMode]
@@ -39,12 +39,12 @@ at <<AppendixB,  Transaction Types>>.
 |===
 |Transaction Type |Description |Link to samples
 
-|_get-url_ |Initiation of a transaction triggering the redirect of the
+| get-url |Initiation of a transaction triggering the redirect of the
 consumer to the eps system.
-| See <<eps_Samples, _get-url_ samples>>
-|_debit_ |Created during payment processing and finalized after consumer
+| <<eps_Samples, get-url samples>>
+| debit |Created during payment processing and finalized after consumer
 TAN confirmation/cancel etc. using eps system payment confirmation.
-| See <<eps_Samples, _debit_ samples>>
+| <<eps_Samples, debit samples>>
 |===
 
 [#eps_Transactions_ReferenceTransaction]
@@ -57,7 +57,7 @@ NOTE: When using _eps-Überweisung_, some banks do not transmit consumer data
 (e.g. account details) to {payment-gateway}. As these fields
 are mandatory for a refund (e.g. via SEPA _Credit Transfer_), the
 merchant is obliged to provide the consumer data to guarantee a
-successful _refund_.
+successful refund.
 
 [#eps_TestCredentials]
 === Test Credentials
@@ -67,9 +67,8 @@ successful _refund_.
 [stripes=none]
 |===
 |*URL (Endpoint)*
-|For transaction type _get-url_
-|
-``\https://{rest-api-test-apm-endpoint}``
+|For transaction type ``get-url``
+|``\https://{rest-api-test-endpoint}``
 |*Merchant Account ID (MAID)*
 2+|1f629760-1a66-4f83-a6b4-6a35620b4a6d
 |*Username*
@@ -103,18 +102,18 @@ successful _refund_.
 [#eps_Ueberweisung_debit]
 ==== debit
 
-NOTE: The merchant sends a _get-url_ request to Wirecard and receives a response
+NOTE: You send a ``get-url`` request to Wirecard and receive a response
 which contains either the URL of the consumers online banking system (if
-BIC is provided in the request) or the eps bank selection page, to which the
+BIC is provided in the request) or the _eps_ bank selection page, to which the
 consumer must be redirected. The consumer is redirected back to merchants shop after the
-transaction is approved and the merchant receives a _debit_ payment notification
+transaction is approved and you receive a ``debit`` payment notification
 from {payment-gateway}.
 
 image::images/11-09-eps/eps_DebitWorkflow.png[width=950, align="center"]
 
 . Consumer adds items to their shopping basket.
 . Consumer selects _eps-Überweisung_.
-. The merchant sends a _get-url_ request to {payment-gateway}.
+. -> Send a get-url request to {payment-gateway}.
 . {payment-gateway} processes and validates the
 transaction.
 . {payment-gateway} forwards the request to
@@ -126,19 +125,18 @@ account for payment verification.
 online banking URL.
 . Consumer verifies the payment within the personal online banking system.
 . _eps-Überweisung_ transfers funds from the consumer's bank account
-to the merchant's bank account.
-. _eps-Überweisung_ sends a payment notification to the {payment-gateway}.
+to your bank account.
+. _eps-Überweisung_ sends a payment notification to {payment-gateway}.
 . {payment-gateway} processes the notification and sends the
-payment _debit_ notification to the merchant.
-. The merchant receives the notification with the payment result.
+payment ``debit`` notification to you.
+. You receive the notification with the payment result.
 
 //-
 
 [#eps_giropayInteroperability]
 === _eps-Überweisung_ & giropay
 
-SO implemented interlink to _eps-giropay_ scheme in Germany. If the
-merchant's contract allows to process those interoperability
+SO implemented interlink to _eps-giropay_ scheme in Germany. If your contract allows to process those interoperability
 transactions, all _eps-giropay_ participating banks in Germany can also
 be reached with a technical _eps-Überweisung_ transaction.
 
@@ -158,6 +156,8 @@ be higher than 10.000 EUR).
 * Remittance identifier limited to 35 characters for structured purpose
 or 140 characters for unstructured purpose (See field <<eps_Fields_Descriptor, descriptor>>).
 
+//-
+
 [#eps_RetrieveEpsPaymentDetails]
 === Retrieve Payment Details
 
@@ -165,21 +165,21 @@ Since _eps-Überweisung_ is an asynchronous payment method, the consumers
 payment data is provided asynchronously via a server 2 server notification
 from eps system.
 
-To retrieve buyers detail payment data the merchant must query payment
+To retrieve buyers detail payment data you must query payment
 data after receiving a debit notification or the redirect of the
 consumer back to the shop system from eps/online banking system.
 
 The debit payment returned as query result will contain consumer's
 payment details such as
 
-* account holder data
-* buyer's bank account data
+* account holder data.
+* buyer's bank account data.
 
 The data is included only if the consumer's bank provided the data in
 the final bank notification for successful payment. It is not mandatory
 for banks to send this data.
 
-Therefore, it is required to process a payment query using {payment-gateway-abbr} Rest
+Therefore, it is required to process a payment query using {payment-gateway-abbr} REST
 interface after the shop system received a debit payment notification or
 the consumer has been redirected to the shop.
 
@@ -190,15 +190,13 @@ for further information about retrieving transaction details.
 === Fields
 
 The fields used for _eps-Überweisung_ requests, responses and
-notifications are the same as the ReST API Fields.
-Please refer to the <<RestApi_Fields, REST API field list>>. Only the fields listed below have different properties,
-especially according to size.
+notifications are the same as the REST API Fields.
+Please refer to the <<RestApi_Fields, REST API field list>>. Only the field listed below has different properties.
 
-The following elements are mandatory (M), optional (O) or conditional
-\(C) for a request/response/notification. If the respective cell is
+If the respective cell is
 empty, the field is disregarded or not sent.
 
-[cols=",,,,v", options="header"]
+[%autowidth, cols="m,,,,v", options="header"]
 [frame=all]
 [%autowidth.strech,stripes=none]
 |===
@@ -214,13 +212,12 @@ empty, the field is disregarded or not sent.
 a|[#eps_Fields_Descriptor]
 The remittance identifier. Limit of 35 characters for structured purpose
 or 140 characters for unstructured purpose. Applied only if not already
-configured during merchant setup. Supports only limited character set:
-a b c d e f g h i j k l m n o p q r s t u v w x y z
-A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-0 1 2 3 4 5 6 7 8 9
-- € $ § % ! = # ~ ; + / ? : ( ) . , ' & > < " * { } [ ] @ \ _ ° ^ \|
-Ä Ö Ü ä ö ü ß
-Space
+configured during merchant setup. +
+Supports only limited character set: +
+``[a - z]`` +
+``[A - Z]`` +
+``[0 - 9]`` +
+``-`` ``€`` ``$`` ``§`` ``%`` ``!`` ``=`` ``#`` ``~`` ``;`` ``+`` ``/`` ``?`` ``:`` ``(`` ``)`` ``.`` ``,`` ````` ``&`` ``>`` ``<`` ``"`` ``*`` ``{`` ``}`` ``[`` ``]`` ``@`` ``\`` ``_`` ``°`` ``^`` ``\|`` ``Ä`` ``Ö`` ``Ü`` ``ä`` ``ö`` ``ü`` ``ß`` ``Space`` 
 |===
 
 [#eps_Samples]
@@ -235,7 +232,7 @@ available at:
 https://coderstoolbox.net/string/#!encoding=xml&action=decode&charset=us_ascii
 
 [#eps_Ueberweisung_GetUrlWithBankSelectionInMerchantShop]
-==== _get-url_ with Bank Selection in Merchant Shop
+==== get-url with Bank Selection in Merchant Shop
 
 [#eps_Ueberweisung_Success]
 ===== Successful Request/Response and Notification
@@ -317,7 +314,7 @@ PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48cGF5bWVudCB4bWxucz0iaHR0cDov
 ----
 
 [#eps_Ueberweisung_GetUrlWithBankSelectionInSO]
-==== _get-url_ with Bank Selection in _eps-Überweisung_ SO System
+==== get-url with Bank Selection in _eps-Überweisung_ SO System
 
 .XML get-url Request (Successful)
 

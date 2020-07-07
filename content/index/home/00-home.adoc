@@ -23,9 +23,7 @@ You've come to the right place!
 
 Get started with our three most popular integration options
 
-.3+a|
-
-[.icon-large]
+.2+a|[.icon]
 image::images/icons/signpost.png[streetsign_icon]
 
 
@@ -37,11 +35,11 @@ You want easy and modular payment integration?
 - https://demoshop-test.wirecard.com/demoshop/#/cart?merchant_account_id=ab62ea6e-ba97-48ef-b3bc-bf0319e09d78[Give it a try in our Demoshop]
 
 //-
-2.+a|
+// 2.+a|
 
-Using a shop system?
+// Using a shop system?
 
-- <<ShopSystems, Get our {payment-provider-name} Shop Extensions>>
+// - <<ShopSystems, Get our {payment-provider-name} Shop Extensions>>
 
 //-
 2.+a|
@@ -97,7 +95,7 @@ image::images/icons/payments.png[altpayment_icon]
 Equip your shop with the payment methods that are best for your consumers.
 
 * <<CC_Main, Card Payments>>
-* <<PaymentMethods, Alternative Payment Methods>>
+* <<API_PM_APM_PaymentMode, Alternative Payment Methods>>
 
 //-
 

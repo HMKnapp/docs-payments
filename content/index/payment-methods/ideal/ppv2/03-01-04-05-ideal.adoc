@@ -76,7 +76,7 @@ Test Credentials for Transaction Type
 [cols="35h,65"]
 |===
 | URLI (Endpoint)
-|``\https://{pp-test-instance-hostname}/api/payment/register``
+|``{pp-test-endpoint}``
 | Merchant Account ID (MAID)
 | adb45327-170a-460b-9810-9008e9772f5f
 | Username
@@ -152,11 +152,11 @@ For a full structure of a request (optional fields included), see the
 include::{root}/samples/json/WPP_IdealTransactionTypeDebit_1CreateAPaymentSessionInitialRequest.json[]
 ----
 
-[cols="30e,5,5,5,5,5,45"]
+[%autowidth, cols="m,,,,,,"]
 |===
 3+|Field (JSON) |Data Type |Cardinality |Size |Description
 
-2+|merchant-account-id e|value |String |Mandatory |36 |A unique identifier assigned
+2+|merchant-account-id m|value |String |Mandatory |36 |A unique identifier assigned
 to every merchant account (by {payment-provider-name}).
 3+|request-id |String |Mandatory |150 a|A unique identifier assigned to every request
 (by merchant). Used when searching for or referencing it later.
@@ -165,7 +165,7 @@ to every merchant account (by {payment-provider-name}).
 Allowed characters: [a-z0-9-_]
 3+|transaction-type |String |Mandatory |n/a |The requested transaction type. For
 _iDEAL_ payments, the transaction-type must be set to ``debit``.
-.2+|requested-amount  2+e|value |Numeric |Mandatory |18.2 a|The full amount that is
+.2+|requested-amount  2+m|value |Numeric |Mandatory |18.2 a|The full amount that is
 requested/contested in a transaction. 2 decimal digits allowed.
 
 Use . (decimal point) as the separator.
@@ -175,7 +175,7 @@ transaction amount. For _iDEAL_ payments, the currency must be set to ``EUR``.
 
 Format: 3-character abbreviation according to ISO 4217.
 
-|payment-methods e|payment-method e|name |String |Mandatory | 15 |The name of the
+|payment-methods m|payment-method m|name |String |Mandatory | 15 |The name of the
 payment method used. Set this value to ``iDEAL``.
 |===
 
@@ -186,7 +186,7 @@ payment method used. Set this value to ``iDEAL``.
 include::{root}/samples/json/WPP_IdealTransactionTypeDebit_2RtCttPPIRU.json[]
 ----
 
-[cols="15e,10,75"]
+[%autowidth, cols="m,,"]
 |===
 |Field (JSON) |Data Type |Description
 
@@ -217,8 +217,7 @@ payments are returned as _failed_, but the
 In any case (unless the consumer cancels the transaction on a 3rd party
 provider page), a base64 encoded response containing payment information
 is sent to the configured redirection URL. See
-<<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and IPNs for {payment-page-v2-abbr}>>﻿﻿
-for more details on redirection targets after payment & transaction status
+<<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and IPNs for {payment-page-v2-abbr}>> for more details on redirection targets after payment & transaction status
 notifications.
 
 You can find a decoded payment response example below.
@@ -231,15 +230,15 @@ include::{root}/samples/json/WPP_IdealTransactionTypeDebit_3ParseAndProcessThePa
 ----
 
 
-[cols="30e,5,5,5,55"]
+[%autowidth, cols="m,,,,"]
 |===
 3+|Field (JSON) |Data Type |Description
 
 3+|api-id |String |Identifier of the currently used API.
 3+|parent-transaction-id |String |The ID of the transaction being referenced as a parent.
-|payment-method 2+e|name |String |The name of the payment method used.
+|payment-method 2+m|name |String |The name of the payment method used.
 3+|request-id |String |A unique identifier assigned to every request (by merchant). Used when searching for or referencing it later.
-|merchant-account-id 2+e|value |String |A unique identifier assigned to every merchant account (by {payment-provider-name}).
+|merchant-account-id 2+m|value |String |A unique identifier assigned to every merchant account (by {payment-provider-name}).
 3+|transaction-state |String a|The current transaction state.
 
 Possible values:
@@ -253,20 +252,20 @@ Possible values:
 Typically, a transaction starts with state _in-progress_ and finishes with
 state either _success_ or _failed_. This information is returned in the response
 only.
-.2+|account-holder 2+e|first-name |String |The first name of the account holder.
+.2+|account-holder 2+m|first-name |String |The first name of the account holder.
 2+|last-name |String |The last name of the account holder.
-.2+|bank-account 2+e|iban |String |The international bank account number (IBAN) of the account holder.
+.2+|bank-account 2+m|iban |String |The international bank account number (IBAN) of the account holder.
 2+|bic |String |The bank identifier code (BIC) of the account holder.
 3+|transaction-type |String |The requested transaction type.
 3+|transaction-id |String |A unique identifier assigned to every transaction (by {payment-provider-name}). Used when searching for or referencing to it later.
 3+|completion-time-stamp |YYYY-MM-DD-Thh:mm:ss a|The UTC/ISO time-stamp documents the time and date when the transaction was executed.
 
 Format: YYYY-MM-DDThh:mm:ss (ISO).
-.2+|requested-amount 2+e|currency |String a|The currency of the requested/contested transaction amount. For _iDEAL_ payments, the currency must be set to ``EUR``.
+.2+|requested-amount 2+m|currency |String a|The currency of the requested/contested transaction amount. For _iDEAL_ payments, the currency must be set to ``EUR``.
 
 Format: 3-character abbreviation according to ISO 4217.
 2+|value |Numeric |The full amount that is requested/contested in a transaction. 2 decimals allowed.
-.3+|statuses .3+e|status e|severity |String a|The definition of the status message.
+.3+|statuses .3+m|status m|severity |String a|The definition of the status message.
 
 Possible values:
 

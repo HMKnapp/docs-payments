@@ -46,7 +46,7 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 
 [%autowidth, cols="h,"]
 |===
-| URL(s) Endpoints           | ``\https://{pp-test-instance-hostname}/api/payment/register``
+| URL(s) Endpoints           | ``\https://{pp-test-endpoint}``
 | Merchant Account ID (MAID) | 7a6dd74f-06ab-4f3f-a864-adc52687270a
 | Username                   | 70000-APIDEMO-CARD
 | Password                   | ohysS0-dvfMx
@@ -56,7 +56,7 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 [#PPv2_CC_TestCredentials_Additional]
 .Test Card Information for _Credit Card_
 
-[cols="35h,65"]
+[%autowidth, cols="h,"]
 |===
 | Card number      | 4200000000000018
 | CVV              | 018
@@ -112,7 +112,7 @@ For a full structure of a request (optional fields included), see the
 include::{root}/samples/json/WPP_CC_TransactionTypePurchase_1CreateAPaymentSessionInitialRequest.json[]
 ----
 
-[%autowidth,cols="m,,,a,,"]
+[%autowidth, stripes=none, cols="m,,,a,,"]
 |===
 2+h|Field (JSON) 
 h|Data +
@@ -148,7 +148,7 @@ used. Set this value to ``creditcard``.
 include::{root}/samples/json/WPP_CC_TransactionTypePurchase_2RtCttPPIRU.json[]
 ----
 
-[%autowidth,cols="m,,"]
+[%autowidth, stripes=none, cols="m,,"]
 |===
 |Field (JSON) | Data Type | Description
 
@@ -192,7 +192,7 @@ You can find a decoded payment response example below.
 include::{root}/samples/json/WPP_CC_TransactionTypePurchase_3ParseAndProcessThePaymentResponseDecodedPaymentResponse.json[]
 ----
 
-[%autowidth,cols="m,,,"]
+[%autowidth, stripes=none, cols="m,,,"]
 |===
 2+|Field (JSON) |Data Type |Description
 
@@ -301,7 +301,7 @@ For a full structure of a request (optional fields included), see the
 include::{root}/samples/json/WPP_CC_TransactionTypeAuthorization_1CreateAPaymentSessionInitialRequest.json[]
 ----
 
-[%autowidth, cols="m,,a,a,,"]
+[%autowidth, stripes=none, cols="m,,a,a,,"]
 |===
 2+h|Field (JSON) 
 h|Data +
@@ -380,7 +380,7 @@ You can find a decoded payment response example below.
 include::{root}/samples/json/WPP_CC_TransactionTypeAuthorization_AuthorizationResponse.json[]
 ----
 
-[%autowidth,cols="m,,,"]
+[%autowidth, stripes=none, cols="m,,,"]
 |===
 2+|Field (JSON) |Data Type |Description
 
@@ -491,7 +491,7 @@ For a full structure of a request (optional fields included), see the
 include::{root}/samples/json/WPP_CC_TransactionTypeAuthorizationonly_1CreateAPaymentSessionInitialRequest.json[]
 ----
 
-[%autowidth,cols="m,,a,a,,"]
+[%autowidth, stripes=none, cols="m,,a,a,,"]
 |===
 2+h|Field (JSON) 
 h|Data +
@@ -528,7 +528,7 @@ used. Set this value to ``creditcard``.
 include::{root}/samples/json/WPP_CC_TransactionTypeAuthorizationonly_2RtCttPPIRU.json[]
 ----
 
-[%autowidth,cols="m,,"]
+[%autowidth, stripes=none, cols="m,,"]
 |===
 |Field (JSON) | Data Type | Description
 
@@ -772,7 +772,7 @@ payment form.
 
 [%autowidth, cols="h,"]
 |===
-| URL(s) Endpoints           |``\https://{pp-test-instance-hostname}/api/payment/register``
+| URL(s) Endpoints           | ``\https://{pp-test-endpoint}``
 | Merchant Account ID (MAID) | cad16b4a-abf2-450d-bcb8-1725a4cef443
 | Username                   | 70000-APILUHN-CARD
 | Password                   | 8mhwavKVb91T
@@ -813,7 +813,7 @@ For a full structure of a request (optional fields included), see the
 include::{root}/samples/json/WPP_CC_3DSecureTestCredentialsAdditional_1CreateAPaymentSessionInitialRequest.json[]
 ----
 
-[%autowidth,cols="m,,a,a,,"]
+[%autowidth, stripes=none, cols="m,,a,a,,"]
 |===
 2+h|Field (JSON) 
 h|Data +
@@ -852,7 +852,7 @@ transaction.
 include::{root}/samples/json/WPP_CC_3DSecureTestCredentialsAdditional_2RtCttPPIRU.json[]
 ----
 
-[%autowidth,cols="m,,"]
+[%autowidth, stripes=none, cols="m,,"]
 |===
 |Field (JSON) | Data Type | Description
 
@@ -911,7 +911,7 @@ cardholder is enrolled.
 or the card issuing bank does not handle the transaction as 3D Secure.
 (ECI Value: 07 - VISA/JCB/American Express; 00 - Mastercard)
 
-[%autowidth,cols="m,,,"]
+[%autowidth, stripes=none, cols="m,,,"]
 |===
 2+|Field (JSON) |Data Type |Description
 
@@ -1021,13 +1021,13 @@ include::{root}/samples/json/WPP_CC_Additional3DS2Fields_Sample.json[]
 .Additional Fields for 3DS2
 [#PPv2_CC_3DS2Fields_ROC]
 A field can be **M**andatory or **O**ptional.
-[%autowidth, stripes="none"]
+[%autowidth,  stripes=none, stripes="none", cols="m,,,,,,,,a"]
 |===
 5+|JSON |Datatype |<<PPv2_CC_3DS2Fields_ROC, M/O>> |Size |Description
 
 .2+|card
 
-4+|merchant-tokenization-flag
+4+m|merchant-tokenization-flag
 |Boolean
 |M
 |
@@ -1052,7 +1052,7 @@ Otherwise, the field is optional.
 
 .27+|account-holder
 
-4+|first-name
+4+m|first-name
 |String
 |M
 |32
@@ -1096,7 +1096,7 @@ Otherwise, the field is optional.
 |Work phone number provided by the consumer.
 
 .13+|account-info
-3+|authentication-method
+3+m|authentication-method
 |String
 |O
 |2
@@ -1201,7 +1201,7 @@ Otherwise, the field is optional.
  the date is now.
 
 .7+|address
-3+|city
+3+m|city
 |String
 |M
 |50
@@ -1245,7 +1245,7 @@ Format: ISO 3166-1 alpha-2 country code.
 |State/province of the consumer's billing address. Accepted format: numeric ISO 3166-2 standard. 
 
 .8+|shipping
-4+|shipping-method
+4+m|shipping-method
 |String
 |O
 |restriction-based enumeration value
@@ -1262,7 +1262,7 @@ a|The shipping method chosen by the consumer.
 - ``other_verified``: Other (e.g. gaming, digital services, e-media subscriptions)
 
 .7+|address
-3+|city
+3+m|city
 |String
 |O
 |50
@@ -1308,7 +1308,7 @@ Format: ISO 3166-1 alpha-2 country code.
  Please provide this field even if billing address is identical.
 
 .8+|risk-info
-4+|delivery-timeframe
+4+m|delivery-timeframe
 |String
 |O
 |2
@@ -1350,8 +1350,8 @@ Format: ISO 3166-1 alpha-2 country code.
 |Expected shipping date for pre-ordered goods. Accepted format: ``YYYY-MM-DD``.
 
 .3+|gift-cards
-.3+|gift-card
-2+|id
+.3+m|gift-card
+2+m|id
 |Numeric
 |O
 |2
@@ -1359,7 +1359,7 @@ Format: ISO 3166-1 alpha-2 country code.
 Accepted values range from ``1`` to ``10``.
 
 .2+|amount
-|value
+m|value
 |Decimal
 |O
 |18,2
@@ -1372,7 +1372,7 @@ Accepted values range from ``1`` to ``10``.
 |For prepaid and gift card purchase only. The ISO 4217 three-digit currency code of the gift card.
 
 .4+|periodic
-4+|recurring-expire-date
+4+m|recurring-expire-date
 |Date
 |O
 |10
@@ -1403,7 +1403,7 @@ Accepted values range from ``1`` to ``10``.
  ``28`` = Prepaid Activation and Load
 
 .4+|three-d
-4+|version
+4+m|version
 |String
 |O
 |5

@@ -25,88 +25,83 @@ include::{root}/include/credit-card/refund-update-info.adoc[leveloffset=+1]
 [#CreditCard_TransactionTypes_List]
 === List of Transaction Types
 
-Please read about details for the transaction types <<CreditCard_TransactionTypes_Authorization, _authorization_>>, <<CreditCard_TransactionTypes_CaptureAuthorization, _capture-authorization_>> and <<CreditCard_TransactionTypes_Purchase, _purchase_>>.
-
-
 [cols="1,2a"]
 |===
-| [[CreditCard_TransactionTypesList_Authorization]]<<CreditCard_TransactionTypes_Authorization, _authorization_>>
-| Reserves funds from the cardholder's account. Typically, the limit ranges from three to thirty days to conduct a _capture-authorization,_ depending on the acquirer and card brand.
-| [[CreditCard_TransactionTypesList_AuthorizationOnly]]<<CreditCard_Samples_AuthorizationOnly, _authorization-only_>>
+
+| [[CreditCard_TransactionTypesList_Authorization]]<<CreditCard_TransactionTypes_Authorization, authorization>>
+| Reserves funds from the cardholder's account. Typically, the limit ranges from three to thirty days to conduct a capture-authorization, depending on the acquirer and card brand.
+
+| [[CreditCard_TransactionTypesList_AuthorizationOnly]]<<CreditCard_Samples_AuthorizationOnly, authorization-only>>
 | Verifies the card's validity without leaving an authorized amount.
+
 | [[CreditCard_TransactionTypesList_AuthorizationSupplementary]]
-
-<<CreditCard_Samples_AuthorizationSupplementary, _authorization-supplementary_>>
-
-
-| Reserves additional funds from the cardholder's account following an _authorization_. Typically, the limit ranges from three to thirty days to conduct a _capture-authorization_, depending on the acquirer and card brand.
-ifndef::backend-pdf[]
-
-endif::[]
+<<CreditCard_Samples_AuthorizationSupplementary, authorization-supplementary>>
+| Reserves additional funds from the cardholder's account following an authorization. Typically, the limit ranges from three to thirty days to conduct a capture-authorization, depending on the acquirer and card brand. +
 This transaction type *is not included in default configuration.* +
-For further information please contact: {e-mail-support}
-| <<CreditCard_TransactionTypes_Authorization, _preauthorization_>>
-| Reserves funds from the cardholder's account. Typically, the limit ranges from three to thirty days to conduct a _capture-preauthorization_, depending on the acquirer and card brand.
-ifndef::backend-pdf[]
+For further information contact {e-mail-support}.
 
-endif::[]
-Mastercard allows up to 30 days to conduct a _capture-preauthorization_
-depending on the configuration.
-| [[CreditCard_TransactionTypesList_CaptureAuthorization]] <<CreditCard_TransactionTypes_CaptureAuthorization, _capture-authorization_>> 
- a| Takes funds from the cardholder's account. Must follow an _authorization_ or _authorization-supplementary_ chain.
+| [[CreditCard_TransactionTypesList_CaptureAuthorization]] <<CreditCard_TransactionTypes_CaptureAuthorization, capture-authorization>> 
+| Takes funds from the cardholder's account. Must follow an authorization or authorization-supplementary chain. +
+Typically, a capture-authorization captures either part of or the full authorized amount. If you want to capture an amount higher than initially authorized, your merchant account needs to be configured accordingly (details see <<CreditCard_Overcapturing, overcapturing>>).
 
-Typically, a _capture-authorization_ captures either part of or the full authorized amount. If you want to capture an amount higher than initially authorized, your merchant account needs to be configured accordingly (details see <<CreditCard_Overcapturing, overcapturing>>).
-
+| capture-preauthorization 
+| Takes funds from the cardholder's account. Must follow a preauthorization.
 
 | [[CreditCard_TransactionTypesList_CheckEnrollment]]
- <<CreditCard_PaymentFeatures_3DSecure_CheckEnrollment,  _check-enrollment_>> | _check-enrollment_ consists of a single request/response communication that verifies, if the card number is eligible and participates in the 3D program.
+ <<CreditCard_PaymentFeatures_3DSecure_CheckEnrollment,  check-enrollment>> 
+| check-enrollment consists of a single request/response communication that verifies if the card number is eligible and participates in the 3D program.
+
 | [[CreditCard_TransactionTypesList_CheckPayerResponse]]
+<<CreditCard_PaymentFeatures_3DSecure_CheckPayerResponse, check-payer-response>>
+| check-payer-response forwards the PARes, which is a digitally signed XML document to _{payment-gateway-abbr}_ for validation.
 
-<<CreditCard_PaymentFeatures_3DSecure_CheckPayerResponse, _check-payer-response_>>
+| credit 
+| Moves funds from the merchant account to the cardholder's account.
 
+| <<CreditCard_TransactionTypes_Authorization, preauthorization>>
+| Reserves funds from the cardholder's account. Typically, the limit ranges from three to thirty days to conduct a capture-preauthorization, depending on the acquirer and card brand.
+Mastercard allows up to 30 days to conduct a capture-preauthorization
+depending on the configuration.
 
- | _check-payer-response_ forwards the PARes, which is a digitally signed XML document to _{payment-gateway-abbr}_ for validation.
+| [[CreditCard_TransactionTypesList_Purchase]] <<CreditCard_TransactionTypes_Purchase, purchase>>
+|Takes funds from the cardholder's account. A one-step process to conduct two transaction types: authorization and capture.
 
-| _check-risk_ | Checks the risk profile of the transaction information, without submitting a payment.
-ifndef::backend-pdf[]
+| <<CreditCard_TransactionTypes_CaptureAuthorization_SendingData_RefundCapture, refund-capture>>
+| Moves funds to the cardholder's account, referring to an eligible capture.
 
-endif::[]
-This transaction type *is not included in default configuration*. +
-For further information please contact: {e-mail-support}
+| <<CreditCard_TransactionTypes_Purchase_SendingData_RefundPurchase, refund-purchase>>
+| Moves funds to the cardholder's account, referring to an eligible purchase.
 
-| _credit_ | Moves funds from the merchant account to the cardholder's account.
-| _original-credit_ |Moves funds to the cardholder's account, *without* referring to an eligible _purchase_ or _capture_ (i.e. non-referenced). This transaction type can be used for gambling and non-gambling processes.
+| tokenize 
+| Responds with a unique card token generated from sensitive credit card data. The card token can be used in subsequent transactions instead of the card information itself.
 
-| [[CreditCard_TransactionTypesList_Purchase]] <<CreditCard_TransactionTypes_Purchase, _purchase_>>
-|Takes funds from the cardholder's account. A one-step process to conduct two transaction types: _authorization_ and _capture_.
+| [[CreditCard_TransactionTypesList_VoidAuthorization]] <<CreditCard_TransactionTypes_Authorization_SendingData_VoidAuthorization, void-authorization>>
+| Frees reserved funds from the cardholder's account due to an authorization or a chain of authorization-supplementary.
 
-| _referenced-authorization_ | Reserves funds from the cardholder's account. Identical to a _authorization_ except for the fact that it refers to a previous _authorization_ in the context of recurring transactions. See details for <<GeneralPlatformFeatures_ReferencingTransaction, referencing a transaction>>.
-|
+| void-auth-supplementary
+| Voids an upwardly adjustment of an existing authorization.
 
- <<CreditCard_TransactionTypes_Purchase_SendingData_ReferencingPurchaseTransactions, _referenced-purchase_>>
+| <<CreditCard_TransactionTypes_CaptureAuthorization_SendingData_VoidCapture, void-capture>>
+| Frees reserved funds from the cardholder's account due to a capture.
 
+| void-capture-preauthorization 
+| Frees reserved funds from the cardholder's account due to a capture-preauthorization.
 
-| Takes funds from the cardholder's account. Identical to a _purchase_ except for the fact that it refers to a previous _purchase_ in the context of recurring transactions.
+| void-credit 
+| Frees reserved funds from the cardholder's account due to a credit.
 
-| <<CreditCard_TransactionTypes_CaptureAuthorization_SendingData_RefundCapture, _refund-capture_>>
-| Moves funds to the cardholder's account, referring to an eligible _capture._
-| <<CreditCard_TransactionTypes_Purchase_SendingData_RefundPurchase, _refund-purchase_>>
-| Moves funds to the cardholder's account, referring to an eligible _purchase._
-| [[CreditCard_TransactionTypesList_VoidAuthorization]] <<CreditCard_TransactionTypes_Authorization_SendingData_VoidAuthorization, _void-authorization_>>
-| Frees reserved funds from the cardholder's account due to an _authorization_ or a chain of _authorization-supplementary._
-| _void-authorization-supplementary_ |Voids an upwardly adjustment of an existing _authorization._
-| <<CreditCard_TransactionTypes_CaptureAuthorization_SendingData_VoidCapture, _void-capture_>>
-| Frees reserved funds from the cardholder's account due to a _capture._
-| _void-credit_ | Frees reserved funds from the cardholder's account due to a _credit._
-| _void-original-credit_ | Frees reserved funds from the cardholder's account due to an _original-credit._
-| <<CreditCard_TransactionTypes_Authorization, _void-preauthorization_>>
-| Frees reserved funds from the cardholder's account due to a _preauthorization._
-| <<CreditCard_TransactionTypes_Purchase_SendingData_VoidPurchase, _void-purchase_>>
-| Frees reserved funds from the cardholder's account due to a _purchase._
-| _void-refund_ | Frees reserved funds from the cardholder's account due to a _refund._
-|_void-refund-capture_ | Frees reserved funds from the cardholder's account due to a _refund-capture._
-| <<CreditCard_TransactionTypes_Purchase_SendingData_VoidRefundPurchase, _void-refund-purchase_>>
-| Frees reserved funds from the cardholder's account due to a _refund-purchase._
+| <<CreditCard_TransactionTypes_Authorization, void-preauthorization>>
+| Frees reserved funds from the cardholder's account due to a preauthorization.
+
+| <<CreditCard_TransactionTypes_Purchase_SendingData_VoidPurchase, void-purchase>>
+| Frees reserved funds from the cardholder's account due to a purchase.
+
+| void-refund-capture 
+| Frees reserved funds from the cardholder's account due to a refund-capture.
+
+| <<CreditCard_TransactionTypes_Purchase_SendingData_VoidRefundPurchase, void-refund-purchase>>
+| Frees reserved funds from the cardholder's account due to a refund-purchase.
+
 |===
 
 [#CreditCard_TransactionTypes_VoidRefund]
@@ -163,10 +158,9 @@ image::images/11-01-01-credit-card_transaction-types/CC_refund-capture_flow.png[
 === OCT Eligibility Check
 
 
-{payment-gateway} uses the transaction type
-_authorization-only_, to find out whether the card in use is eligible
+{payment-gateway} uses the transaction type _authorization-only_, to find out whether the card in use is eligible
 for original credit transactions (OCT). If you want to use this
-eligibility check contact mailto:{e-mail-support}[merchant support]
+eligibility check, contact mailto:{e-mail-support}[merchant support]
 for details.
 
 

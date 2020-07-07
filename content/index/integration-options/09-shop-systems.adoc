@@ -391,7 +391,7 @@ please <<ContactUs, contact our sales and support teams>>.
 
 Add more payments methods with the
 link:https://github.com/wirecard/paymentSDK-php[Wirecard PHP Payment SDK] or
-our <<PaymentMethods, {payment-gateway} payment methods>>.
+our <<API_PM_APM_PaymentMode, {payment-gateway} payment methods>>.
 
 Want to contribute? Send us a pull-request on GitHub and we will get in
 touch with you.

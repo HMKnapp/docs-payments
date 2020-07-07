@@ -81,7 +81,7 @@ This pattern cannot be customized.
 |A numeric value which has digits before and after the decimal point ``.`` +
 Example: the amount of money in a specific currency (e.g. 138.53 EUR).
 
-|Number
+|Numeric
 |A numeric value that has no decimal places, such as the expiration month of a credit card.
 |===
 

@@ -57,7 +57,7 @@ payment page.
 
 Customers are redirected to this URL where they submit the payment and
 {payment-page-v2-abbr} handles the processing automatically, for the benefit of both the
-merchant & customer.
+merchant and consumer.
 
 [discrete]
 [#PPv2_WhoIs]
@@ -67,8 +67,7 @@ This documentation is primarily for developers integrating {payment-page-v2-abbr
 online shop. Each variation of {payment-page-v2-abbr} has a short introduction, and a more
 extensive overview of integration procedures and code.
 
-A basic understanding of REST API services, JavaScript and HTML is
-assumed.
+A basic understanding of REST API services, JavaScript and HTML is assumed.
 
 [discrete]
 [#PPv2_SupportedPaymentMethods]
@@ -80,23 +79,23 @@ See the list of all supported payment methods below:
 
 * <<PPv2_CC, Credit Card>>
 * <<PPv2_AlipayCrossborder, Alipay Cross-border>>
-* <<PPv2_Bancontact, Bancontact>>
+//* <<PPv2_Bancontact, Bancontact>>
 * <<PPv2_eps, eps>>
-* <<PPv2_giropay, giropay>>
+//* <<PPv2_giropay, giropay>>
 * <<PPv2_ideal, iDEAL>>
-* <<PPv2_Klarna, Klarna Payments>>
-* <<API_Masterpass, Masterpass>>
-* <<PPv2_paydirekt, paydirekt>>
-* <<PPv2_paylib, Paylib>>
+// * <<PPv2_Klarna, Klarna Payments>>
+// * <<API_Masterpass, Masterpass>>
+// * <<PPv2_paydirekt, paydirekt>>
+// * <<PPv2_paylib, Paylib>>
 * <<PPv2_PayPal, PayPal>>
-* <<PPv2_paysafecard, paysafecard>>
-* <<PPv2_P24, Przelewy24>>
+// * <<PPv2_paysafecard, paysafecard>>
+// * <<PPv2_P24, Przelewy24>>
 * <<PPv2_SEPADirectDebit, SEPA Direct Debit>>
-* <<Skrill_Main, Skrill Digital Wallet>>
+// * <<Skrill_Main, Skrill Digital Wallet>>
 * <<PPv2_Sofort, Sofort.>>
 * <<WeChat_Main, WeChat QR Pay>>
-* <<PPv2_PaymentDirectDebit, {payment-provider-name} Payment Guaranteed Direct Debit>>
-* <<PPv2_PaymentInstallment, {payment-provider-name} Payment in Installments>>
-* <<PPv2_PaymentInvoice, {payment-provider-name} Payment on Invoice>>
+// * <<PPv2_PaymentDirectDebit, {payment-provider-name} Payment Guaranteed Direct Debit>>
+// * <<PPv2_PaymentInstallment, {payment-provider-name} Payment in Installments>>
+// * <<PPv2_PaymentInvoice, {payment-provider-name} Payment on Invoice>>
 * <<Voucher_Main, {payment-provider-name} Voucher>>
 //-

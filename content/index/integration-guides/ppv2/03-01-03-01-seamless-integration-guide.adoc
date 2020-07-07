@@ -172,7 +172,7 @@ This is an HTTP request with two headers:
 [source,subs=attributes+]
 ----
 Content-Type: application/json
-Authorization: Basic NzAwMDAtQVBJTFVITi1DQVJEOjhtaHdhdktWYjkxVA==
+Authorization: Basic RUVVc2VyOjFSRFhOWmtZR20=
 ----
 
 The ``Authorization`` header needs to be formatted as:

@@ -9,9 +9,6 @@ There are multiple integration options available for {payment-gateway}.
 - For (near) real-time processing the *backend* implementation is
 described under <<RestApi, REST API>>. However, the description of payment methods, for example, 
 is common for both Payment Page and REST API.
-- Processing of multiple transactions using *batches* is described under
-<<BatchProcessingApi, Batch Processing API>>, available for both SEPA Direct Debit and SEPA Credit Transfer.
-- Our *Payment SDK* offers a seamless user experience by rendering a payment form as an integral part of the merchant's mobile application.
 
 //-
 ====
@@ -50,16 +47,13 @@ NOTE: Only HTML knowledge is required for {payment-provider-name} Payment Page i
 [discrete]
 === REST API
 
-When merchants want full control over the checkout and payment process
-they can create requests themselves and send them directly to the
-_REST API_. All communications between a merchant and the REST API
-are secured by TLS encryption (HTTPS).
+If you want full control over the checkout and payment process, you can create requests themselves and send them directly to the REST API. All communications between your system and the REST API are secured by TLS encryption (HTTPS).
 
-Integration is possible by:
+You integrate with requests sent from your backend (server-to-server). Format can be
 
-- XML requests sent from merchant's backend (server-to-server)
-- JSON respectively
-- NVP (for credit card only)
+- XML 
+- JSON 
+
 //-
 
 NOTE: For the integration of {payment-gateway} via REST API, advanced programming skills are required.
@@ -67,55 +61,8 @@ NOTE: For the integration of {payment-gateway} via REST API, advanced programmin
 PCI certified merchants can use {payment-gateway} without any restrictions.
 
 Non PCI certified merchants can use _{payment-gateway}_ only with
-referenced or recurring transactions. For initial transactions they must use a front end solution (e.g. <<PP, HPP>>).
+referenced or recurring transactions. For initial transactions they must use a front end solution (e.g. <<PaymentPageSolutions_PPv2_HPP, HPP>>).
 
-Details to integrate _{payment-gateway}_ via REST API are
-described <<RestApi, here>>.
-
-[#GeneralIntegrationOptions_Batch]
-[discrete]
-=== Batch Processing API
-
-In order to process multiple transactions at the same time, {payment-provider-name}'s Batch Processing is the ideal solution for both fast and easy to
-implement offline bulk transaction processing.
-
-Batch processing is possible for the following payment methods:
-
-- SEPA Direct Debit
-- SEPA Credit Transfer
-- Credit Card
-
-//-
-
-NOTE: Working programming knowledge is required to integrate this way.
-
-
-[#GeneralIntegrationOptions_SDK]
-[discrete]
-=== SDK
-
-The Software Development Kit (SDK) serves as a wrapper for the {payment-gateway} with a PCI V3 compliant native mobile payment
-form. SDK is naturally developed for the integration into a merchant's
-app as a software library where it covers sending payment requests to
-the {payment-gateway}. It uses REST requests constructed by the merchant
-sent over HTTPS protocol to {payment-gateway}
-end-point where the REST API is exposed.
-
-The following payment methods are currently supported:
-
-- Credit Card
-- PayPal
-- SEPA Direct Debit
-- Apple Pay
-- Google Pay™
-//-
-
-Operation system interfaces:
-
-- iOS
-- Android
-//-
-
-NOTE: Working programmer knowledge is required to integrate this way.
+Details to integrate _{payment-gateway}_ via REST API are described <<RestApi, here>>.
 
 //-

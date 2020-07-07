@@ -1,5 +1,5 @@
 [#API_AlipayCrossBorder]
-== REST API & {payment-page-v1}
+== REST API
 _Alipay Cross-border_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#API_AlipayCrossBorder_Introduction_General_PaymentMode]
@@ -33,37 +33,37 @@ For transaction type details which are not given here look at
 
 [%autowidth.stretch,stripes=none]
 |===
-|Transaction Type |Description |Link to the sample
+| Transaction Type |Description |Link to the sample
 
-|_debit_          |        | <<API_AlipayCrossBorder_Samples_General_debit, _debit_ samples>>
+| debit          |        | <<API_AlipayCrossBorder_Samples_General_debit, debit samples>>
 
 Used with
 <<API_AlipayCrossBorder_Samples_autoDebit_debit_withPeriodic, autoDebit>>,
 containing a <periodic>.
 
-|_refund-debit_ |
-|<<API_AlipayCrossBorder_Samples_General_refundDebit, _refundDebit_ samples>>
+| refund-debit |
+| <<API_AlipayCrossBorder_Samples_General_refundDebit, refund-debit samples>>
 
-|_authorization-only_ |Used with auto-debit: Initiates the sign
-agreement between _Alipay Cross-border_ and the consumer. |
-<<API_AlipayCrossBorder_Samples_autoDebit_authorizationOnly_Sign, _authorization-only_ (sign) samples>>
+| authorization-only |Used with auto-debit: Initiates the sign
+agreement between _Alipay Cross-border_ and the consumer. 
+| <<API_AlipayCrossBorder_Samples_autoDebit_authorizationOnly_Sign, authorization-only (sign) samples>>
 
-<<API_AlipayCrossBorder_Samples_autoDebit_authorizationOnly_Unsign, _authorization-only_ (unsign) samples>>
+<<API_AlipayCrossBorder_Samples_autoDebit_authorizationOnly_Unsign, authorization-only (unsign) samples>>
 |===
 
 [#AlipayCrossBorder_TestCredentials]
 === Test Credentials
 
-[%autowidth.stretch,stripes=none]
+[%autowidth,cols=",",stripes=none]
 |===
-.2+h|URL(s) Endpoints |For the transaction types _authorization-only_ and _debit._ |``\https://{rest-api-test-apm-endpoint}``
-|For the transaction types _refund-debit_ and _refund-request_. |``\https://{rest-api-test-endpoint}``
+h|URL(s) Endpoint 
+|``\https://{rest-api-test-endpoint}``
 h|Merchant Account ID (MAID)
-2+|47cd4edf-b13c-4298-9344-53119ab8b9df
+|47cd4edf-b13c-4298-9344-53119ab8b9df
 h|Username
-2+|16390-testing
+|16390-testing
 h|Password
-2+|3!3013=D3fD8X7
+|3!3013=D3fD8X7
 |===
 
 [#API_AlipayCrossBorder_TestCredentials_Additional]
@@ -110,7 +110,7 @@ image::images/11-02-alipay-cross-border/AlipayCB_debit_Workflow.png[debit Workfl
 
 . Consumers add items to shopping basket.
 . Consumers select Payment Method _Alipay Cross-border_.
-. Merchant initiates a _debit_ transaction.
+. Merchant initiates a ``debit`` transaction.
 . _Alipay Cross-border_ responds with a redirection URL to the merchant.
 . Merchant redirects consumer to _Alipay Cross-border_.
 . Consumers enter their account data and confirm the payment.
@@ -264,9 +264,9 @@ For MCC code setup, <<ContactUs, contact merchant support>>.
 
 
 [#API_AlipayCrossBorder_Fields_autoDebit]
-==== Additional Fields for _auto-debit_
+==== Additional Fields for auto-debit
 
-Only the _auto-debit_ fields listed below have different properties.
+Only the auto-debit fields listed below have different properties.
 
 The following elements are mandatory (M) or optional (O) for a request/response/notification.
 
@@ -380,16 +380,16 @@ https://coderstoolbox.net/string/#!encoding=xml&action=decode&charset=us_ascii.
 ==== General
 
 [#API_AlipayCrossBorder_Samples_General_debit]
-===== _debit_
+===== debit
 
-._debit_ Request (Successful)
+.debit Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/alipay-xborder_debit_request_success_en.xml[]
 ----
 
-._debit_ Response (Successful)
+.debit Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -398,16 +398,16 @@ include::{root}/samples/xml/alipay-xborder_debit_response_success_en.xml[]
 
 
 [#API_AlipayCrossBorder_Samples_General_refundDebit]
-===== _refund-debit_
+===== refund-debit
 
-._refund-debit_ Request (Successful)
+.refund-debit Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/alipay-xborder_refund-debit_request_success.xml[]
 ----
 
-._refund-debit_ Response (Successful)
+.refund-debit Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -415,19 +415,19 @@ include::{root}/samples/xml/alipay-xborder_refund-debit_response_success_en_a9bb
 ----
 
 [#API_AlipayCrossBorder_Samples_autoDebit]
-==== _auto-debit_
+==== auto-debit
 
 [#API_AlipayCrossBorder_Samples_autoDebit_authorizationOnly_Sign]
-===== _authorization-only_ (Sign Agreement)
+===== authorization-only (Sign Agreement)
 
-._authorization-only_ (Sign) Request (Successful)
+.authorization-only (Sign) Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/alipay-xborder_authorization-only_request_success_recurring_first.xml[]
 ----
 
-._get-url (Sign) Response (Successful)
+.get-url (Sign) Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -435,16 +435,16 @@ include::{root}/samples/xml/alipay-xborder_get-url_response_success_recurring_fi
 ----
 
 [#API_AlipayCrossBorder_Samples_autoDebit_debit_withPeriodic]
-===== _debit_ (with <periodic>)
+===== debit (with <periodic>)
 
-._debit_ Request (Successful)
+.debit Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/alipay-xborder_debit_request_success_recurring_recurring_649cb805.xml[]
 ----
 
-._get-url_ Response (Successful)
+.get-url Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
@@ -452,16 +452,16 @@ include::{root}/samples/xml/alipay-xborder_get-url_response_success_en_recurring
 ----
 
 [#API_AlipayCrossBorder_Samples_autoDebit_authorizationOnly_Unsign]
-===== _authorization-only_ (Unsign Agreement)
+===== authorization-only (Unsign Agreement)
 
-._authorization-only_ (Unsign) Request (Successful)
+.authorization-only (Unsign) Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/alipay-xborder_authorization-only_request_success_recurring_final_f704f0a9.xml[]
 ----
 
-._authorization-only_ (Unsign) Response (Successful)
+.authorization-only (Unsign) Response (Successful)
 
 [source,xml,subs=attributes+]
 ----

@@ -1,8 +1,7 @@
 [#GeneralPlatformFeatures_Surcharging]
 == Surcharging
 
-Surcharging is a feature for <<PP, {payment-page-v1}>> image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."] (HPP and EPP) and
-<<RestApi, REST API>>.
+Surcharging is a feature for <<RestApi, REST API>>.
 Aimed at merchants who would like to charge additional fees for certain types of
 payments, this feature guarantees transparency on surcharge rates for
 consumers. 
@@ -17,19 +16,20 @@ depending on region, card type indicator, card type and payment method.
 - Region:
 * Domestic
 * International
+//-
+
 - Card type indicator:
 * Credit
 * Debit
 * Prepaid
+//-
+
 - Card type:
 * Visa
 * Mastercard
-* Amex
-* JCB
-* UPI
+//-
 
 - Alternative payment method (if required):
-* <<POLi, POli>>
 * <<API_AlipayCrossBorder, Alipay Cross-border>>
 * <<API_PaymentMethods_PayPal, PayPal>>
 
@@ -69,34 +69,16 @@ NOTE: Including the ``<surcharge-amount>`` as part of the purchase request overw
 
 Depending on how the surcharge amount is determined, the workflow varies.
 
-.. If you decide to auto-calculate the surcharge amount based on the configured surcharge rates:
-+
-<<PP, {payment-page-v1}>>
-
-- send a _purchase_ request without including a predefined surcharge amount.
-
-+
-
-<<RestApi, REST API>>
-
+.. If you decide to auto-calculate the surcharge amount based on the configured surcharge rates, 
 - send a _calculate-fee_ request and retrieve the surcharge amount from the response first, then 
 - insert the retrieved value in the _purchase_ request and send the request thereafter. 
 +
 
-.. If you decide to calculate the surcharge amount yourself, include the value directly as part of the _purchase_ request (<<PP, {payment-page-v1}>> and
-<<RestApi, REST API>>). 
+.. If you decide to calculate the surcharge amount yourself, include the value directly as part of the _purchase_ request. 
 
 //-
 
 Below, we provide  <<GeneralPlatformFeatures_Surcharging_Samples_CalculateFee, _calculate-fee_>> and <<GeneralPlatformFeatures_Surcharging_Samples_Purchase, _purchase_>> samples for REST API.
-
-[#GeneralPlatformFeatures_Surcharging_IntegrationOptions]
-=== Supported Integration Options
-
-- <<PP, {payment-page-v1}>> image:images/icons/legacy.png[LEGACY, 80, 20, role="no-zoom", title="Development of this product is discontinued."]
-* <<PP_HPP, Hosted Payment Page>>
-* <<PP_EPP, Embedded Payment Page>>
-- <<RestApi, REST API>>
 
 //-
 

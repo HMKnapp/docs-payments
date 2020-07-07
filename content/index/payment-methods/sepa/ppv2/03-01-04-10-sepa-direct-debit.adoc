@@ -46,7 +46,7 @@ Test credentials for the transaction type <<PPv2_SEPADirectDebit_TransactionType
 
 [cols="35h,65"]
 |===
-| URI (Endpoint)             | ``\https://{pp-test-instance-hostname}/api/payment/register``
+| URI (Endpoint)             | ``\https://{pp-test-endpoint}``
 | Merchant Account ID (MAID) | 4c901196-eff7-411e-82a3-5ef6b6860d64
 | Username                   | 70000-APITEST-AP
 | Password                   | qD2wzQ_hrc!8
@@ -109,18 +109,18 @@ include::{root}/samples/json/WPP_SEPADirectDebitTransactionTypeDebit_1CreateAPay
 ----
 
 
-[cols="15e,10,10,10,5,50"]
+[%autowidth, cols="m,,,,,"]
 |===
 2+| Field (JSON) | Data Type | Mandatory/Optional | Size | Description
 
 
-| merchant-account-id e| value | String | Mandatory | 36 | A unique identifier assigned to every _Merchant Account_ (by {payment-provider-name}).
+| merchant-account-id m| value | String | Mandatory | 36 | A unique identifier assigned to every _Merchant Account_ (by {payment-provider-name}).
 2+| request-id                | String | Mandatory | 150 | A unique identifier assigned to every request which you sent out. Used when
 searching for or referencing it later. `{{$guid}}` serves as a placeholder for a random ``request-id``.
 
 Allowed characters:  [a-z0-9-_]
 2+| transaction-type          | String | Mandatory | 36 | The requested transaction type.
-.2+| requested-amount e| value | Numeric | Mandatory | 11 | The full amount that is requested/contested in a transaction. 2 decimal
+.2+| requested-amount m| value | Numeric | Mandatory | 11 | The full amount that is requested/contested in a transaction. 2 decimal
 places allowed.
 
 Use . (decimal point) as the separator.
@@ -129,7 +129,7 @@ Use . (decimal point) as the separator.
                          payments, the currency must be set to ``EUR``.
 
 Format: 3-character abbreviation according to ISO 4217.
-| payment-method      e| name     | String | Optional | 15 | The name of the payment method used for the transaction. Set this value to ``sepadirectdebit``.
+| payment-method      m| name     | String | Optional | 15 | The name of the payment method used for the transaction. Set this value to ``sepadirectdebit``.
 2+| mandate-id | String | Mandatory | 35 | The ID of the Direct Debit mandate. You must generate this value yourself.
 2+|success-redirect-url |String |Mandatory |2000 a|The URL to which the consumer is redirected after a successful payment, e.g. ``\https://{pp-redirect-url-success}``
 2+|fail-redirect-url |String |Mandatory |2000 a|The URL to which the consumer is redirected after a failed payment, e.g. ``\https://{pp-redirect-url-error}``
@@ -145,7 +145,7 @@ Format: 3-character abbreviation according to ISO 4217.
 include::{root}/samples/json/WPP_SEPADirectDebitTypeDebit_2RedirectUrl.json[]
 ----
 
-[cols="15e,10,75"]
+[%autowidth, cols="m,,"]
 |===
 | Field (JSON) | Data Type | Description
 
@@ -161,13 +161,13 @@ include::{root}/include/ppv2-redirect-instructions.adoc[]
 include::{root}/samples/json/WPP_SEPADirectDebitTransactionTypeDebit_3ParseAndProcessThePaymentResponseDecodedPaymentResponse.json[]
 ----
 
-[cols="15e,10,10,10,65"]
+[%autowidth, cols="m,,,,"]
 |===
 3+| Field (JSON) | Data Type | Description
 
-2+| merchant-account-id e| value | String | A unique identifier assigned to every _Merchant Account_ (by {payment-provider-name}).
+2+| merchant-account-id m| value | String | A unique identifier assigned to every _Merchant Account_ (by {payment-provider-name}).
 3+|success-redirect-url |String a|The URL to which the consumer is redirected after a successful payment, e.g. ``\https://{pp-redirect-url-success}``
-2+|bank-account| iban          | String | The International Bank Account Number (IBAN).
+2+|bank-account m| iban          | String | The International Bank Account Number (IBAN).
 3+| transaction-id | String | A unique identifier assigned to every transaction (by {payment-provider-name}). Used when searching for or referencing to it later.
 3+| request-id    | String | A unique identifier assigned to every request which you sent out. Used when searching for or referencing it later.
 3+| transaction-state | String a| The current transaction state.
@@ -185,12 +185,12 @@ with state either _success_ or _failed_. This information is returned in
 the response only.
 3+| completion-time-stamp | YYYY-MM-DD-Thh:mm:ss | The UTC/ISO time-stamp documents the time and date when the transaction was executed. +
 Format: YYYY-MM-DDThh:mm:ss (ISO).
-2.2+| requested-amount e| currency | String | The currency of the requested/contested transaction amount. For _SEPA Direct Debit_ payments, the currency must be set to ``EUR``. +
+2.2+| requested-amount m| currency | String | The currency of the requested/contested transaction amount. For _SEPA Direct Debit_ payments, the currency must be set to ``EUR``. +
 Format: 3-character abbreviation according to ISO 4217.
                     | value | Numeric  | The full amount that is requested/contested in a transaction. 2 decimals
 allowed.
 3+| provider-transaction-reference-id | String | An identifier used to match and reference all transactions belonging to a single Direct Debit payment lifecycle.
-.3+| statuses .3+| status e| description | String | The description of the transaction status message.
+.3+| statuses .3+| status m| description | String | The description of the transaction status message.
             | severity    | String a| The definition of the status message.
 
 Possible values:
@@ -205,10 +205,10 @@ Possible values:
 3+|fail-redirect-url |String a|The URL to which the consumer is redirected after a failed payment, e.g. ``\https://{pp-redirect-url-error}``
 3+|cancel-redirect-url |String a|The URL to which the consumer is redirected after having canceled a payment, e.g. ``\https://{pp-redirect-url-cancel}``
 3+| transaction-type | String  | The requested transaction type.
-2.2+| account-holder|  first-name    | String | The first name of the account holder.
+2.2+| account-holder m|  first-name    | String | The first name of the account holder.
 | last-name     | String | The last name of the account holder.
-| payment-methods  | payment-method e| name | String | The name of the payment method used for the transaction.
-2.2+| mandate | mandate-id  | String | The ID of the Direct Debit mandate. You must generate this value yourself.
+| payment-methods  m| payment-method m| name | String | The name of the payment method used for the transaction.
+2.2+| mandate m| mandate-id  | String | The ID of the Direct Debit mandate. You must generate this value yourself.
 | signed-date | YYYY-MM-DD | The date the Direct Debit mandate was signed.
 3+| creditor-id | String | This is your Creditor ID.
 3+| api-id      | String | Identifier of the currently used API.
@@ -281,18 +281,18 @@ For a full structure of a request (optional fields included), see the
 include::{root}/samples/json/WPP_SEPADirectDebitRecurringTransactions_1CreateAPaymentSessionInitialRequest.json[]
 ----
 
-[cols="15e,10,10,10,5,50"]
+[%autowidth, cols="m,,,,,"]
 |===
 2+| Field (JSON) | Data Type | Mandatory/Optional | Size | Description
 
-| merchant-account-id e| value | String | Mandatory | 36 | A unique identifier assigned to every _Merchant Account_ (by {payment-provider-name}).
+| merchant-account-id m| value | String | Mandatory | 36 | A unique identifier assigned to every _Merchant Account_ (by {payment-provider-name}).
 2+| request-id                | String | Mandatory | 150 | A unique identifier assigned to every request which you sent out. Used when
 searching for or referencing it later. ``{{$guid}}`` serves as a
 placeholder for a random ``request-id``.
 
 Allowed characters:  [a-z0-9-_]
 2+| transaction-type          | String | Mandatory | 36 | The requested transaction type.
-.2+| requested-amount e| value | Numeric | Mandatory | 11 | The full amount that is requested/contested in a transaction. 2 decimal
+.2+| requested-amount m| value | Numeric | Mandatory | 11 | The full amount that is requested/contested in a transaction. 2 decimal
 places allowed.
 
 Use . (decimal point) as the separator.
@@ -301,7 +301,7 @@ Use . (decimal point) as the separator.
                          payments, the currency must be set to ``EUR``.
 
 Format: 3-character abbreviation according to ISO 4217.
-| payment-method      e| name     | String | Optional | 15 | The name of the payment method used. Set this value to ``sepadirectdebit``.
+| payment-method      m| name     | String | Optional | 15 | The name of the payment method used. Set this value to ``sepadirectdebit``.
 2+| mandate-id         | String | Mandatory | 35 | The ID of the Direct Debit mandate. You must generate this value
 yourself.
 2+| creditor-id        | String | Mandatory | 35 | The Creditor ID of the merchant.
@@ -322,7 +322,7 @@ recurring transaction.
 include::{root}/samples/json/WPP_SEPADirectDebitRecurringTransactions_2RtCttPPIRU.json[]
 ----
 
-[cols="15e,10,75"]
+[%autowidth, cols="m,,"]
 |===
 | Field (JSON) | Data Type | Description
 
@@ -339,11 +339,11 @@ include::{root}/include/ppv2-redirect-instructions.adoc[]
 include::{root}/samples/json/WPP_SEPADirectDebitRecurringTransactions_3ParseAndProcessThePaymentResponseDecodedPaymentResponse.json[]
 ----
 
-[cols="15e,10,10,10,65"]
+[%autowidth, cols="m,,,,"]
 |===
 3+| Field (JSON) | Data Type | Description
 
-2+|bank-account| iban          | String | The International Bank Account Number (IBAN).
+2+|bank-account m| iban          | String | The International Bank Account Number (IBAN).
 3+|success-redirect-url |String a|The URL to which the consumer is redirected after a successful payment, e.g. ``\https://{pp-redirect-url-success}``
 3+| transaction-id | String | A unique identifier assigned to every transaction (by {payment-provider-name}). Used when searching for or referencing to it later.
 3+| request-id    | String | A unique identifier assigned to every request which you sent out. Used when searching for or referencing it later.
@@ -362,19 +362,19 @@ with state either _success_ or _failed_. This information is returned in
 the response only.
 3+| completion-time-stamp | YYYY-MM-DD-Thh:mm:ss | The UTC/ISO time-stamp documents the time and date when the transaction was executed. +
 Format: YYYY-MM-DDThh:mm:ss (ISO).
-2.2+| requested-amount e| currency | String | The currency of the requested/contested transaction amount. For _SEPA Direct Debit_ payments, the currency must be set to ``EUR``. +
+2.2+| requested-amount m| currency | String | The currency of the requested/contested transaction amount. For _SEPA Direct Debit_ payments, the currency must be set to ``EUR``. +
 Format: 3-character abbreviation according to ISO 4217.
                     | value | Numeric  | The full amount that is requested/contested in a transaction. 2 decimals
 allowed.
 3+| provider-transaction-reference-id | String | An identifier used to match and reference all transactions belonging to a single Direct Debit payment lifecycle.
-2.2+| periodic e| periodic-type | String | Indicates if (and how) payment occurs more than once.
+2.2+| periodic m| periodic-type | String | Indicates if (and how) payment occurs more than once.
                | sequence-type | String | Indicates the phase of a recurring transaction.
 3+| transaction-type | String  | The requested transaction type.
-| payment-methods  | payment-method e| name | String | The name of the payment method used for the transaction.
-2.2+| account-holder|  first-name    | String | The first name of the account holder.
+| payment-methods  m| payment-method m| name | String | The name of the payment method used for the transaction.
+2.2+| account-holder m|  first-name    | String | The first name of the account holder.
 | last-name     | String | The last name of the account holder.
-2+| merchant-account-id e| value | String | A unique identifier assigned to every _Merchant Account_ (by {payment-provider-name}).
-.3+| statuses .3+| status e| description | String | The description of the transaction status message.
+2+| merchant-account-id m| value | String | A unique identifier assigned to every _Merchant Account_ (by {payment-provider-name}).
+.3+| statuses .3+| status m| description | String | The description of the transaction status message.
             | severity    | String a| The definition of the status message.
 
 Possible values:
@@ -388,7 +388,7 @@ Possible values:
             | code        | String | Status code of the status message.
 3+|cancel-redirect-url |String a|The URL to which the consumer is redirected after having canceled a payment, e.g. ``\https://{pp-redirect-url-cancel}``
 3+|fail-redirect-url |String a|The URL to which the consumer is redirected after a failed payment, e.g. ``\https://{pp-redirect-url-error}``
-2.2+| mandate | mandate-id  | String | The ID of the Direct Debit mandate. You must generate this value yourself.
+2.2+| mandate m| mandate-id  | String | The ID of the Direct Debit mandate. You must generate this value yourself.
 | signed-date | YYYY-MM-DD | The date the Direct Debit mandate was signed.
 3+| creditor-id | String | This is your Creditor ID.
 3+| api-id      | String | Identifier of the currently used API.
@@ -417,18 +417,18 @@ NOTE: For more information on SEPA schemes, click
 include::{root}/samples/json/WPP_SEPADirectDebitB2BScheme_SEPA_DirectDebitExampleRequestWith_B2B_SchemeEnabled.json[]
 ----
 
-[cols="15e,10,10,10,5,50"]
+[%autowidth, cols="m,,,,,"]
 |===
 2+| Field (JSON) | Data Type | Mandatory/Optional | Size | Description
 
-| merchant-account-id e| value | String | Mandatory | 36 | A unique identifier assigned to every _Merchant Account_ (by {payment-provider-name}).
+| merchant-account-id m| value | String | Mandatory | 36 | A unique identifier assigned to every _Merchant Account_ (by {payment-provider-name}).
 2+| request-id                | String | Mandatory | 150 | A unique identifier assigned to every request which you sent out. Used when
 searching for or referencing it later. ``{{$guid}}`` serves as a
 placeholder for a random ``request-id``.
 
 Allowed characters:  [a-z0-9-_]
 2+| transaction-type          | String | Mandatory | 36 | The requested transaction type.
-.2+| requested-amount e| value | Numeric | Mandatory | 11 | The full amount that is requested/contested in a transaction. 2 decimal
+.2+| requested-amount m| value | Numeric | Mandatory | 11 | The full amount that is requested/contested in a transaction. 2 decimal
 places allowed.
 
 Use . (decimal point) as the separator.
@@ -437,7 +437,7 @@ Use . (decimal point) as the separator.
                          payments, the currency must be set to ``EUR``.
 
 Format: 3-character abbreviation according to ISO 4217.
-| payment-method      e| name     | String | Optional | 15 | The name of the payment method used. Set this value to ``sepadirectdebit``.
+| payment-method      m| name     | String | Optional | 15 | The name of the payment method used. Set this value to ``sepadirectdebit``.
 2+| mandate-id         | String | Mandatory | 35 | The ID of the Direct Debit mandate. You must generate this value
 yourself.
 2+| creditor-id        | String | Mandatory | 35 | This is your Creditor ID.
@@ -535,3 +535,5 @@ include::{root}/samples/json/WPP_SEPADirectDebit_JSON_NVPFieldsRequest_ResponseO
 
 | api_id | api-id |payment ({ })
 |===
+
+//-

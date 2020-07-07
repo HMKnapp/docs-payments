@@ -69,7 +69,7 @@ The consumer clicks the "Back to shop" link in the online banking window
 and is redirected back to the merchant's web shop.
 
 [#WPP_eps_Banks]
-=== Banks Participating in __eps-Überweisung__
+=== Banks Participating in _eps-Überweisung_
 include::{root}/include/list-eps-banks.adoc[]
 
 [#WPP_eps_giropay]
@@ -93,7 +93,7 @@ Test Credentials for Transaction Type <<PPv2_eps_TransactionType_debit, _debit_>
 [cols="35,65"]
 |===
 h| URI (Endpoint)
-|``\https://{pp-test-instance-hostname}/api/payment/register``
+|``{pp-test-endpoint}``
 h| Merchant Account ID (MAID)
 | 1f629760-1a66-4f83-a6b4-6a35620b4a6d
 h| Username
@@ -124,12 +124,12 @@ h| Secret Key (used for response verification)
 
 
 [#PPv2_eps_TransactionType_debit]
-=== Transaction Type _debit_
+=== Transaction Type debit
 
-A _debit_ transaction charges the account holder's bank account with the
+A debit transaction charges the account holder's bank account with the
 specified amount and transfers it immediately.
 
-For a successful _debit_ transaction:
+For a successful debit transaction:
 
 . Create a payment session (initial request).
 . Redirect the consumer to the payment page (initial response URL).
@@ -163,11 +163,11 @@ include::{root}/samples/json/WPP_EpsTransactionTypeDebit_1CreateAPaymentSessionI
 ----
 
 
-[cols="30e,5,5,5,5,5,45"]
+[%autowidth, cols="m,,,,,,"]
 |===
 3+|Field (JSON) |Data Type |Cardinality |Size |Description
 
-2+|merchant-account-id e|value |String |Mandatory |36 |A unique identifier assigned
+2+|merchant-account-id m|value |String |Mandatory |36 |A unique identifier assigned
 to every merchant account (by {payment-provider-name}). You receive a unique
 ``merchant-account-id`` for each payment method.
 3+|request-id |String |Mandatory |150 a|A unique identifier assigned to every request
@@ -177,7 +177,7 @@ to every merchant account (by {payment-provider-name}). You receive a unique
 Allowed characters: [a-z0-9-_]
 3+|transaction-type |String |Mandatory |n/a |The requested transaction type. For
 _eps_ payments, the transaction-type must be set to ``debit``.
-.2+|requested-amount  2+e|value |Numeric |Mandatory |18.2 a|The full amount that is
+.2+|requested-amount  2+m|value |Numeric |Mandatory |18.2 a|The full amount that is
 requested/contested in a transaction. 2 decimal digits allowed.
 
 Use . (decimal point) as the separator.
@@ -187,25 +187,25 @@ transaction amount.
 
 Format: 3-character abbreviation according to ISO 4217.
 
-|payment-methods e|payment-method e|name |String |Mandatory | 15 |The name of the
+|payment-methods m|payment-method m|name |String |Mandatory | 15 |The name of the
 payment method used. Set this value to ``eps``.
-.2+|bank-account 2+e|bic |String |Optional |8 or 11 a|The bank identifier code (BIC)
+.2+|bank-account 2+m|bic |String |Optional |8 or 11 a|The bank identifier code (BIC)
 of the account owner (consumer).
 
-Allowed characters and format: ([a-zA-Z]{4}[a-zA-Z]{2}[a-zA-Z0-9]{2}([a-zA-Z0-9]{3})
+Allowed characters and format: ([``a-zA-Z``]{4}``[a-zA-Z``]{2}[``a-zA-Z0-9``]{2}([``a-zA-Z0-9``]{3})
 
-2+|iban |String |Optional |34 a|The international bank account
-number (IBAN) of the account owner (consumer).
+2+|iban |String |Optional |34 a|The **I**nternational **B**ank **A**ccount
+**N**umber of the account owner (consumer).
 
-Allowed characters and format:  [a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}
+Allowed characters and format: [``a-zA-Z``]{2}[``0-9``]{2}[``a-zA-Z0-9``]{4}[``0-9``]{7}([``a-zA-Z0-9``]?){0,16}
 
-.2+|account-holder 2+|first-name |String |Optional |32 |The first name of the
+.2+|account-holder 2+m|first-name |String |Optional |32 |The first name of the
 account holder.
 2+|last-name |String |Mandatory |32 |The last name of the account holder.
 3+|descriptor |String |Optional |140 a|The descriptor is the text
 representing an order on the bank statement issued to your consumer by their
 bank. It provides information for the consumer, as it associates a specific
-_debit_ on the consumer's account to a specific purchase in your shop.
+debit on the consumer's account to a specific purchase in your shop.
 
 Limit of 35 characters for structured purpose or 140 characters for
 unstructured purpose. Applied only if not already configured during merchant
@@ -213,13 +213,10 @@ setup.
 
 Supports only limited character set:
 
-[a-zA-Z0-9],
-
-€ - $ § % ! = # ~ ; + / ? : ( ) . , ' & > < " * { } [ ] @ \ _ ° ^ \|
-
-Ä Ö Ü ä ö ü ß
-
-The _space_ key.
+``[a - z]`` +
+``[A - Z]`` +
+``[0 - 9]`` +
+``-`` ``€`` ``$`` ``§`` ``%`` ``!`` ``=`` ``#`` ``~`` ``;`` ``+`` ``/`` ``?`` ``:`` ``(`` ``)`` ``.`` ``,`` ````` ``&`` ``>`` ``<`` ``"`` ``*`` ``{`` ``}`` ``[`` ``]`` ``@`` ``\`` ``_`` ``°`` ``^`` ``\|`` ``Ä`` ``Ö`` ``Ü`` ``ä`` ``ö`` ``ü`` ``ß`` ``Space`` 
 
 3+|order-number |String |Optional |32 a|Merchant-side order number.
 
@@ -247,7 +244,7 @@ include::{root}/samples/json/WPP_EpsTransactionTypeDebit_2RtCttPPIDR.json[]
 ----
 
 
-[cols="15e,10,75"]
+[%autowidth, cols="m,10,75"]
 |===
 |Field (JSON) |Data Type |Description
 
@@ -291,7 +288,7 @@ You can find a decoded payment response example below.
 include::{root}/samples/json/WPP_EpsTransactionTypeDebit_3ParseAndProcessThePaymentResponseDecodedPaymentResponse.json[]
 ----
 
-[cols="30e,5,5,5,55"]
+[%autowidth, cols="m,,,,"]
 |===
 3+|Field (JSON) |Data Type |Description
 
@@ -321,7 +318,7 @@ only.
 time and date when the transaction was executed.
 
 Format: YYYY-MM-DDThh:mm:ss.sssZ (ISO).
-.3+|status 2+e|code |String |Status code of the status message.
+.3+|status 2+m|code |String |Status code of the status message.
 
 2+|description |String |The description of the transaction status message.
 Click here  for a complete list of status descriptions.
@@ -336,7 +333,7 @@ Possible values:
 
 //-
 
-.2+|requested-amount 2+e|currency |String |The currency of the
+.2+|requested-amount 2+m|currency |String |The currency of the
 requested/contested transaction amount.
 2+|value |Numeric |The full amount that was requested/contested in the
 transaction.
@@ -344,14 +341,14 @@ transaction.
 as a parent. As a _debit_ transaction is internally split into sub-transactions,
 the parent-transaction-id serves to link these sub-transactions.
 3+|order-number |String |Merchant-side order number as set in the request.
-.2+|account-holder 2+e|first-name |String |The first name of the account holder.
+.2+|account-holder 2+m|first-name |String |The first name of the account holder.
 2+|last-name |String |The last name of the account holder.
 3+|ip-address |String a|The internet protocol address of the account holder as
 recorded by the entity receiving the transaction attempt from the account holder.
  Supported IP versions: IPv4 and IPv6.
-|payment-methods e|payment-method |name |String |The name of the payment method
+|payment-methods m|payment-method m|name |String |The name of the payment method
 used.
-.2+|bank-account 2+|iban |String |The international bank account number (IBAN)
+.2+|bank-account 2+m|iban |String |The international bank account number (IBAN)
 of the account holder.
 2+|bic |String |The bank identifier code (BIC) of the account holder.
 3+|api-id |String |Identifier of the currently used API.

@@ -1,5 +1,5 @@
 [#API_WeChatQRPay]
-== REST API & {payment-page-v1}/v2
+== REST API & {payment-page-v2}
 _WeChat QR Pay_ is a type of <<PaymentMethods_PaymentMode_Wallet, Wallet>>.
 
 [#API_WeChatQRPay_GeneralInformation_PaymentMode]
@@ -39,14 +39,14 @@ For
 |===
 |Transaction Type |Link to the Sample
 
-|get-url |<<API_WeChatQRPay_Samples_debitgeturl, _debit/get-url_ sample>> (REST API)
+|get-url |<<API_WeChatQRPay_Samples_debitgeturl, debit/get-url sample>> (REST API)
 |check-signature |
-|debit | <<API_WeChatQRPay_Samples_debitgeturl, _debit/get-url_ sample>> (REST API)  +
-         <<API_WeChatQRPay_Samples_debit, _debit_ sample>> (Payment Page)
+|debit | <<API_WeChatQRPay_Samples_debitgeturl, debit/get-url sample>> (REST API)  +
+         <<API_WeChatQRPay_Samples_debit, debit sample>> (Payment Page)
 
-|refund-debit | <<API_WeChatQRPay_Samples_refunddebit, _refund-debit_ sample>>
-|void-debit | Voids the validity of a QR code. After a _void-debit,_ the consumer can no longer pay with the QR code that was generated with the preceding _debit_ request. +
-<<API_WeChatQRPay_Samples_voiddebit, _void-debit_ sample>>
+|refund-debit | <<API_WeChatQRPay_Samples_refunddebit, refund-debit sample>>
+|void-debit | Voids the validity of a QR code. After a void-debit, the consumer can no longer pay with the QR code that was generated with the preceding debit request. +
+<<API_WeChatQRPay_Samples_voiddebit, void-debit sample>>
 |===
 
 [#WeChatQRPay_TestCredentials]
@@ -58,14 +58,24 @@ Test transactions with the given credentials bill your WeChat account. Use only 
 You can refund the amount within 6 months of the initial transaction.
 ====
 
-[%autowidth]
+[%autowidth, cols=",,"]
 |===
-.2+h|URL(s) Endpoints |For the transaction type _debit._ |``\https://{rest-api-test-apm-endpoint}``
-                      |For the transaction types _refund-debit_ and _void-debit_. |``\https://{rest-api-test-endpoint}``
-h|Merchant Account ID (MAID) 2+|e9892fc3-1886-4564-8153-f3c7d4dc2b39
-h|Username 2+|70000-APITEST-AP
-h|Password 2+|qD2wzQ_hrc!8
-h|Secret Key | Payment Page |980624d8-3be5-40c8-afca-5347e087a338
+h|URL(s) Endpoint 
+2+|``\https://{rest-api-test-endpoint}``
+
+h|Merchant Account ID (MAID) 
+2+|e9892fc3-1886-4564-8153-f3c7d4dc2b39
+
+h|Username 
+2+|70000-APITEST-AP
+
+h|Password 
+2+|qD2wzQ_hrc!8
+
+h|Secret Key 
+| Payment Page 
+|980624d8-3be5-40c8-afca-5347e087a338
+
 |===
 
 [#API_WeChatQRPay_Workflow]
@@ -103,7 +113,7 @@ are the same as the
 ==== REST API
 
 [#API_WeChatQRPay_Samples_debitgeturl]
-===== _debit/get-url_
+===== debit/get-url
 
 *XML*
 
@@ -205,7 +215,7 @@ requested_amount=1.01&requested_amount_currency=USD&locale=en&order_number=12345
 ----
 
 [#API_WeChatQRPay_Samples_refunddebit]
-===== _refund-debit_
+===== refund-debit
 
 *XML*
 
@@ -228,11 +238,11 @@ include::{root}/samples/xml/wechat-qrpay_refund-request_notification_success_cb0
 ----
 
 [#API_WeChatQRPay_Samples_voiddebit]
-===== _void-debit_
+===== void-debit
 
 [NOTE]
 ====
-Voids the validity of a QR code. After a _void-debit,_ the consumer can no longer pay with the QR code that was generated with the preceding _debit_ request.
+Voids the validity of a QR code. After a void-debit, the consumer can no longer pay with the QR code that was generated with the preceding debit request.
 ====
 
 *XML*

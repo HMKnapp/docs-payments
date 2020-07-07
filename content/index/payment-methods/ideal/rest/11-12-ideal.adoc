@@ -1,5 +1,5 @@
 [#iDEAL]
-== REST API & {payment-page-v1}
+== REST API
 _iDEAL_ is a type of <<PaymentMethods_PaymentMode_OnlineBankTransfer, Online Bank Transfer>>.
 
 [#iDEAL_GeneralInformation_PaymentMode]
@@ -29,16 +29,16 @@ For <<Glossary_TransactionType, transaction type>> details which are not given h
 at <<AppendixB,  Transaction Types>>.
 
 [%autowidth]
-[cols="e,,"]
+[cols=",,"]
 |===
 |Transaction Type |Description |Link to samples
 
 |get-url |A transaction for initiating an iDEAL payment. As long as
-there is no notification from iDEAL there is only a _get-url_
-transaction. |See <<iDEAL_Samples, sample>>
+there is no notification from iDEAL there is only a get-url
+transaction. |<<iDEAL_Samples, sample>>
 |debit |Transfer funds from the Account Holder to the Merchant. The
 debit will be created when notification for the transaction is received
-from IDEAL. |See <<iDEAL_Samples, sample>>
+from IDEAL. |<<iDEAL_Samples, sample>>
 |===
 
 [#iDEAL_ReferenceTransaction]
@@ -49,21 +49,19 @@ functionality, see <<GeneralPlatformFeatures_CrossPayment, Cross-Payment-Methods
 [#iDEAL_TestCredentials]
 === Test Credentials
 
-[cols="h,,"]
+[cols="h,"]
 [%autowidth]
 |===
 | *URL (Endpoint)*
-| For transaction type _get-url._
-|
-``\https://{rest-api-test-apm-endpoint}``
+|``\https://{rest-api-test-endpoint}``
 | *Merchant Account ID (MAID)*
-2+| 4aeccf39-0d47-47f6-a399-c05c1f2fc819
+| 4aeccf39-0d47-47f6-a399-c05c1f2fc819
 | *Username*
-2+| 16390-testing
+| 16390-testing
 | *Password*
-2+| 3!3013=D3fD8X7
+| 3!3013=D3fD8X7
 | *Secret Key*
-2+| 7a353766-23b5-4992-ae96-cb4232998954
+| 7a353766-23b5-4992-ae96-cb4232998954
 |===
 
 .Additional Test Credentials on iDEAL Environment
@@ -103,9 +101,9 @@ receives a payment notification from Wirecard.
 
 image::images/11-12-ideal/20180509_iDEAL_debit.png[image,height=250]
 
-. Consumer adds items to his/her shopping basket.
+. Consumer adds items to their shopping basket.
 . Consumer selects _iDEAL_.
-. The merchant sends a _get-url_ request to {payment-gateway}.
+. -> Send a ``get-url`` request to {payment-gateway}.
 . {payment-gateway} processes and validates the
 transaction.
 . {payment-gateway} forwards the request to _iDEAL_.
@@ -116,15 +114,14 @@ for payment verification.
 online banking URL.
 . Consumer verifies the payment within the personal online banking
 system.
-. _iDEAL_ transfers funds from the consumer's bank account to the
-merchant's bank account.
-. _iDEAL_ redirects consumer to the merchant's result page.
-. iDEAL sends the transaction Status to {payment-gateway}
+. _iDEAL_ transfers funds from the consumer's bank account to your bank account.
+. _iDEAL_ redirects consumer to your result page.
+. iDEAL sends the transaction status to {payment-gateway}
 ({payment-gateway} continuously queries for the payment
 status).
 . {payment-gateway} processes the notification and sends the
-payment _debit_ notification to the merchant.
-. The merchant receives the notification with the payment result.
+payment debit notification to you.
+. You receive the notification with the payment result.
 
 [#iDEAL_Fields]
 === Fields
@@ -137,7 +134,7 @@ The following elements are mandatory (M) or optional (O) for a
 request/response/notification. If the respective cell is empty, the
 field is disregarded or not sent.
 
-[cols=",,,,,,v"]
+[%autowidth, cols="m,,,,,,v"]
 [%autowidth]
 |===
 |Field |Request  |Response |Notification |Data Type |Size |Description
@@ -176,7 +173,7 @@ transaction. The following characters are allowed:
 |xs:string
 |512
 |The URL to which the consumer will be re-directed after a successful
-payment. This is normally a success confirmation page on the merchant's
+payment. This is normally a success confirmation page on your
 website.
 |===
 
@@ -205,8 +202,7 @@ Frieslandbank merged into Rabobank. They are now available as Rabobank.
 [NOTE]
 ====
 Only the following banks can be used
-on ``\http://{test-instance-hostname}`` and iDEAL
-sandbox:
+on ``\https://{rest-api-test-endpoint}`` and _iDEAL_ sandbox:
 
 - *RABONL2U (Rabobank)*
 - *INGBNL2A (ING)*
@@ -216,42 +212,42 @@ sandbox:
 [#iDEAL_Samples]
 === Samples
 
-.XML Get-URL Request (Successful)
+.XML get-url Request (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/ideal_get-url_request_success_de.xml[]
 ----
 
-.XML Get-URL Response (Successful)
+.XML get-url Response (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/ideal_get-url_response_success_de.xml[]
 ----
 
-.XML Debit Notification (Successful)
+.XML debit Notification (Successful)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/ideal_debit_notification_success_de_67bea562.xml[]
 ----
 
-.XML Get-URL Request (Failure)
+.XML get-url Request (Failure)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/ideal_get-url_request_failure_de.xml[]
 ----
 
-.XML Get-URL Response (Failure)
+.XML get-url Response (Failure)
 
 [source,xml,subs=attributes+]
 ----
 include::{root}/samples/xml/ideal_get-url_response_failure_de.xml[]
 ----
 
-.XML Debit Notification (Failure)
+.XML debit Notification (Failure)
 
 [source,xml,subs=attributes+]
 ----

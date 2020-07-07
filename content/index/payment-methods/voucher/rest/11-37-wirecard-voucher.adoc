@@ -1,5 +1,5 @@
 [#WirecardVoucher]
-== REST API & {payment-page-v1}/v2
+== REST API & {payment-page-v2}
 _Wirecard Voucher_ is a type of <<PaymentMethods_PaymentMode_Voucher, voucher>> payment.
 
 [#WirecardVoucher_GeneralInformation_PaymentMode]
@@ -29,58 +29,58 @@ h|IPN Encodement       2+| Please follow the instructions given at <<GeneralPlat
 
 For <<Glossary_TransactionType, transaction type>> details look at <<AppendixB,  Transaction Types>>.
 
-[cols="2e,6,2a"]
+[cols="2,6,2a"]
 |===
 | Transaction Type | Description | Link to the Samples
 
 | enrollment 
 | Creates a voucher with the option to instantly activate it. 
-|<<WirecardVoucher_Samples_Enrollment, _enrollment_>> +
-<<WirecardVoucher_Samples_EnrollmentInstantActivation, _enrollment_ with instant activation>>
+|<<WirecardVoucher_Samples_Enrollment, enrollment>> +
+<<WirecardVoucher_Samples_EnrollmentInstantActivation, enrollment with instant activation>>
 
 | activation 
 | Activates an existing voucher. +
 Vouchers must be activated in order to be used.
-| <<WirecardVoucher_Samples_Activation, _activation_>>
+| <<WirecardVoucher_Samples_Activation, activation>>
 
 | purchase 
 | Redeems a voucher. 
-|<<WirecardVoucher_Samples_Purchase, _purchase_ samples>>
+|<<WirecardVoucher_Samples_Purchase, purchase samples>>
 
 | void-purchase 
-|Cancels a  _purchase_ against Voucher API. +
+|Cancels a purchase against Voucher API. +
 Configurable on merchant level. 
-|<<WirecardVoucher_Samples_VoidPurchase, _void-purchase_ samples>>
+|<<WirecardVoucher_Samples_VoidPurchase, void-purchase samples>>
 
 | reserve 
 | Reserves an amount for redemption. 
-|<<WirecardVoucher_Samples_Reserve, _reserve_ samples>>
+|<<WirecardVoucher_Samples_Reserve, reserve samples>>
 
 | void-reserve 
 | Cancels a redemption reservation that has not yet been confirmed. +
-If redemption has already been confirmed, use transaction type _cancel-redeem_. 
-|<<WirecardVoucher_Samples_VoidReserve, _void-reserve_ samples>>
+If redemption has already been confirmed, use transaction type cancel-redeem. 
+|<<WirecardVoucher_Samples_VoidReserve, void-reserve samples>>
 
 | redeem 
 | Confirms a reservation redemption. +
 Subtracts the redemption amount from the total voucher amount. 
-|<<WirecardVoucher_Samples_Redeem, _redeem_ samples>>
+|<<WirecardVoucher_Samples_Redeem, redeem samples>>
 
 | cancel-redeem 
 | Cancels a confirmed redemption. +
 Resets the voucher amount to the value before redemption. +
 Resets the voucher status from ``REDEEMED`` to ``ACTIVATED``. 
-|<<WirecardVoucher_Samples_CancelRedeem, _cancel-redeem_ samples>>
+|<<WirecardVoucher_Samples_CancelRedeem, cancel-redeem samples>>
 
 | void-cancel-redeem 
 | Rollback of redemption cancelation. +
 Resets the voucher amount to the value before redemption cancelation. +
 Resets the voucher status from  ``ACTIVATED`` to ``REDEEMED``. 
-|<<WirecardVoucher_Samples_VoidCancelRedeem, _void-cancel-redeem_ samples>>
+|<<WirecardVoucher_Samples_VoidCancelRedeem, void-cancel-redeem samples>>
 
 | authorization-only 
 | Retrieves voucher details.
-|<<WirecardVoucher_Samples_AuthorizationOnly, _authorization-only_ samples>>
+|<<WirecardVoucher_Samples_AuthorizationOnly, authorization-only samples>>
 
 |===
 
@@ -131,7 +131,7 @@ Fields can be **M**andatory or **O**ptional.
 | String
 |   
 | ID of voucher type that the voucher will be created from. +
-Mandatory for _enrollment_.
+Mandatory for ``enrollment``.
 
 | voucher-brand-id    
 | M
@@ -143,22 +143,22 @@ Mandatory for _enrollment_.
 | O            
 | Boolean
 | 
-| In _enrollment_ request: Set this flag to ``true`` to create and activate a new voucher in one go.
+| In ``enrollment`` request: Set this flag to ``true`` to create and activate a new voucher in one go.
 
 | voucher-code        
 | M/O
 | String
 | 36   
 | Unique code for payment and voucher processing. +
- Returned in an _enrollment_ response for further use. +
+ Returned in an ``enrollment`` response for further use. +
 
 Mandatory for
 
-* _activation_
-* _reserve_
-* _purchase_
-* _redeem_
-* _authorization-only_
+* ``activation``
+* ``reserve``
+* ``purchase``
+* ``redeem``
+* ``authorization-only``
 //-
 
 You have to send either ``voucher-code`` or ``voucher-serial-number``. +
@@ -181,15 +181,15 @@ If you send both, {payment-gateway} proceeds with ``voucher-code``.
 | String
 | 255  
 | Identifies the voucher in reports and support requests. +
-Returned in an _enrollment_ response for further use. +
+Returned in an ``enrollment`` response for further use. +
 
 Mandatory for
 
-* _activation_ 
-* _reserve_
-* _purchase_
-* _redeem_
-* _authorization-only_
+* ``activation``
+* ``reserve``
+* ``purchase``
+* ``redeem``
+* ``authorization-only``
 //-
 
 You have to send either ``voucher-code`` or ``voucher-serial-number``. +
@@ -287,7 +287,7 @@ Go to <<GeneralPlatformFeatures_IPN_NotificationExamples, Notification Examples>
 to see corresponding notification samples.
 
 [#WirecardVoucher_Samples_Enrollment]
-==== _enrollment_
+==== enrollment
 
 .XML enrollment Request (Successful)
 
@@ -319,7 +319,7 @@ include::{root}/samples/xml/voucher_enrollmentInstantActivation_response_success
 ----
 
 [#WirecardVoucher_Samples_Activation]
-==== _activation_
+==== activation
 
 .XML activation by Voucher Code Request (Successful)
 
@@ -350,7 +350,7 @@ include::{root}/samples/xml/voucher_activationBySerialNumber_response_success.xm
 ----
 
 [#WirecardVoucher_Samples_Purchase]
-==== _purchase_
+==== purchase
 
 .XML purchase Request (Successful)
 
@@ -368,7 +368,7 @@ include::{root}/samples/xml/voucher_purchase_response_success.xml[]
 
 
 [#WirecardVoucher_Samples_VoidPurchase]
-==== _void-purchase_
+==== void-purchase
 
 .XML void-purchase Request (Successful)
 
@@ -386,7 +386,7 @@ include::{root}/samples/xml/voucher_void-purchase_response_success_d424b4b8.xml[
 
 
 [#WirecardVoucher_Samples_Reserve]
-==== _reserve_
+==== reserve
 
 .XML reserve Request (Successful)
 
@@ -404,7 +404,7 @@ include::{root}/samples/xml/voucher_reserve_response_success.xml[]
 
 
 [#WirecardVoucher_Samples_VoidReserve]
-==== _void-reserve_
+==== void-reserve
 
 .XML void-reserve Request (Successful)
 

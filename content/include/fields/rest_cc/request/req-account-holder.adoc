@@ -7,7 +7,7 @@
 |date-of-birth 
 |O 
 |Date 
-|  
+|8
 |Consumer's birth date. +
 Accepted format: ``{date-pattern}``.
 
@@ -89,7 +89,7 @@ Accepted values: +
 |phone 
 |O 
 |String 
-|18 
+|32
 |Phone number provided by the consumer.  
 
 |work-phone
@@ -110,7 +110,7 @@ Accepted values: +
 |O 
 |String 
 |14 
-|This is the tax-number of the consumer.
+|The corporate tax number of the consumer (applies to legal entities).
 
 // tag::three-ds[]
 

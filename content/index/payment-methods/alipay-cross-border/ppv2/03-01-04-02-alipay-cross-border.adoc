@@ -54,11 +54,11 @@ SGD, THB, USD.
 === Test Credentials
 
 Merchant Credentials for Transaction Type
-<<PPv2_AlipayCrossborder_TransactionType_debit, _debit_>>
+<<PPv2_AlipayCrossborder_TransactionType_debit, debit>>
 
 [cols="35h,65"]
 |===
-| URI Endpoint               |``\https://{pp-test-instance-hostname}/api/payment/register``
+| URI Endpoint               |``\https://{pp-test-endpoint}``
 | Merchant Account ID (MAID) | 47cd4edf-b13c-4298-9344-53119ab8b9df
 | Username                   | 16390-testing
 | Password                   | 3!3013=D3fD8X7
@@ -80,12 +80,12 @@ Merchant Credentials for Transaction Type
 image::images/03-01-04-02-alipay-cross-border/alipay_crossborder_enterdata.png[Alipay Cross-border login form, 750]
 
 [#PPv2_AlipayCrossborder_TransactionType_debit]
-=== Transaction Type _debit_
+=== Transaction Type debit
 
-A _debit_ transaction charges the specified amount from the account
+A debit transaction charges the specified amount from the account
 holder's bank account and marks it for immediate transfer.
 
-For a successful _debit_ transaction:
+For a successful debit transaction:
 
 . Create a payment session (initial request).
 . Redirect the consumer to the payment page (initial response URL).
@@ -126,11 +126,11 @@ For a full structure of a request (optional fields included), see the
 include::{root}/samples/json/WPP_AlipayCrossborderTransactionTypeDebit_1CreateAPaymentSessionInitialRequest.json[]
 ----
 
-[cols="30e,10,10,50"]
+[%autowidth, cols="m,,,"]
 |===
 2+|Field (JSON) |Data Type |Description
 
-|merchant-account-id e|value |String |A unique identifier assigned to every
+|merchant-account-id m|value |String |A unique identifier assigned to every
 merchant account (by {payment-provider-name}).
 2+|request-id |String a|A unique identifier assigned to every request
 (by merchant). Used when searching for or referencing it later.
@@ -138,18 +138,18 @@ merchant account (by {payment-provider-name}).
 
 Allowed characters:  [a-z0-9-_]
 2+|transaction-type |String |The requested transaction type. For _Alipay Cross-border_ payments, transaction-type must be set to ``debit``.
-.2+|requested-amount e|value |Numeric a|The full amount that is requested/contested in a transaction. 2 decimal digits allowed.
+.2+|requested-amount m|value |Numeric a|The full amount that is requested/contested in a transaction. 2 decimal digits allowed.
 
 Use . (decimal point) as the separator.
 
 To test _Alipay Cross-border_, enter a small sum (double digit amount at most).
 |currency |String |The currency of the requested/contested transaction amount. For _Alipay Cross-border_ payments, the currency must be one of the following: ``AUD``, ``CAD``, ``CHF``, ``DKK``, ``EUR``, ``GBP``, ``HKD``, ``JPY``, ``KRW``, ``NOK``, ``NZD``, ``SEK``, ``SGD``, ``THB``, ``USD``. Format: 3-character abbreviation according to ISO 4217.
-|payment-method e|name |String |The name of the payment method used. Set this value to ``alipay-xborder``.
+|payment-method m|name |String |The name of the payment method used. Set this value to ``alipay-xborder``.
 2+|order-number |String |The order number provided by the merchant.
 2+|order-detail |String |Merchant-provided string to store the order details for the transaction.
 2+|ip-address |String |The internet protocol address of the consumer.
 2+|locale |String |A set of parameters defining language and country in the user interface.
-.3+|account-holder e|first-name |String |The first name of the account holder.
+.3+|account-holder m|first-name |String |The first name of the account holder.
 |last-name |String |The last name of the account holder.
 |email |String |The email address of the account holder.
 2+|success-redirect-url |String a|The URL to which the consumer is redirected after a successful payment,
@@ -167,7 +167,7 @@ e.g. ``\https://{pp-redirect-url-cancel}``
 include::{root}/samples/json/WPP_AlipayCrossborderTransactionTypeDebit_2RtCttPPIDR.json[]
 ----
 
-[cols="25e,10,65"]
+[%autowidth, cols="m,,"]
 |===
 |Field (JSON) | Data Type | Description
 
@@ -197,10 +197,8 @@ payments are returned as _failed_, but the
 
 In any case (unless the consumer cancels the transaction on a 3rd party
 provider page), a base64-encoded response containing payment information
-is sent to the configured redirection URL. See
-<<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and IPNs for {payment-page-v2-abbr}>>﻿﻿
-for more details on redirection targets after payment and transaction status
-notifications.
+is sent to the configured redirection URL. For details on redirection targets after payment and transaction status notifications, see
+<<PPSolutions_PPv2_ConfigureRedirects, Configuring Redirects and IPNs for {payment-page-v2-abbr}>>.
 
 You can find a decoded payment response example below.
 
@@ -211,7 +209,7 @@ You can find a decoded payment response example below.
 include::{root}/samples/json/WPP_AlipayCrossborderTransactionTypeDebit_3ParseAndProcessThePaymentResponseDecodedPaymentResponse.json[]
 ----
 
-[cols="20e,10,5,65"]
+[cols="20m,10,5,65"]
 |===
 2+|Field (JSON) |Data Type |Description
 
@@ -221,13 +219,13 @@ include::{root}/samples/json/WPP_AlipayCrossborderTransactionTypeDebit_3ParseAnd
 2+|completion-time-stamp |YYYY-MM-DD-Thh:mm:ss a|The UTC/ISO time-stamp documents the time and date when the transaction was executed.
 
 Format: YYYY-MM-DDThh:mm:ss (ISO).
-.2+|requested-amount e|currency |String |The currency of the requested/contested transaction amount. For _Alipay Cross-border_ payments, the currency must be one of the following: ``AUD``, ``CAD``, ``CHF``, ``DKK``, ``EUR``, ``GBP``, ``HKD``, ``JPY``, ``KRW``, ``NOK``, ``NZD``, ``SEK``, ``SGD``, ``THB``, ``USD``.
-e|value |Numeric |The full amount that is requested/contested in a transaction. 2 decimal digits allowed.
-
+.2+|requested-amount m|currency |String |The currency of the requested/contested transaction amount. +
+For _Alipay Cross-border_ payments, the currency must be one of the following: ``AUD``, ``CAD``, ``CHF``, ``DKK``, ``EUR``, ``GBP``, ``HKD``, ``JPY``, ``KRW``, ``NOK``, ``NZD``, ``SEK``, ``SGD``, ``THB``, ``USD``.
+m|value |Numeric |The full amount that is requested/contested in a transaction. 2 decimal digits allowed. +
 Use . (decimal point) as the separator.
 2+|parent-transaction-id |String |The ID of the transaction being referenced as a parent.
 2+|request-id |String |A unique identifier assigned to every request (by merchant). Used when searching for or referencing it later.
-|merchant-account-id e|value |String |A unique identifier assigned to every merchant account (by {payment-provider-name}). You receive a unique merchant account ID for each payment method.
+|merchant-account-id m|value |String |A unique identifier assigned to every merchant account (by {payment-provider-name}). You receive a unique merchant account ID for each payment method.
 2+|transaction-state  |String a|The current transaction state.
 
 Possible values:
@@ -248,7 +246,7 @@ e.g. ``\https://{pp-redirect-url-cancel}``
 e.g. ``\https://{pp-redirect-url-success}``
 2+|fail-redirect-url |String a|The URL to which the consumer is redirected after an unsuccessful payment,
 e.g. ``\https://{pp-redirect-url-error}``
-.3+|status e|description |String |The description of the transaction status message.
+.3+|status m|description |String |The description of the transaction status message.
 |severity |String a|The definition of the status message.
 
 Possible values:
@@ -260,10 +258,10 @@ Possible values:
 //-
 
 |code |String |Status code of the status message.
-.3+|account-holder e|first-name |String |The first name of the consumer.
+.3+|account-holder m|first-name |String |The first name of the consumer.
 |last-name |String |The last name of the consumer.
 |email |String |The email address of the consumer.
-|payment-method e|name |String |The name of the payment method used. Set this value to ``alipay-xborder``.
+|payment-method m|name |String |The name of the payment method used. Set this value to ``alipay-xborder``.
 2+|order-number  |String |This is the order number of the merchant.
 2+|order-detail |String |Merchant-provided string to store the order details for the transaction.
 2+|api-id |String |Identifier of the currently used API.
@@ -274,10 +272,10 @@ Possible values:
 === Post-Processing Operations
 
 WPP is best used to deal with one-off payments (e.g. regular,
-independent _debit_ transactions) or the initial transaction in a chain of
-them (e.g. a first _authorization_ in a chain of recurring transactions).
+independent debit transactions) or the initial transaction in a chain of
+them (e.g. a first authorization in a chain of recurring transactions).
 However, when it comes to referencing a transaction for any kind of
-post-processing operation - such as a refund of one of your _debit_ transactions
+post-processing operation - such as a refund of one of your debit transactions
 - use our <<RestApi, REST API>> directly.
 
 NOTE: Check the REST API
@@ -350,3 +348,5 @@ include::{root}/samples/json/WPP_AlipayCrossborder_JSON_NVPField_JSfACbdR.json[]
 |status_code_n |status ([ {} ])/ code |statuses ({ })
 |api_id |api-id |payment ({ })
 |===
+
+//-

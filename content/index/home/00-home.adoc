@@ -17,7 +17,7 @@ You've come to the right place!
 |===
 
 [.signpost]
-[cols=",,"]
+[cols=".^,,"]
 |===
 3.+a|
 

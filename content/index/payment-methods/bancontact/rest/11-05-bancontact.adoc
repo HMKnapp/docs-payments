@@ -224,7 +224,7 @@ optional *O.*
 Use ``debit``.
 
 | payment-methods | M | Alphanumeric a|
-The name of the <<PaymentMethods, Payment Method>>.
+The name of the <<API_PM_APM_PaymentMode, Payment Method>>.
 
 Use ``bancontact``.
 

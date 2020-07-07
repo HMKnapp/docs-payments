@@ -110,7 +110,7 @@ EngineAPTransactions_195.93.244.10_20130101_1b3be510-a992-48aa-8af9-6ba4c368a0ac
 ===== Structure and Attributes for Alternative Payments
 
 The file ``EngineAPTransactions*.csv`` currently comprises transfer transaction requests for the
-<<PaymentMethods, alternative payment methods>> that have been
+<<API_PM_APM_PaymentMode, alternative payment methods>> that have been
 posted or modified by the system over the past 24 hours. If a column
 does not apply to a payment method, the column will contain ``NULL``. The
 data is recorded in the following columns/fields:

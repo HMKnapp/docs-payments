@@ -205,10 +205,10 @@ Possible values:
 3+|fail-redirect-url |String a|The URL to which the consumer is redirected after a failed payment, e.g. ``\https://{pp-redirect-url-error}``
 3+|cancel-redirect-url |String a|The URL to which the consumer is redirected after having canceled a payment, e.g. ``\https://{pp-redirect-url-cancel}``
 3+| transaction-type | String  | The requested transaction type.
-2.2+| account-holder|  first-name    | String | The first name of the account holder.
+2.2+| account-holder m|  first-name    | String | The first name of the account holder.
 | last-name     | String | The last name of the account holder.
-| payment-methods  | payment-method m| name | String | The name of the payment method used for the transaction.
-2.2+| mandate | mandate-id  | String | The ID of the Direct Debit mandate. You must generate this value yourself.
+| payment-methods  m| payment-method m| name | String | The name of the payment method used for the transaction.
+2.2+| mandate m| mandate-id  | String | The ID of the Direct Debit mandate. You must generate this value yourself.
 | signed-date | YYYY-MM-DD | The date the Direct Debit mandate was signed.
 3+| creditor-id | String | This is your Creditor ID.
 3+| api-id      | String | Identifier of the currently used API.
@@ -370,8 +370,8 @@ allowed.
 2.2+| periodic m| periodic-type | String | Indicates if (and how) payment occurs more than once.
                | sequence-type | String | Indicates the phase of a recurring transaction.
 3+| transaction-type | String  | The requested transaction type.
-| payment-methods  | payment-method m| name | String | The name of the payment method used for the transaction.
-2.2+| account-holder|  first-name    | String | The first name of the account holder.
+| payment-methods  m| payment-method m| name | String | The name of the payment method used for the transaction.
+2.2+| account-holder m|  first-name    | String | The first name of the account holder.
 | last-name     | String | The last name of the account holder.
 2+| merchant-account-id m| value | String | A unique identifier assigned to every _Merchant Account_ (by {payment-provider-name}).
 .3+| statuses .3+| status m| description | String | The description of the transaction status message.
@@ -388,7 +388,7 @@ Possible values:
             | code        | String | Status code of the status message.
 3+|cancel-redirect-url |String a|The URL to which the consumer is redirected after having canceled a payment, e.g. ``\https://{pp-redirect-url-cancel}``
 3+|fail-redirect-url |String a|The URL to which the consumer is redirected after a failed payment, e.g. ``\https://{pp-redirect-url-error}``
-2.2+| mandate | mandate-id  | String | The ID of the Direct Debit mandate. You must generate this value yourself.
+2.2+| mandate m| mandate-id  | String | The ID of the Direct Debit mandate. You must generate this value yourself.
 | signed-date | YYYY-MM-DD | The date the Direct Debit mandate was signed.
 3+| creditor-id | String | This is your Creditor ID.
 3+| api-id      | String | Identifier of the currently used API.
@@ -417,7 +417,7 @@ NOTE: For more information on SEPA schemes, click
 include::{root}/samples/json/WPP_SEPADirectDebitB2BScheme_SEPA_DirectDebitExampleRequestWith_B2B_SchemeEnabled.json[]
 ----
 
-[%autowidth, cols="M,,,,,"]
+[%autowidth, cols="m,,,,,"]
 |===
 2+| Field (JSON) | Data Type | Mandatory/Optional | Size | Description
 
@@ -535,3 +535,5 @@ include::{root}/samples/json/WPP_SEPADirectDebit_JSON_NVPFieldsRequest_ResponseO
 
 | api_id | api-id |payment ({ })
 |===
+
+//-

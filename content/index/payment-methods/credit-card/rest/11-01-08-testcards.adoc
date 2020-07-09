@@ -107,12 +107,6 @@ To obtain the required response, send a
 <<CreditCard_TransactionTypes_Purchase_SendingData_PurchaseUsingCardData, _purchase_>>
 request to our endpoint using the corresponding card details provided here.
 
-For example: If you want to provoke the message "The card type is not processed
-by the authorization center.  Please contact technical support."
-(Status Code = ``500.1061``) for a MAESTRO card,
-send a _purchase_ request and use the Card Number ``6333111900920000``,
-Expiration Date ``{cc-exp-month}/{cc-exp-year}`` and CVC ``999``.
-
 [#API_CC_TestCards_Non3D_Success]
 .Card Numbers for Successful Transactions
 .Status Code 201.0000

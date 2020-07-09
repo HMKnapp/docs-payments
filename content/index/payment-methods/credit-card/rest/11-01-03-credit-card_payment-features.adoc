@@ -258,7 +258,7 @@ tag of each first request in the transaction flow (e.g.
 ``check-enrollment``, ``authorization-only``, ``authorization`` or
 ``purchase``).
 
-The sub merchant information is mandatory for MasterCard, Visa, UPI and JCB traffic.
+The sub merchant information is mandatory for MasterCard and Visa traffic.
 
 NOTE: For each transaction flow the first request must contain ``sub-merchant-info``. For the following steps ``sub-merchant-info`` is not
 mandatory. We recommend to send ``sub-merchant-info`` in every step. This avoids complexity in implementation.

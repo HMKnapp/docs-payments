@@ -30,8 +30,7 @@ https://cwiki.apache.org/confluence/display/HTTPD/CommonHTTPStatusCodes[here.]
 [#StatusCodes_InDetail]
 === Status Codes in Detail
 
-For the payment method _Credit Card_ we provide special card numbers for
-Amex, DINERS, DISCOVER, JCB, MAESTRO, Mastercard and VISA to test a variety of status codes.
+For the payment method _Credit Card_ we provide special card numbers for Mastercard and VISA to test a variety of status codes.
 
 Those status codes you can test (mostly codes that begin with 500.1xxx),
 are marked bold and provide a link that points directly to the
@@ -765,7 +764,7 @@ a| *500.1159*
 | 500.3112 | warning     | External Provider: Duplicate card exists in the vault. | External Provider: Duplicate card exists in the vault.
 | 500.3113 | warning     | External Provider: Credit card must include number. | External Provider: Credit card must include number.
 | 500.3114 | warning     | External Provider: Credit card type is not accepted by this merchant account. | External Provider: Credit card type is not accepted by this merchant account.
-| 500.3115 | warning     | External Provider: CVV must be 4 digits for American Express and 3 digits for other card types. | External Provider: CVV must be 4 digits for _American Express_ and 3 digits for other card types.
+| 500.3115 | warning     | External Provider: CVV must be 3 digits. | External Provider: CVV must be 3 digits.
 | 500.3116 | warning     | External Provider: CVV is required. | External Provider: CVV is required.
 | 500.3117 | warning     | External Provider: CVV verification failed. | External Provider: CVV verification failed.
 | 500.3118 | warning     | External Provider: Email is an invalid format. | External Provider: Email is an invalid format.

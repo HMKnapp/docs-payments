@@ -105,9 +105,7 @@ Currently, Seamless Mode supports *only credit card payments.* For a more paymen
 
 The payment-processing example is *designed for the testing environment* and *does not use real information.*
 
-Payment processing with {payment-page-v2} in Seamless Mode deviates a little bit from the
-
-<<PaymentPageSolutions_PPv2_HPP_Integration, HPP>> and <<PaymentPageSolutions_PPv2_EPP_Integration, EPP>> payment processing workflow:
+Payment processing with {payment-page-v2} in Seamless Mode deviates a little bit from the <<PaymentPageSolutions_PPv2_HPP_Integration, HPP>> and <<PaymentPageSolutions_PPv2_EPP_Integration, EPP>> payment processing workflow:
 
 [%autowidth]
 |===
@@ -133,7 +131,7 @@ set up your testing tool:
 [%autowidth, cols="h,",]
 |===
 |URI (Endpoint)   
-|``\https://{pp-test-instance-hostname}/api/payment/register``
+|``\https://{pp-test-endpoint}``
 
 |Username         
 |70000-APILUHN-CARD
@@ -164,7 +162,7 @@ set up your testing tool:
 [#PPv2_Seamless_Integration_Example_InitialRequest]
 .1. Create a Payment Session
 To create a payment session, send a *POST request* to the ``/api/payment/register`` endpoint,
-e.g. ``\https://{pp-test-instance-hostname}/api/payment/register``.
+e.g. ``\https://{pp-test-endpoint}``.
 
 This is an HTTP request with two headers:
 
@@ -689,3 +687,5 @@ consumer to a success-/fail-/cancel-redirect-url of your own choice and design t
 
 To parse and process the payment response of Non 3D Secure credit card
 payment, please consult *<<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> for details.*
+
+//-

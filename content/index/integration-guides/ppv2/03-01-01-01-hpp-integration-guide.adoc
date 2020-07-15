@@ -82,7 +82,7 @@ set up your testing tool:
 [%autowidth, cols="h,", stripes="none"]
 |===
 | URL (Endpoint)           
-| ``\https://{rest-api-test-endpoint}``
+| ``\https://{pp-test-endpoint}``
 
 | Merchant Account ID (MAID) 
 | 7a6dd74f-06ab-4f3f-a864-adc52687270a

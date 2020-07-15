@@ -50,9 +50,7 @@ If ``country`` is neither ``US`` nor ``CA``, do not send this field.
 From each scheme the _Payment Facilitator_ receives a different ID. +
 Accepted values: +
 
-* 8 alphanumeric characters for *UPI*. +
-* 11 numeric characters for *Mastercard* and *Visa*. +
-* For *JCB* no value is needed. +
+* 11 numeric characters
 
 //-
 

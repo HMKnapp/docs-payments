@@ -109,10 +109,7 @@ a| To learn more about how you can benefit from implementing 3D Secure 2, watch 
 [#CreditCard_3DS2_PMs]
 === Supported Card Brands
 
-3D Secure 2 has been developed, and is supported, by Mastercard, VISA,
-American Express, UPI, Diners Club, Discover, and JCB.
-
-- <<CreditCard, Credit Card>>
-- <<PPv2_CC, Credit Card with {payment-page-v2-abbr}>>
+* Mastercard
+* VISA
 
 //-

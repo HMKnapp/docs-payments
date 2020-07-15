@@ -58,9 +58,7 @@ Authentication Value (AAV) or Universal Cardholder Authentication Field
 increased protection against credit card fraud. The Card Security Code
 is located on the back of MasterCard, Visa and Discover credit or debit
 cards and is typically a separate group of 3 Digits to the right of the
-signature strip. On American Express cards, the Card Security Code is a
-printed, not embossed, group of four digits on the front towards the
-right.
+signature strip.
 |[[Glossary_CardTokenId]]Card Token Id
 |card.token-id
 |A unique identifier assigned for every card token.  This is a surrogate

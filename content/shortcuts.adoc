@@ -39,10 +39,10 @@
 :batch-processing-api: {payment-provider-name} Batch Processing API
 :instance-hostname: payments.wirecard.com
 :test-instance-hostname: payments-test.wirecard.com
-:pp-test-instance-hostname: payments-test.wirecard.com/
+:pp-test-instance-hostname: payments-test.wirecard.com/wpp
 :pp-demoshop-instance-hostname: demoshop-test.{domain}
 :rest-api-test-endpoint: {test-instance-hostname}/ee/rest/payments
-:pp-test-endpoint: {pp-test-instance-hostname}wpp/api/payment/register
+:pp-test-endpoint: {pp-test-instance-hostname}/api/payment/register
 :pp-redirect-url-success: {pp-demoshop-instance-hostname}/demoshop/#/success
 :pp-redirect-url-cancel: {pp-demoshop-instance-hostname}/demoshop/#/cancel
 :pp-redirect-url-error: {pp-demoshop-instance-hostname}/demoshop/#/error

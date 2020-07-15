@@ -89,9 +89,7 @@ a|A security feature for credit or debit card transactions,
 providing increased protection against credit card fraud. The Card
 Security Code is located on the back of Mastercard, Visa and Discover
 credit or debit cards and is typically a separate group of 3 digits to
-the right of the signature strip. On American Express cards, the Card
-Security Code is a printed, not embossed,  group of four digits on the
-front towards the right.
+the right of the signature strip.
 |``redirect_url`` 256 **Optional**
 __Alphanumeric__
 a|The URL where the account holder will be redirected to following transaction completion.

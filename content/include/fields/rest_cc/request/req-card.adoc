@@ -39,7 +39,6 @@ Otherwise, the field is optional.
 | String	
 | 4	
 | A security feature for credit or debit card transactions, providing increased protection against credit card or debit card fraud. The card security code is located on the back of credit or debit cards and is typically a separate group of 3 digits to the right of the signature strip. + 
-On American Express cards, the card security code is a printed, not embossed, group of four digits on the front towards the right. +
 Depending on your merchant account settings it may be mandatory.
 
 |card-type 

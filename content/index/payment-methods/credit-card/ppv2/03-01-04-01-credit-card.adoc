@@ -66,9 +66,9 @@ the <<PPSolutions_PPv2_PPv2Security, {payment-page-v2-abbr} Security>> section.
 image:images/03-01-04-01-credit-card/cc_entercarddata.jpg[Credit Card Payment Form,width=642,height=427]
 
 [#PPv2_CC_TransactionType_purchase]
-=== _purchase_
+=== purchase
 
-A _purchase_ transaction charges the account holder's card and immediately
+A purchase transaction charges the account holder's card and immediately
 transfers the reserved amount.
 
 For a successful transaction:
@@ -251,9 +251,9 @@ bank statement purposes.
 |===
 
 [#PPv2_CC_TransactionType_authorization]
-=== _authorization_
+=== authorization
 
-An _authorization_ transaction places the account holder's funds on hold,
+An authorization transaction places the account holder's funds on hold,
 pending future capture, re-authorization or void transaction.
 
 As with other referenceable transaction types, you can use {payment-page-v2-abbr} only to
@@ -374,7 +374,7 @@ notifications.
 
 You can find a decoded payment response example below.
 
-._authorization_ (Response)
+.authorization (Response)
 [source,json,subs=attributes+]
 ----
 include::{root}/samples/json/WPP_CC_TransactionTypeAuthorization_AuthorizationResponse.json[]
@@ -439,12 +439,12 @@ bank statement purposes.
 |===
 
 [#PPv2_CC_TransactionType_authorizationonly]
-=== _authorization-only_
+=== authorization-only
 
-An _authorization-only_ transaction verifies the validity of account
+An authorization-only transaction verifies the validity of account
 holder's card, but does not leave an authorized amount.
 
-_authorization-only_ transactions require a *zero* requested amount.
+authorization-only transactions require a *zero* requested amount.
 
 As with other referenceable transaction types, you can use {payment-page-v2-abbr} only to
 create the authorization itself. To capture or register additional
@@ -511,7 +511,7 @@ Allowed characters: [a-z0-9-_]
 2+|transaction-type |String |Required |36 |The requested transaction type.
 .2+|requested-amount m|value |Numeric |Required |18 a|The full amount that is
 requested/contested in a transaction. 2 decimal places allowed.
-_authorization-only_ transactions require a zero requested amount.
+``authorization-only`` transactions require a zero requested amount.
 
 Use . (decimal point) as the separator.
 |currency |String |Required |3 a|The currency of the requested/contested
@@ -635,19 +635,19 @@ bank statement purposes.
 === Post-Processing Operations 
 
 {payment-page-v2-abbr} is best used to deal with "one-off" payments (e.g. regular,
-independent _debit_ transactions) or the initial transaction in a chain of
-them (e.g. a first _authorization_ in a chain of recurring transactions).
+independent debit transactions) or the initial transaction in a chain of
+them (e.g. a first authorization in a chain of recurring transactions).
 However, when it comes to referencing a transaction for any kind of
-post processing operations - like a refund of one of your _debit_ transactions 
+post processing operations - like a refund of one of your debit transactions 
 - use our <<RestApi, REST API>> directly. Check the REST API
 <<CreditCard, _Credit Card_ specification>> for details on _Credit Card_
 specific post processing operations.
 
 There are multiple post processing operations available for _Credit Card_:
 
-- _capture_ operations for both _authorization_ and _authorization-only_,
+- capture operations for both authorization and authorization-only,
 - recurring transactions,
-- _void_ transactions,
+- void transactions,
 - refunds,
 - and more.
 
@@ -901,15 +901,15 @@ These are the possible scenarios for the value of the field ``eci``:
 
 3D authentication successful:: The card issuing bank is 3D ready and
 cardholder is enrolled.
-(ECI Value: 05 - VISA/JCB/American Express; 02 - Mastercard)
+(ECI Value: 05 - VISA, 02 - Mastercard)
 
 3D authentication unsuccessful:: Either the card issuing bank is not
 3D ready or the cardholder is not enrolled.
-(ECI Value: 06 - VISA/JCB/American Express; 01 - Mastercard)
+(ECI Value: 06 - VISA, 01 - Mastercard)
 
 3D authentication unsuccessful or not attempted:: Either a non-3D card
 or the card issuing bank does not handle the transaction as 3D Secure.
-(ECI Value: 07 - VISA/JCB/American Express; 00 - Mastercard)
+(ECI Value: 07 - VISA, 00 - Mastercard)
 
 [%autowidth, stripes=none, cols="m,,,"]
 |===

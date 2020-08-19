@@ -20,8 +20,8 @@
 | Response only
 | Timestamp 
 | 20
-| The date and time that a transaction state changed to either ``success`` or ``failed`` in GMT. +
-Format: ``{timestamp-pattern}``.
+| The date and time that a transaction state changes to either ``success`` or ``failed`` in GMT. +
+Format: ``{timestamp-pattern-utc}``.
 
 | order-id
 | Response only

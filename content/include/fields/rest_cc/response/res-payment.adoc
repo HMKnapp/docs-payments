@@ -20,7 +20,7 @@ a| ``merchant-account-id``/@``ref``
 | Timestamp 
 | 20
 | The date and time that a transaction state changed to either ``success`` or ``failed`` in GMT. +
-Format: ``{timestamp-pattern}``.
+Format: ``{timestamp-pattern-utc}``.
 
 | authorization-code 
 | String 
